@@ -8,9 +8,9 @@ import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
 /**
- * Anonymous, account-free session: identity is a locally generated device id sent as a header
- * on every request (see NetworkBindings), not a login/JWT pair - there's no email/password flow
- * in this app, so there's nothing to refresh or expire.
+ * Anonymous, account-free session: identity is a locally generated device id, exchanged for a
+ * long-lived backend JWT via POST /auth/anonymous (see NetworkBindings) - there's no
+ * email/password flow, so the only "auth" state to keep is that one token.
  */
 @Inject
 @SingleIn(AppScope::class)
@@ -80,6 +80,12 @@ class SessionStorage {
         settings?.putBoolean(KEY_NOTIFICATIONS, enabled)
     }
 
+    fun authToken(): String? = settings?.getStringOrNull(KEY_AUTH_TOKEN)
+
+    fun saveAuthToken(token: String) {
+        settings?.putString(KEY_AUTH_TOKEN, token)
+    }
+
     private companion object {
         const val KEY_DEVICE_ID = "device_id"
         const val KEY_ONBOARDING_DONE = "onboarding_done"
@@ -91,6 +97,7 @@ class SessionStorage {
         const val KEY_HABITS = "habits"
         const val KEY_MOODS = "moods"
         const val KEY_NOTIFICATIONS = "notifications_enabled"
+        const val KEY_AUTH_TOKEN = "auth_token"
         const val RECORD_SEPARATOR = "|~|"
     }
 }

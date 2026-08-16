@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!--
+      Backend is plain HTTP on a bare IP for now (no TLS yet) - scoped cleartext exception for
+      just this host instead of a blanket usesCleartextTraffic="true" for the whole app.
+      Remove once the API is served over HTTPS.
+    -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">92.42.99.211</domain>
+    </domain-config>
+</network-security-config>
