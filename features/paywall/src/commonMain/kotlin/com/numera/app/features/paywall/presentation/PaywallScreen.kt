@@ -109,7 +109,7 @@ private fun PaywallContent(modifier: Modifier, state: PaywallState.Content, onAc
 }
 
 private fun ctaText(lifePath: Int?): String =
-    if (lifePath != null) "Открыть остальные 7 чисел" else "Продолжить"
+    if (lifePath != null) "Открыть остальные 8 чисел" else "Продолжить"
 
 @Composable
 private fun NumberHero(lifePath: Int?, expression: Int?) {

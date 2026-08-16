@@ -5,9 +5,13 @@ import androidx.lifecycle.viewModelScope
 import com.numera.app.core.billing.SubscriptionState
 import com.numera.app.core.billing.BillingClient
 import com.numera.app.core.commonMain.session.SessionStorage
+import com.numera.app.core.numerology.AdvancedNumerology
+import com.numera.app.core.numerology.LuckyNumbers
 import com.numera.app.core.numerology.PythagoreanCalculator
 import com.numera.app.core.numerology.model.NumerologyProfile
 import com.numera.app.core.numerology.model.SimpleDate
+import com.numera.app.core.numerology.todaySimpleDate
+import com.numera.app.features.numbers.domain.PersonalCycleMeanings
 import com.numera.app.features.numbers.presentation.model.NumberCardUi
 import com.numera.app.features.numbers.presentation.model.NumberType
 import dev.zacsweers.metro.Inject
@@ -36,6 +40,9 @@ class NumbersViewModel(
             NumbersAction.OnRefresh -> load()
             is NumbersAction.OnCardClick -> handleCardClick(action.numberType)
             NumbersAction.OnCompatibilityClick -> setEvent(NumbersEvent.NavigateToCompatibility)
+            NumbersAction.OnKarmicAnalysisClick -> setEvent(NumbersEvent.NavigateToKarmicAnalysis)
+            NumbersAction.OnLifeCyclesClick -> setEvent(NumbersEvent.NavigateToLifeCycles)
+            NumbersAction.OnToolsClick -> setEvent(NumbersEvent.NavigateToTools)
         }
     }
 
@@ -77,9 +84,44 @@ class NumbersViewModel(
                     NumberCardUi(NumberType.SOUL_URGE, "Число души", numbers.soulUrge, locked = !subscribed),
                     NumberCardUi(NumberType.PERSONALITY, "Число личности", numbers.personality, locked = !subscribed),
                     NumberCardUi(NumberType.HEALTH, "Код здоровья", numbers.healthCode, locked = !subscribed),
-                    NumberCardUi(NumberType.BUSINESS, "Код бизнеса", numbers.businessCode, locked = !subscribed)
+                    NumberCardUi(NumberType.BUSINESS, "Код бизнеса", numbers.businessCode, locked = !subscribed),
+                    NumberCardUi(NumberType.MATURITY, "Число зрелости", AdvancedNumerology.maturityNumber(profile), locked = !subscribed),
+                    NumberCardUi(
+                        NumberType.HIDDEN_PASSION,
+                        "Скрытая страсть",
+                        AdvancedNumerology.hiddenPassionNumber(profile.fullName),
+                        locked = !subscribed
+                    ),
+                    NumberCardUi(
+                        NumberType.CORNERSTONE,
+                        "Краеугольный камень",
+                        AdvancedNumerology.cornerstoneNumber(profile.fullName),
+                        locked = !subscribed
+                    ),
+                    NumberCardUi(
+                        NumberType.CAPSTONE,
+                        "Завершающий камень",
+                        AdvancedNumerology.capstoneNumber(profile.fullName),
+                        locked = !subscribed
+                    )
                 )
-                _state.value = state.value.copy(cards = cards, loading = false)
+
+                val today = todaySimpleDate()
+                val personalYear = AdvancedNumerology.personalYear(profile.birthDate, today.year)
+                val personalMonth = AdvancedNumerology.personalMonth(profile.birthDate, today.year, today.month)
+                val luckyNumbers = LuckyNumbers.luckyNumbers(numbers, personalYear)
+                val luckyColor = LuckyNumbers.luckyColor(numbers.lifePath)
+
+                _state.value = state.value.copy(
+                    cards = cards,
+                    loading = false,
+                    personalYear = personalYear,
+                    personalYearTheme = PersonalCycleMeanings.yearTheme(personalYear),
+                    personalMonth = personalMonth,
+                    personalMonthTheme = PersonalCycleMeanings.monthTheme(personalMonth),
+                    luckyNumbers = luckyNumbers,
+                    luckyColor = luckyColor
+                )
             }
         }
     }

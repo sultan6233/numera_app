@@ -3,8 +3,11 @@ package com.numera.app.features.numbers.presentation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import com.numera.app.core.commonMain.Compatibility
+import com.numera.app.core.commonMain.KarmicAnalysis
+import com.numera.app.core.commonMain.LifeCycles
 import com.numera.app.core.commonMain.NumberDetail
 import com.numera.app.core.commonMain.Navigator
+import com.numera.app.core.commonMain.NumerologyTools
 import com.numera.app.core.commonMain.Paywall
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -17,6 +20,9 @@ fun NumbersEventHandler(uiEvent: SharedFlow<NumbersEvent>, navigator: Navigator)
                 is NumbersEvent.NavigateToDetail -> navigator.navigateTo(NumberDetail(event.numberType))
                 NumbersEvent.NavigateToPaywall -> navigator.navigateTo(Paywall)
                 NumbersEvent.NavigateToCompatibility -> navigator.navigateTo(Compatibility)
+                NumbersEvent.NavigateToKarmicAnalysis -> navigator.navigateTo(KarmicAnalysis)
+                NumbersEvent.NavigateToLifeCycles -> navigator.navigateTo(LifeCycles)
+                NumbersEvent.NavigateToTools -> navigator.navigateTo(NumerologyTools)
             }
         }
     }

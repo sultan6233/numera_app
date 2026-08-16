@@ -12,9 +12,14 @@ data class NumerologyNumbers(
     val businessCode: Int
 )
 
+data class CompatibilityBreakdownItem(val label: String, val score: Int)
+
 data class CompatibilityResult(
     val score: Int,
     val label: String,
     val lifePathA: Int,
-    val lifePathB: Int
+    val lifePathB: Int,
+    val breakdown: List<CompatibilityBreakdownItem> = emptyList()
 )
+
+data class LifeCycle(val number: Int, val startAge: Int, val endAge: Int?)

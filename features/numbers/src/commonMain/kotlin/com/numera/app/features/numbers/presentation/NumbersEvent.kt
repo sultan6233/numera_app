@@ -4,4 +4,7 @@ sealed interface NumbersEvent {
     data class NavigateToDetail(val numberType: String) : NumbersEvent
     data object NavigateToPaywall : NumbersEvent
     data object NavigateToCompatibility : NumbersEvent
+    data object NavigateToKarmicAnalysis : NumbersEvent
+    data object NavigateToLifeCycles : NumbersEvent
+    data object NavigateToTools : NumbersEvent
 }

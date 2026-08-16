@@ -23,9 +23,12 @@ import com.numera.app.core.commonMain.Compatibility
 import com.numera.app.core.commonMain.CompatibilityDetail
 import com.numera.app.core.commonMain.Growth
 import com.numera.app.core.commonMain.Home
+import com.numera.app.core.commonMain.KarmicAnalysis
+import com.numera.app.core.commonMain.LifeCycles
 import com.numera.app.core.commonMain.Navigator
 import com.numera.app.core.commonMain.NumberDetail
 import com.numera.app.core.commonMain.Numbers
+import com.numera.app.core.commonMain.NumerologyTools
 import com.numera.app.core.commonMain.Onboarding
 import com.numera.app.core.commonMain.Paywall
 import com.numera.app.core.commonMain.Profile
@@ -39,8 +42,11 @@ import com.numera.app.features.compatibility.presentation.CompatibilityDetailEnt
 import com.numera.app.features.compatibility.presentation.CompatibilityEntry
 import com.numera.app.features.growth.presentation.GrowthEntry
 import com.numera.app.features.home.presentation.HomeEntry
+import com.numera.app.features.numbers.presentation.KarmicAnalysisEntry
+import com.numera.app.features.numbers.presentation.LifeCyclesEntry
 import com.numera.app.features.numbers.presentation.NumberDetailEntry
 import com.numera.app.features.numbers.presentation.NumbersEntry
+import com.numera.app.features.numbers.presentation.NumerologyToolsEntry
 import com.numera.app.features.onboarding.presentation.OnboardingEntry
 import com.numera.app.features.paywall.presentation.PaywallEntry
 import com.numera.app.features.profile.presentation.ProfileEntry
@@ -145,6 +151,24 @@ fun App() {
                                 companionId = key.companionId,
                                 viewModel = viewModel
                             )
+                        }
+                        entry<KarmicAnalysis> {
+                            val viewModel = viewModel {
+                                appGraph.numbersGraphFactory.createNumbersGraph().karmicAnalysisViewModel
+                            }
+                            KarmicAnalysisEntry(viewModel = viewModel)
+                        }
+                        entry<LifeCycles> {
+                            val viewModel = viewModel {
+                                appGraph.numbersGraphFactory.createNumbersGraph().lifeCyclesViewModel
+                            }
+                            LifeCyclesEntry(viewModel = viewModel)
+                        }
+                        entry<NumerologyTools> {
+                            val viewModel = viewModel {
+                                appGraph.numbersGraphFactory.createNumbersGraph().numerologyToolsViewModel
+                            }
+                            NumerologyToolsEntry(viewModel = viewModel)
                         }
                         entry<CalendarEnergy> {
                             val viewModel = viewModel {

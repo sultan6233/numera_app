@@ -46,6 +46,10 @@ private fun glyphFor(type: String): NumeraGlyph = when (type) {
     NumberType.PERSONALITY -> NumeraGlyph.Duality
     NumberType.HEALTH -> NumeraGlyph.Leaf
     NumberType.BUSINESS -> NumeraGlyph.Case
+    NumberType.MATURITY -> NumeraGlyph.Sun
+    NumberType.HIDDEN_PASSION -> NumeraGlyph.Sprout
+    NumberType.CORNERSTONE -> NumeraGlyph.Grid
+    NumberType.CAPSTONE -> NumeraGlyph.Person
     else -> NumeraGlyph.Grid
 }
 
@@ -81,11 +85,44 @@ fun NumbersScreen(state: NumbersState, onAction: (NumbersAction) -> Unit) {
                     }
                 } else {
                     LazyColumn(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                        item {
+                            CyclesRow(
+                                personalYear = state.personalYear,
+                                personalYearTheme = state.personalYearTheme,
+                                personalMonth = state.personalMonth,
+                                personalMonthTheme = state.personalMonthTheme
+                            )
+                        }
+                        item {
+                            LuckyNumbersRow(numbers = state.luckyNumbers, color = state.luckyColor)
+                        }
+                        item { Spacer(modifier = Modifier.height(4.dp)) }
                         items(state.cards) { card ->
                             NumberCard(card, onClick = { onAction(NumbersAction.OnCardClick(card.type)) })
                         }
                         item {
                             CompatibilityEntryCard(onClick = { onAction(NumbersAction.OnCompatibilityClick) })
+                        }
+                        item {
+                            ToolEntryCard(
+                                glyph = NumeraGlyph.Spiral,
+                                title = "Кармический анализ",
+                                onClick = { onAction(NumbersAction.OnKarmicAnalysisClick) }
+                            )
+                        }
+                        item {
+                            ToolEntryCard(
+                                glyph = NumeraGlyph.Calendar,
+                                title = "Жизненные циклы",
+                                onClick = { onAction(NumbersAction.OnLifeCyclesClick) }
+                            )
+                        }
+                        item {
+                            ToolEntryCard(
+                                glyph = NumeraGlyph.Grid,
+                                title = "Инструменты нумерологии",
+                                onClick = { onAction(NumbersAction.OnToolsClick) }
+                            )
                         }
                         item { Spacer(modifier = Modifier.height(8.dp)) }
                     }
@@ -104,6 +141,11 @@ private fun Int.reducedDigit(): Int {
 
 @Composable
 private fun CompatibilityEntryCard(onClick: () -> Unit) {
+    ToolEntryCard(glyph = NumeraGlyph.Duality, title = "Совместимость с близкими", onClick = onClick)
+}
+
+@Composable
+private fun ToolEntryCard(glyph: NumeraGlyph, title: String, onClick: () -> Unit) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -123,16 +165,63 @@ private fun CompatibilityEntryCard(onClick: () -> Unit) {
                 .background(Surface),
             contentAlignment = Alignment.Center
         ) {
-            NumeraIcon(glyph = NumeraGlyph.Duality, tint = Primary, size = 20.dp)
+            NumeraIcon(glyph = glyph, tint = Primary, size = 20.dp)
         }
         Text(
-            text = "Совместимость с близкими",
+            text = title,
             fontSize = 15.sp,
             fontWeight = FontWeight.Medium,
             color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier.weight(1f)
         )
         Text(text = "→", fontSize = 16.sp, color = Primary)
+    }
+}
+
+@Composable
+private fun CyclesRow(personalYear: Int, personalYearTheme: String, personalMonth: Int, personalMonthTheme: String) {
+    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+        CycleCard(label = "Личный год", value = personalYear, theme = personalYearTheme, modifier = Modifier.weight(1f))
+        CycleCard(label = "Личный месяц", value = personalMonth, theme = personalMonthTheme, modifier = Modifier.weight(1f))
+    }
+}
+
+@Composable
+private fun CycleCard(label: String, value: Int, theme: String, modifier: Modifier = Modifier) {
+    Column(
+        modifier = modifier
+            .clip(RoundedCornerShape(4.dp))
+            .background(Surface)
+            .border(1.dp, Outline, RoundedCornerShape(4.dp))
+            .padding(14.dp)
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            Text(text = value.toString(), fontFamily = displayFontFamily(), fontSize = 22.sp, fontWeight = FontWeight.Bold, color = Primary)
+            Text(text = label, fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+        Spacer(modifier = Modifier.height(6.dp))
+        Text(text = theme, fontSize = 11.sp, lineHeight = 15.sp, color = Muted, maxLines = 3)
+    }
+}
+
+@Composable
+private fun LuckyNumbersRow(numbers: List<Int>, color: String) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(4.dp))
+            .background(Surface)
+            .border(1.dp, Outline, RoundedCornerShape(4.dp))
+            .padding(horizontal = 14.dp, vertical = 12.dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            text = "Счастливые числа: ${numbers.joinToString(", ")}",
+            fontSize = 12.sp,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+        Text(text = "Цвет: $color", fontSize = 12.sp, color = Primary)
     }
 }
 

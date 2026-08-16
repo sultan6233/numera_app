@@ -14,4 +14,8 @@ object NumberType {
     const val PERSONALITY = "personality"
     const val HEALTH = "health"
     const val BUSINESS = "business"
+    const val MATURITY = "maturity"
+    const val HIDDEN_PASSION = "hidden_passion"
+    const val CORNERSTONE = "cornerstone"
+    const val CAPSTONE = "capstone"
 }

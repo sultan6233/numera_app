@@ -3,6 +3,7 @@ package com.numera.app.features.numbers.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.numera.app.core.commonMain.session.SessionStorage
+import com.numera.app.core.numerology.AdvancedNumerology
 import com.numera.app.core.numerology.PythagoreanCalculator
 import com.numera.app.core.numerology.model.NumerologyProfile
 import com.numera.app.core.numerology.model.SimpleDate
@@ -32,6 +33,10 @@ class NumberDetailViewModel(private val sessionStorage: SessionStorage) : ViewMo
             NumberType.PERSONALITY -> "Число личности" to numbers.personality
             NumberType.HEALTH -> "Код здоровья" to numbers.healthCode
             NumberType.BUSINESS -> "Код бизнеса" to numbers.businessCode
+            NumberType.MATURITY -> "Число зрелости" to AdvancedNumerology.maturityNumber(profile)
+            NumberType.HIDDEN_PASSION -> "Скрытая страсть" to AdvancedNumerology.hiddenPassionNumber(profile.fullName)
+            NumberType.CORNERSTONE -> "Краеугольный камень" to AdvancedNumerology.cornerstoneNumber(profile.fullName)
+            NumberType.CAPSTONE -> "Завершающий камень" to AdvancedNumerology.capstoneNumber(profile.fullName)
             else -> "Число" to numbers.lifePath
         }
         _state.value = NumberDetailState.Content(categoryLabel, value, NumberMeanings.meaningFor(value))

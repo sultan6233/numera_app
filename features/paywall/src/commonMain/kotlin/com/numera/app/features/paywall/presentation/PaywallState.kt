@@ -28,7 +28,7 @@ private val DEFAULT_PLANS = listOf(
 )
 
 private val DEFAULT_VALUE_ITEMS = listOf(
-    ValueItemUi(NumeraGlyph.Spiral, "Число души, личности и ещё 4 расчёта"),
+    ValueItemUi(NumeraGlyph.Spiral, "Число души, личности и ещё 6 расчётов"),
     ValueItemUi(NumeraGlyph.Sun, "Новый персональный разбор каждый день"),
     ValueItemUi(NumeraGlyph.Duality, "Совместимость с близкими"),
     ValueItemUi(NumeraGlyph.Calendar, "Личный календарь энергии на каждый день")

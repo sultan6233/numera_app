@@ -14,13 +14,13 @@ object PythagoreanCalculator {
         reduceToSingleDigit(digitSum(birthDate.day) + digitSum(birthDate.month) + digitSum(birthDate.year))
 
     fun expression(fullName: String): Int =
-        reduceToSingleDigit(fullName.filter { it.isLetter() }.sumOf { letterValue(it) })
+        reduceToSingleDigit(latinLetters(fullName).sumOf { letterValue(it) })
 
     fun soulUrge(fullName: String): Int =
-        reduceToSingleDigit(fullName.filter { it.isLetter() && isVowel(it) }.sumOf { letterValue(it) })
+        reduceToSingleDigit(latinLetters(fullName).filter { isVowel(it) }.sumOf { letterValue(it) })
 
     fun personality(fullName: String): Int =
-        reduceToSingleDigit(fullName.filter { it.isLetter() && !isVowel(it) }.sumOf { letterValue(it) })
+        reduceToSingleDigit(latinLetters(fullName).filter { !isVowel(it) }.sumOf { letterValue(it) })
 
     fun birthDayNumber(birthDate: SimpleDate): Int = reduceToSingleDigit(birthDate.day)
 
@@ -45,16 +45,29 @@ object PythagoreanCalculator {
         businessCode = businessCode(profile)
     )
 
-    private fun isVowel(c: Char): Boolean = c.uppercaseChar() in "AEIOU"
+    /** Transliterates first (see [Transliteration]) so Cyrillic names feed the same Latin table. */
+    internal fun latinLetters(fullName: String): List<Char> =
+        Transliteration.toLatin(fullName).filter { it.isLetter() }.toList()
+
+    internal fun isVowel(c: Char): Boolean = c.uppercaseChar() in "AEIOU"
 
     /** A=1..I=9, J=1..R=9, S=1..Z=8 - the standard Pythagorean letter-to-number table. */
-    private fun letterValue(c: Char): Int {
+    internal fun letterValue(c: Char): Int {
         val upper = c.uppercaseChar()
         if (upper !in 'A'..'Z') return 0
         return (upper - 'A') % 9 + 1
     }
 
-    private fun digitSum(n: Int): Int = n.toString().filter { it.isDigit() }.sumOf { it.digitToInt() }
+    internal fun digitSum(n: Int): Int = n.toString().filter { it.isDigit() }.sumOf { it.digitToInt() }
+
+    /** Full reduction to a single digit 1-9, with no master-number exception - used by cycle
+     *  numbers (personal year/month, pinnacles, challenges) which every reference treats as
+     *  plain digits rather than identity numbers. */
+    internal fun reduceFully(input: Int): Int {
+        var n = input
+        while (n > 9) n = digitSum(n)
+        return n
+    }
 
     /** Master numbers (11, 22, 33) are kept unreduced - standard Pythagorean convention. */
     internal fun reduceToSingleDigit(input: Int): Int {

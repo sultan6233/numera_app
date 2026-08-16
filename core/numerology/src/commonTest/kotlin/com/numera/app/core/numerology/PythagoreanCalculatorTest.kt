@@ -3,6 +3,7 @@ package com.numera.app.core.numerology
 import com.numera.app.core.numerology.model.SimpleDate
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 class PythagoreanCalculatorTest {
 
@@ -49,5 +50,17 @@ class PythagoreanCalculatorTest {
     @Test
     fun birthDayNumber_reducesRegularDay() {
         assertEquals(6, PythagoreanCalculator.birthDayNumber(SimpleDate(2000, 1, 15)))
+    }
+
+    @Test
+    fun expression_transliteratesCyrillicNameToSameValueAsItsLatinSpelling() {
+        // Regression test: letterValue only understands A-Z, so a Cyrillic name used to score 0
+        // for expression/soulUrge/personality instead of being transliterated first.
+        assertEquals(PythagoreanCalculator.expression("Anna"), PythagoreanCalculator.expression("Анна"))
+    }
+
+    @Test
+    fun expression_isNonZeroForCyrillicOnlyName() {
+        assertTrue(PythagoreanCalculator.expression("Максим Петров") > 0)
     }
 }

@@ -4,4 +4,7 @@ sealed interface NumbersAction {
     data object OnRefresh : NumbersAction
     data class OnCardClick(val numberType: String) : NumbersAction
     data object OnCompatibilityClick : NumbersAction
+    data object OnKarmicAnalysisClick : NumbersAction
+    data object OnLifeCyclesClick : NumbersAction
+    data object OnToolsClick : NumbersAction
 }

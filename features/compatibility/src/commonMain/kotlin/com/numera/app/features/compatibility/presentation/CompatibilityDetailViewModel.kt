@@ -29,6 +29,6 @@ class CompatibilityDetailViewModel(
         )
         val other = NumerologyProfile(fullName = companion.name, birthDate = companion.birthDate)
         val result = CompatibilityCalculator.compatibility(me, other)
-        _state.value = CompatibilityDetailState.Content(companion.name, result.score, result.label)
+        _state.value = CompatibilityDetailState.Content(companion.name, result.score, result.label, result.breakdown)
     }
 }
