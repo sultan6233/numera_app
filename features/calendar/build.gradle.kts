@@ -12,6 +12,7 @@ kotlin {
         commonMain.dependencies {
             implementation(projects.core.designsystem)
             implementation(projects.core.numerology)
+            implementation(projects.core.billing)
             implementation(libs.androidx.core.ktx)
         }
     }

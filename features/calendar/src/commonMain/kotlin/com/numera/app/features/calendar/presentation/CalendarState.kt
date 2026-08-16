@@ -8,6 +8,10 @@ sealed interface CalendarState {
     data class Content(
         val year: Int,
         val month: Int,
-        val days: List<CalendarDayUi> = emptyList()
+        val monthLabel: String = "",
+        val leadingBlanks: Int = 0,
+        val days: List<CalendarDayUi> = emptyList(),
+        val subscribed: Boolean = false,
+        val selectedDay: CalendarDayUi? = null
     ) : CalendarState
 }

@@ -1,60 +1,67 @@
 package com.numera.app.features.calendar.presentation
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.numera.app.core.commonMain.Background
+import com.numera.app.core.commonMain.Ember
+import com.numera.app.core.commonMain.Muted
 import com.numera.app.core.commonMain.Primary
+import com.numera.app.core.commonMain.Success
 import com.numera.app.core.commonMain.Surface
+import com.numera.app.core.commonMain.components.DefaultNumeraButton
+import com.numera.app.core.commonMain.displayFontFamily
+import com.numera.app.features.calendar.domain.DayEnergyMeanings
 import com.numera.app.features.calendar.presentation.model.CalendarDayUi
+
+private val WEEKDAY_LABELS = listOf("ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС")
 
 @Composable
 fun CalendarScreen(state: CalendarState, onAction: (CalendarAction) -> Unit) {
     Scaffold { innerPadding ->
         when (state) {
-            is CalendarState.Content -> Column(modifier = Modifier.padding(innerPadding).fillMaxSize().padding(16.dp)) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(
-                        modifier = Modifier.clickable { onAction(CalendarAction.OnPrevMonth) }.padding(8.dp),
-                        text = "‹"
-                    )
-                    Text(
-                        text = "${state.month}.${state.year}",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.SemiBold,
-                        color = MaterialTheme.colorScheme.onBackground
-                    )
-                    Text(
-                        modifier = Modifier.clickable { onAction(CalendarAction.OnNextMonth) }.padding(8.dp),
-                        text = "›"
-                    )
+            is CalendarState.Content -> Box(modifier = Modifier.padding(innerPadding).fillMaxSize()) {
+                CalendarContent(
+                    state = state,
+                    onAction = onAction,
+                    modifier = if (state.subscribed) Modifier else Modifier.blur(18.dp)
+                )
+                if (!state.subscribed) {
+                    LockOverlay(onUnlockClick = { onAction(CalendarAction.OnUnlockClick) })
                 }
-                LazyVerticalGrid(columns = GridCells.Fixed(7)) {
-                    items(state.days) { day -> DayCell(day) }
+                state.selectedDay?.let { day ->
+                    DayDetailDialog(day = day, onDismiss = { onAction(CalendarAction.OnDismissDayDetail) })
                 }
             }
         }
@@ -62,13 +69,61 @@ fun CalendarScreen(state: CalendarState, onAction: (CalendarAction) -> Unit) {
 }
 
 @Composable
-private fun DayCell(day: CalendarDayUi) {
+private fun CalendarContent(state: CalendarState.Content, onAction: (CalendarAction) -> Unit, modifier: Modifier) {
+    Column(modifier = modifier.fillMaxSize().padding(16.dp)) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                modifier = Modifier.clickable { onAction(CalendarAction.OnPrevMonth) }.padding(8.dp),
+                text = "‹",
+                fontSize = 20.sp,
+                color = Primary
+            )
+            Text(
+                text = state.monthLabel,
+                fontFamily = displayFontFamily(),
+                fontSize = 19.sp,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onBackground
+            )
+            Text(
+                modifier = Modifier.clickable { onAction(CalendarAction.OnNextMonth) }.padding(8.dp),
+                text = "›",
+                fontSize = 20.sp,
+                color = Primary
+            )
+        }
+        Spacer(modifier = Modifier.height(8.dp))
+        Row(modifier = Modifier.fillMaxWidth()) {
+            WEEKDAY_LABELS.forEach { label ->
+                Box(modifier = Modifier.weight(1f), contentAlignment = Alignment.Center) {
+                    Text(text = label, fontSize = 11.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                }
+            }
+        }
+        Spacer(modifier = Modifier.height(4.dp))
+        LazyVerticalGrid(columns = GridCells.Fixed(7), modifier = Modifier.weight(1f)) {
+            items(state.leadingBlanks) { Box(modifier = Modifier.aspectRatio(1f)) }
+            items(state.days) { day -> DayCell(day, onClick = { onAction(CalendarAction.OnDayClick(day)) }) }
+        }
+        Spacer(modifier = Modifier.height(12.dp))
+        Legend()
+    }
+}
+
+@Composable
+private fun DayCell(day: CalendarDayUi, onClick: () -> Unit) {
+    val accent = energyAccent(day.personalDay)
     Box(
         modifier = Modifier
             .padding(4.dp)
             .aspectRatio(1f)
             .clip(RoundedCornerShape(10.dp))
-            .background(if (day.isToday) Primary else Surface),
+            .background(if (day.isToday) Primary else Surface)
+            .clickable(onClick = onClick),
         contentAlignment = Alignment.Center
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -83,6 +138,97 @@ private fun DayCell(day: CalendarDayUi) {
                 fontWeight = FontWeight.Bold,
                 color = if (day.isToday) MaterialTheme.colorScheme.background else MaterialTheme.colorScheme.onBackground
             )
+            Box(
+                modifier = Modifier
+                    .padding(top = 2.dp)
+                    .size(5.dp)
+                    .clip(RoundedCornerShape(50))
+                    .background(if (day.isToday) MaterialTheme.colorScheme.background.copy(alpha = 0.6f) else accent)
+            )
         }
+    }
+}
+
+private fun energyAccent(personalDay: Int): Color = when (personalDay) {
+    1, 3, 5, 8 -> Success
+    4, 7 -> Ember
+    11, 22, 33 -> Primary
+    else -> Muted
+}
+
+@Composable
+private fun Legend() {
+    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(14.dp)) {
+        LegendItem(Success, "Действие")
+        LegendItem(Ember, "Пауза")
+        LegendItem(Muted, "Стабильность")
+        LegendItem(Primary, "Особый")
+    }
+}
+
+@Composable
+private fun LegendItem(color: Color, label: String) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Box(modifier = Modifier.size(6.dp).clip(RoundedCornerShape(50)).background(color))
+        Spacer(modifier = Modifier.width(4.dp))
+        Text(text = label, fontSize = 10.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+    }
+}
+
+@Composable
+private fun DayDetailDialog(day: CalendarDayUi, onDismiss: () -> Unit) {
+    val meaning = DayEnergyMeanings.meaningFor(day.personalDay)
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        confirmButton = {
+            Text(modifier = Modifier.clickable(onClick = onDismiss).padding(8.dp), text = "Закрыть")
+        },
+        title = { Text("День ${day.day} — число ${day.personalDay}") },
+        text = {
+            Column {
+                Text(text = meaning.title, fontFamily = displayFontFamily(), fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(text = meaning.text, fontSize = 13.sp, lineHeight = 19.sp)
+            }
+        }
+    )
+}
+
+@Composable
+private fun BoxScope.LockOverlay(onUnlockClick: () -> Unit) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Background.copy(alpha = 0.6f))
+            .clickable(onClick = onUnlockClick)
+    )
+    Column(
+        modifier = Modifier
+            .align(Alignment.Center)
+            .padding(28.dp)
+            .clip(RoundedCornerShape(4.dp))
+            .background(Surface)
+            .border(1.dp, Primary, RoundedCornerShape(4.dp))
+            .padding(20.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = "Календарь энергии — в подписке",
+            fontFamily = displayFontFamily(),
+            fontSize = 17.sp,
+            fontWeight = FontWeight.Bold,
+            color = MaterialTheme.colorScheme.onBackground,
+            textAlign = TextAlign.Center
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Text(
+            text = "Открывайте личное число и разбор для каждого дня месяца",
+            fontSize = 13.sp,
+            lineHeight = 18.sp,
+            textAlign = TextAlign.Center,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        DefaultNumeraButton(text = "Оформить подписку", onClick = onUnlockClick)
     }
 }

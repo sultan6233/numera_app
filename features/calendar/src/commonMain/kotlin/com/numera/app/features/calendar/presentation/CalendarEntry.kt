@@ -6,6 +6,7 @@ import com.numera.app.core.commonMain.Navigator
 
 @Composable
 fun CalendarEntry(navigator: Navigator, viewModel: CalendarViewModel) {
+    CalendarEventHandler(uiEvent = viewModel.event, navigator = navigator)
     CalendarScreen(
         state = viewModel.state.collectAsStateWithLifecycle().value,
         onAction = viewModel::onAction
