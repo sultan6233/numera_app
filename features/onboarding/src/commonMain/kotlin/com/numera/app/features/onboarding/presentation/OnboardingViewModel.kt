@@ -2,6 +2,7 @@ package com.numera.app.features.onboarding.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.numera.app.core.commonMain.deviceTimezoneId
 import com.numera.app.core.commonMain.session.SessionStorage
 import com.numera.app.core.numerology.PythagoreanCalculator
 import com.numera.app.core.numerology.model.SimpleDate
@@ -70,7 +71,7 @@ class OnboardingViewModel(
             // a failed sync here (no connectivity, backend hiccup) shouldn't block onboarding.
             try {
                 val isoDate = "$birthYear-${birthMonth.pad2()}-${birthDay.pad2()}"
-                profileApi.updateProfile(content.name, isoDate)
+                profileApi.updateProfile(content.name, isoDate, deviceTimezoneId())
             } catch (e: Exception) {
                 // Daily insight falls back to the local calculation (see HomeViewModel) if this
                 // never made it to the backend.
