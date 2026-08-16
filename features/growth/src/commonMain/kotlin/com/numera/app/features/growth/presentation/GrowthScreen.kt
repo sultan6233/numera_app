@@ -33,6 +33,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -337,12 +338,28 @@ private fun SwipeToDeleteRow(
     onClick: (() -> Unit)? = null,
     content: @Composable RowScope.() -> Unit
 ) {
-    val scope = rememberCoroutineScope()
-    val offsetX = remember { Animatable(0f) }
+    // Two pieces of state on purpose: dragOffsetPx updates synchronously (no coroutine) so it's
+    // always exactly current the instant the finger lifts, and animatedOffset only takes over
+    // once dragging stops, for the settle animation. Driving both the live drag AND the settle
+    // through a single Animatable via scope.launch{} per delta (the previous approach) let those
+    // fire-and-forget launches race the settle animation - sometimes the animation is what's
+    // catching up to the finger, but a stray delta arriving after the settle already started
+    // could stomp its target back to a stale value, so the row occasionally lands with no visible
+    // animation, and worse, the threshold check in onDragStopped could read that same stale value
+    // and decide "not far enough" even though the finger clearly passed it.
+    var isDragging by remember { mutableStateOf(false) }
+    var dragOffsetPx by remember { mutableFloatStateOf(0f) }
+    val animatedOffset = remember { Animatable(0f) }
     var showConfirm by remember { mutableStateOf(false) }
+    val scope = rememberCoroutineScope()
     val density = LocalDensity.current
     val deleteThresholdPx = with(density) { 88.dp.toPx() }
     val maxDragPx = with(density) { 140.dp.toPx() }
+    val currentOffset = if (isDragging) dragOffsetPx else animatedOffset.value
+
+    fun resetOffset() {
+        scope.launch { animatedOffset.animateTo(0f) }
+    }
 
     Box(modifier = Modifier.fillMaxWidth()) {
         Row(
@@ -358,18 +375,25 @@ private fun SwipeToDeleteRow(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .offset { IntOffset(offsetX.value.roundToInt(), 0) }
+                .offset { IntOffset(currentOffset.roundToInt(), 0) }
                 .draggable(
                     orientation = Orientation.Horizontal,
                     state = rememberDraggableState { delta ->
-                        scope.launch { offsetX.snapTo((offsetX.value + delta).coerceIn(-maxDragPx, 0f)) }
+                        dragOffsetPx = (dragOffsetPx + delta).coerceIn(-maxDragPx, 0f)
+                    },
+                    onDragStarted = {
+                        isDragging = true
+                        dragOffsetPx = animatedOffset.value
                     },
                     onDragStopped = {
-                        if (offsetX.value < -deleteThresholdPx) {
-                            offsetX.animateTo(-maxDragPx)
+                        isDragging = false
+                        val finalOffset = dragOffsetPx
+                        animatedOffset.snapTo(finalOffset)
+                        if (finalOffset < -deleteThresholdPx) {
+                            animatedOffset.animateTo(-maxDragPx)
                             showConfirm = true
                         } else {
-                            offsetX.animateTo(0f)
+                            animatedOffset.animateTo(0f)
                         }
                     }
                 )
@@ -386,7 +410,7 @@ private fun SwipeToDeleteRow(
         AlertDialog(
             onDismissRequest = {
                 showConfirm = false
-                scope.launch { offsetX.animateTo(0f) }
+                resetOffset()
             },
             confirmButton = {
                 Text(
@@ -402,7 +426,7 @@ private fun SwipeToDeleteRow(
                 Text(
                     modifier = Modifier.clickable {
                         showConfirm = false
-                        scope.launch { offsetX.animateTo(0f) }
+                        resetOffset()
                     }.padding(8.dp),
                     text = "Отмена"
                 )
