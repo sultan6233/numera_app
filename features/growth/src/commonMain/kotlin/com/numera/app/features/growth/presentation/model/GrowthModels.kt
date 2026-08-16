@@ -8,6 +8,7 @@ data class MoodEntryUi(
     val id: String,
     val mood: String,
     val note: String,
+    val tags: List<String>,
     val year: Int,
     val month: Int,
     val day: Int

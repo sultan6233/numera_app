@@ -12,4 +12,7 @@ sealed interface GrowthAction {
     data class OnMoodNoteChanged(val value: String) : GrowthAction
     data object OnSaveMood : GrowthAction
     data class OnDeleteMood(val id: String) : GrowthAction
+    data class OnTagToggled(val tag: String) : GrowthAction
+    data class OnMoodEntryClick(val id: String) : GrowthAction
+    data object OnCancelMoodEdit : GrowthAction
 }

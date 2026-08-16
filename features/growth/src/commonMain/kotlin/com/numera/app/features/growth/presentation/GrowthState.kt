@@ -14,8 +14,14 @@ sealed interface GrowthState {
         val moods: List<MoodEntryUi> = emptyList(),
         val selectedMood: String = "🙂",
         val newMoodNote: String = "",
+        val selectedTags: Set<String> = emptySet(),
+        val editingMoodId: String? = null,
         val personalDayToday: Int = 0,
         val habitSuggestion: String = "",
-        val moodInsight: String? = null
+        val moodInsight: String? = null,
+        val weeklySummary: String? = null,
+        /** Average mood score per day for the last 14 days, oldest first, null where there's no
+         *  entry that day - drives the trend chart. */
+        val moodTrend: List<Double?> = emptyList()
     ) : GrowthState
 }

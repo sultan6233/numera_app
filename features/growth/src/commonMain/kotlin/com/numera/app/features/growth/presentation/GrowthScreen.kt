@@ -1,12 +1,14 @@
 package com.numera.app.features.growth.presentation
 
 import androidx.compose.animation.core.Animatable
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.draggable
 import androidx.compose.foundation.gestures.rememberDraggableState
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -21,6 +23,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Checkbox
@@ -37,19 +40,26 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.CornerRadius
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.numera.app.core.commonMain.Ember
 import com.numera.app.core.commonMain.Error
 import com.numera.app.core.commonMain.Muted
 import com.numera.app.core.commonMain.OnBackground
+import com.numera.app.core.commonMain.Outline
 import com.numera.app.core.commonMain.Primary
 import com.numera.app.core.commonMain.Success
 import com.numera.app.core.commonMain.Surface
 import com.numera.app.core.commonMain.components.DefaultNumeraButton
+import com.numera.app.core.commonMain.components.DefaultNumeraOutlinedButton
+import com.numera.app.features.growth.domain.MoodTags
 import com.numera.app.features.growth.presentation.model.GrowthTab
 import com.numera.app.features.growth.presentation.model.HabitUi
 import com.numera.app.features.growth.presentation.model.MoodEntryUi
@@ -151,59 +161,163 @@ private fun dayWord(count: Int): String {
 
 @Composable
 private fun MoodTab(state: GrowthState.Content, onAction: (GrowthAction) -> Unit) {
-    Column(modifier = Modifier.fillMaxSize()) {
-        state.moodInsight?.let {
-            InsightCard(text = it, accent = Success)
-            Spacer(modifier = Modifier.height(12.dp))
-        }
-        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            MOOD_OPTIONS.forEach { mood ->
-                Box(
-                    modifier = Modifier
-                        .clip(RoundedCornerShape(10.dp))
-                        .background(if (mood == state.selectedMood) Primary else Surface)
-                        .clickable { onAction(GrowthAction.OnMoodSelected(mood)) }
-                        .padding(10.dp)
-                ) {
-                    Text(text = mood, fontSize = 20.sp)
+    val editing = state.editingMoodId != null
+    LazyColumn(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        item {
+            Column {
+                state.weeklySummary?.let {
+                    InsightCard(text = it, accent = Primary)
+                    Spacer(modifier = Modifier.height(8.dp))
+                }
+                state.moodInsight?.let {
+                    InsightCard(text = it, accent = Success)
+                    Spacer(modifier = Modifier.height(8.dp))
+                }
+                if (state.moodTrend.isNotEmpty()) {
+                    MoodTrendChart(trend = state.moodTrend)
+                    Spacer(modifier = Modifier.height(12.dp))
+                }
+                if (editing) {
+                    Text(
+                        text = "Редактирование записи",
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Primary,
+                        modifier = Modifier.padding(bottom = 8.dp)
+                    )
+                }
+                Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                    MOOD_OPTIONS.forEach { mood ->
+                        Box(
+                            modifier = Modifier
+                                .clip(RoundedCornerShape(10.dp))
+                                .background(if (mood == state.selectedMood) Primary else Surface)
+                                .clickable { onAction(GrowthAction.OnMoodSelected(mood)) }
+                                .padding(10.dp)
+                        ) {
+                            Text(text = mood, fontSize = 20.sp)
+                        }
+                    }
+                }
+                Spacer(modifier = Modifier.height(10.dp))
+                TagsRow(
+                    selected = state.selectedTags,
+                    onToggle = { onAction(GrowthAction.OnTagToggled(it)) }
+                )
+                Spacer(modifier = Modifier.height(10.dp))
+                OutlinedTextField(
+                    modifier = Modifier.fillMaxWidth(),
+                    value = state.newMoodNote,
+                    onValueChange = { onAction(GrowthAction.OnMoodNoteChanged(it)) },
+                    placeholder = { Text("Что сегодня повлияло на настроение?") }
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                    DefaultNumeraButton(
+                        modifier = Modifier.weight(1f),
+                        text = if (editing) "Обновить" else "Сохранить",
+                        onClick = { onAction(GrowthAction.OnSaveMood) }
+                    )
+                    if (editing) {
+                        DefaultNumeraOutlinedButton(
+                            modifier = Modifier.weight(1f),
+                            text = "Отмена",
+                            onClick = { onAction(GrowthAction.OnCancelMoodEdit) }
+                        )
+                    }
+                }
+                Spacer(modifier = Modifier.height(16.dp))
+                if (state.moods.isNotEmpty()) {
+                    Text(
+                        text = "Нажмите на запись, чтобы изменить — смахните влево, чтобы удалить",
+                        fontSize = 11.sp,
+                        color = Muted,
+                        modifier = Modifier.padding(bottom = 4.dp)
+                    )
                 }
             }
         }
-        Spacer(modifier = Modifier.height(12.dp))
-        OutlinedTextField(
-            modifier = Modifier.fillMaxWidth(),
-            value = state.newMoodNote,
-            onValueChange = { onAction(GrowthAction.OnMoodNoteChanged(it)) },
-            placeholder = { Text("Что сегодня повлияло на настроение?") }
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-        DefaultNumeraButton(text = "Сохранить", onClick = { onAction(GrowthAction.OnSaveMood) })
-        Spacer(modifier = Modifier.height(16.dp))
-        if (state.moods.isNotEmpty()) {
-            Text(
-                text = "Смахните запись влево, чтобы удалить",
-                fontSize = 11.sp,
-                color = Muted,
-                modifier = Modifier.padding(bottom = 8.dp)
-            )
-        }
-        LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            items(state.moods, key = { it.id }) { entry ->
-                SwipeToDeleteRow(
-                    onDelete = { onAction(GrowthAction.OnDeleteMood(entry.id)) },
-                    confirmTitle = "Удалить запись?",
-                    confirmText = "Запись настроения будет удалена без возможности восстановления."
-                ) {
-                    Text(text = entry.mood, fontSize = 20.sp)
-                    Spacer(modifier = Modifier.width(10.dp))
-                    Text(
-                        modifier = Modifier.weight(1f),
-                        text = entry.note,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        fontSize = 13.sp
-                    )
-                    Text(text = "${entry.day} ${SHORT_MONTHS[entry.month - 1]}", fontSize = 11.sp, color = Muted)
+        items(state.moods, key = { it.id }) { entry ->
+            SwipeToDeleteRow(
+                onDelete = { onAction(GrowthAction.OnDeleteMood(entry.id)) },
+                onClick = { onAction(GrowthAction.OnMoodEntryClick(entry.id)) },
+                confirmTitle = "Удалить запись?",
+                confirmText = "Запись настроения будет удалена без возможности восстановления."
+            ) {
+                Text(text = entry.mood, fontSize = 20.sp)
+                Spacer(modifier = Modifier.width(10.dp))
+                Column(modifier = Modifier.weight(1f)) {
+                    if (entry.note.isNotBlank()) {
+                        Text(text = entry.note, color = MaterialTheme.colorScheme.onSurfaceVariant, fontSize = 13.sp)
+                    }
+                    if (entry.tags.isNotEmpty()) {
+                        Text(text = entry.tags.joinToString(" · "), color = Primary, fontSize = 11.sp)
+                    }
                 }
+                Text(text = "${entry.day} ${SHORT_MONTHS[entry.month - 1]}", fontSize = 11.sp, color = Muted)
+            }
+        }
+    }
+}
+
+@Composable
+private fun TagsRow(selected: Set<String>, onToggle: (String) -> Unit) {
+    Row(
+        modifier = Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()),
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        MoodTags.ALL.forEach { tag ->
+            val isSelected = tag in selected
+            Box(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(50))
+                    .background(if (isSelected) Primary else Surface)
+                    .border(1.dp, if (isSelected) Primary else Outline, RoundedCornerShape(50))
+                    .clickable { onToggle(tag) }
+                    .padding(horizontal = 14.dp, vertical = 8.dp)
+            ) {
+                Text(
+                    text = tag,
+                    fontSize = 12.sp,
+                    color = if (isSelected) MaterialTheme.colorScheme.background else MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+        }
+    }
+}
+
+/** Bar chart of average mood score per day for the last 14 days - today's bar is always
+ *  highlighted in Primary so it's easy to spot the trend leading up to now. */
+@Composable
+private fun MoodTrendChart(trend: List<Double?>) {
+    Column(modifier = Modifier.fillMaxWidth()) {
+        Text(
+            text = "Настроение за 14 дней",
+            fontSize = 11.sp,
+            color = Muted,
+            modifier = Modifier.padding(bottom = 6.dp)
+        )
+        Canvas(modifier = Modifier.fillMaxWidth().height(56.dp)) {
+            if (trend.isEmpty()) return@Canvas
+            val barWidth = size.width / trend.size
+            val gap = barWidth * 0.28f
+            trend.forEachIndexed { index, score ->
+                val isToday = index == trend.lastIndex
+                val heightFraction = score?.let { (it / 5.0).toFloat().coerceIn(0.12f, 1f) } ?: 0.05f
+                val barHeight = size.height * heightFraction
+                val barColor = when {
+                    score == null -> Outline
+                    isToday -> Primary
+                    score >= 3.5 -> Success
+                    score <= 2.0 -> Ember
+                    else -> Primary
+                }
+                drawRoundRect(
+                    color = barColor,
+                    topLeft = Offset(index * barWidth + gap / 2f, size.height - barHeight),
+                    size = Size(barWidth - gap, barHeight),
+                    cornerRadius = CornerRadius(3f, 3f)
+                )
             }
         }
     }
@@ -212,13 +326,15 @@ private fun MoodTab(state: GrowthState.Content, onAction: (GrowthAction) -> Unit
 /**
  * Swipe-left-to-delete with a confirmation dialog before anything actually happens - a swipe
  * past the threshold reveals a red "Удалить" panel and asks; canceling snaps the row back
- * instead of leaving it stranded mid-swipe.
+ * instead of leaving it stranded mid-swipe. An optional [onClick] lets the row double as a tap
+ * target (used by mood entries to open edit mode) alongside the swipe gesture.
  */
 @Composable
 private fun SwipeToDeleteRow(
     onDelete: () -> Unit,
     confirmTitle: String,
     confirmText: String,
+    onClick: (() -> Unit)? = null,
     content: @Composable RowScope.() -> Unit
 ) {
     val scope = rememberCoroutineScope()
@@ -259,6 +375,7 @@ private fun SwipeToDeleteRow(
                 )
                 .clip(RoundedCornerShape(12.dp))
                 .background(Surface)
+                .clickable(enabled = onClick != null) { onClick?.invoke() }
                 .padding(12.dp),
             verticalAlignment = Alignment.CenterVertically,
             content = content
