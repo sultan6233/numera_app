@@ -11,4 +11,5 @@ sealed interface GrowthAction {
     data class OnMoodSelected(val mood: String) : GrowthAction
     data class OnMoodNoteChanged(val value: String) : GrowthAction
     data object OnSaveMood : GrowthAction
+    data class OnDeleteMood(val id: String) : GrowthAction
 }

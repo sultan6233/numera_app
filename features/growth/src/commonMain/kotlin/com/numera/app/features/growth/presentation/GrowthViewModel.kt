@@ -43,6 +43,7 @@ class GrowthViewModel(private val sessionStorage: SessionStorage) : ViewModel() 
             is GrowthAction.OnMoodSelected -> _state.value = content.copy(selectedMood = action.mood)
             is GrowthAction.OnMoodNoteChanged -> _state.value = content.copy(newMoodNote = action.value)
             GrowthAction.OnSaveMood -> saveMood(content)
+            is GrowthAction.OnDeleteMood -> deleteMood(content, action.id)
         }
     }
 
@@ -80,6 +81,14 @@ class GrowthViewModel(private val sessionStorage: SessionStorage) : ViewModel() 
         sessionStorage.saveMoodRecords(records)
         val moods = listOf(entry) + content.moods
         _state.value = content.copy(moods = moods, newMoodNote = "", moodInsight = computeMoodInsight(moods))
+    }
+
+    private fun deleteMood(content: GrowthState.Content, id: String) {
+        sessionStorage.saveMoodRecords(
+            sessionStorage.moodRecords().filterNot { it.substringBefore(FIELD_SEPARATOR) == id }
+        )
+        val moods = content.moods.filterNot { it.id == id }
+        _state.value = content.copy(moods = moods, moodInsight = computeMoodInsight(moods))
     }
 
     private fun completionRecord(habitId: String, date: SimpleDate): String =
