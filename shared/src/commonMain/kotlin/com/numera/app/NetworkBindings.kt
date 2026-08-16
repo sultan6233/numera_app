@@ -1,5 +1,6 @@
 package com.numera.app
 
+import com.numera.app.core.commonMain.deviceTimezoneId
 import com.numera.app.core.commonMain.session.SessionStorage
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesTo
@@ -16,6 +17,7 @@ import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.plugins.expectSuccess
 import io.ktor.client.plugins.logging.LogLevel
 import io.ktor.client.plugins.logging.Logging
+import io.ktor.client.request.header
 import io.ktor.client.request.post
 import io.ktor.client.request.setBody
 import io.ktor.http.ContentType
@@ -66,6 +68,12 @@ interface NetworkBindings {
                     port = 8080
                 }
                 contentType(ContentType.Application.Json)
+                // Sent on every request, not just profile writes: the backend's `authenticated`
+                // route wrapper reads this header and keeps the stored profile timezone in sync
+                // on every authenticated call (see Security.kt), so a traveling user's nightly
+                // insight/push schedule follows their current timezone without a dedicated
+                // "update my timezone" endpoint.
+                header("X-Timezone", deviceTimezoneId())
             }
 
             install(Auth) {
