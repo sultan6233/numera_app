@@ -7,6 +7,7 @@ sealed interface GrowthAction {
     data class OnNewHabitTitleChanged(val value: String) : GrowthAction
     data object OnAddHabit : GrowthAction
     data class OnToggleHabit(val id: String) : GrowthAction
+    data class OnDeleteHabit(val id: String) : GrowthAction
     data class OnMoodSelected(val mood: String) : GrowthAction
     data class OnMoodNoteChanged(val value: String) : GrowthAction
     data object OnSaveMood : GrowthAction

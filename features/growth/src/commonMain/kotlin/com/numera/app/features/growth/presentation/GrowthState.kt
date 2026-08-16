@@ -13,6 +13,9 @@ sealed interface GrowthState {
         val newHabitTitle: String = "",
         val moods: List<MoodEntryUi> = emptyList(),
         val selectedMood: String = "🙂",
-        val newMoodNote: String = ""
+        val newMoodNote: String = "",
+        val personalDayToday: Int = 0,
+        val habitSuggestion: String = "",
+        val moodInsight: String? = null
     ) : GrowthState
 }

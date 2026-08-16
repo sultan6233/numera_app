@@ -67,6 +67,15 @@ class SessionStorage {
         settings?.putString(KEY_HABITS, records.joinToString(RECORD_SEPARATOR))
     }
 
+    /** One record per day a habit was marked done - lets the Growth feature compute streaks
+     *  instead of storing a single done/not-done flag that never resets. */
+    fun habitCompletionRecords(): List<String> =
+        settings?.getString(KEY_HABIT_COMPLETIONS, "")?.split(RECORD_SEPARATOR)?.filter { it.isNotBlank() } ?: emptyList()
+
+    fun saveHabitCompletionRecords(records: List<String>) {
+        settings?.putString(KEY_HABIT_COMPLETIONS, records.joinToString(RECORD_SEPARATOR))
+    }
+
     fun moodRecords(): List<String> =
         settings?.getString(KEY_MOODS, "")?.split(RECORD_SEPARATOR)?.filter { it.isNotBlank() } ?: emptyList()
 
@@ -95,6 +104,7 @@ class SessionStorage {
         const val KEY_BIRTH_DAY = "birth_day"
         const val KEY_COMPANIONS = "companions"
         const val KEY_HABITS = "habits"
+        const val KEY_HABIT_COMPLETIONS = "habit_completions"
         const val KEY_MOODS = "moods"
         const val KEY_NOTIFICATIONS = "notifications_enabled"
         const val KEY_AUTH_TOKEN = "auth_token"

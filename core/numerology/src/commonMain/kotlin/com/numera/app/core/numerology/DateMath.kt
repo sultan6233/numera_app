@@ -1,11 +1,27 @@
 package com.numera.app.core.numerology
 
+import com.numera.app.core.numerology.model.SimpleDate
+
 object DateMath {
     fun daysInMonth(year: Int, month: Int): Int = when (month) {
         1, 3, 5, 7, 8, 10, 12 -> 31
         4, 6, 9, 11 -> 30
         2 -> if (isLeapYear(year)) 29 else 28
         else -> 30
+    }
+
+    /** The calendar day immediately before [date] - used for walking backward through a
+     *  history of dates (e.g. counting a streak) without pulling in kotlinx-datetime. */
+    fun previousDay(date: SimpleDate): SimpleDate {
+        var day = date.day - 1
+        var month = date.month
+        var year = date.year
+        if (day < 1) {
+            month -= 1
+            if (month < 1) { month = 12; year -= 1 }
+            day = daysInMonth(year, month)
+        }
+        return SimpleDate(year, month, day)
     }
 
     /**
