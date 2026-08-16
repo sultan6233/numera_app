@@ -32,19 +32,21 @@ import com.numera.app.core.commonMain.Primary
 import com.numera.app.core.commonMain.PrimarySoft
 import com.numera.app.core.commonMain.Surface
 import com.numera.app.core.commonMain.components.NumberWheel
+import com.numera.app.core.commonMain.components.NumeraGlyph
+import com.numera.app.core.commonMain.components.NumeraIcon
 import com.numera.app.core.commonMain.components.shimmer
 import com.numera.app.core.commonMain.displayFontFamily
 import com.numera.app.features.numbers.presentation.model.NumberCardUi
 import com.numera.app.features.numbers.presentation.model.NumberType
 
-private fun iconFor(type: String): String = when (type) {
-    NumberType.LIFE_PATH -> "🧭"
-    NumberType.EXPRESSION -> "⭐"
-    NumberType.SOUL_URGE -> "💫"
-    NumberType.PERSONALITY -> "🎭"
-    NumberType.HEALTH -> "🌿"
-    NumberType.BUSINESS -> "💼"
-    else -> "🔢"
+private fun glyphFor(type: String): NumeraGlyph = when (type) {
+    NumberType.LIFE_PATH -> NumeraGlyph.Compass
+    NumberType.EXPRESSION -> NumeraGlyph.Star
+    NumberType.SOUL_URGE -> NumeraGlyph.Spiral
+    NumberType.PERSONALITY -> NumeraGlyph.Duality
+    NumberType.HEALTH -> NumeraGlyph.Leaf
+    NumberType.BUSINESS -> NumeraGlyph.Case
+    else -> NumeraGlyph.Grid
 }
 
 @Composable
@@ -117,7 +119,7 @@ private fun NumberCard(card: NumberCardUi, onClick: () -> Unit) {
                 .background(PrimarySoft),
             contentAlignment = Alignment.Center
         ) {
-            Text(text = iconFor(card.type), fontSize = 18.sp)
+            NumeraIcon(glyph = glyphFor(card.type), tint = Primary, size = 20.dp)
         }
         Text(
             text = card.label,
@@ -127,7 +129,7 @@ private fun NumberCard(card: NumberCardUi, onClick: () -> Unit) {
             modifier = Modifier.weight(1f)
         )
         if (card.locked) {
-            Text(text = "🔒", fontSize = 15.sp, color = Muted)
+            NumeraIcon(glyph = NumeraGlyph.Lock, tint = Muted, size = 16.dp)
         } else {
             Text(
                 text = card.value.toString(),

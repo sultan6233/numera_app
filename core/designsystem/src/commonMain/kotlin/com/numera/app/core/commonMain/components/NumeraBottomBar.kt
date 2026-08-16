@@ -29,18 +29,19 @@ import com.numera.app.core.commonMain.Muted
 import com.numera.app.core.commonMain.Numbers
 import com.numera.app.core.commonMain.OnBackground
 import com.numera.app.core.commonMain.Outline
+import com.numera.app.core.commonMain.Primary
 import com.numera.app.core.commonMain.PrimarySoft
 import com.numera.app.core.commonMain.Profile
 import com.numera.app.core.commonMain.Surface
 
-private data class BottomBarTab(val route: NavKey, val icon: String, val label: String)
+private data class BottomBarTab(val route: NavKey, val glyph: NumeraGlyph, val label: String)
 
 private val TABS = listOf(
-    BottomBarTab(Home, "✨", "Сегодня"),
-    BottomBarTab(Numbers, "🔢", "Числа"),
-    BottomBarTab(CalendarEnergy, "📅", "Календарь"),
-    BottomBarTab(Growth, "🌱", "Рост"),
-    BottomBarTab(Profile, "👤", "Профиль")
+    BottomBarTab(Home, NumeraGlyph.Sun, "Сегодня"),
+    BottomBarTab(Numbers, NumeraGlyph.Grid, "Числа"),
+    BottomBarTab(CalendarEnergy, NumeraGlyph.Calendar, "Календарь"),
+    BottomBarTab(Growth, NumeraGlyph.Sprout, "Рост"),
+    BottomBarTab(Profile, NumeraGlyph.Person, "Профиль")
 )
 
 @Composable
@@ -87,9 +88,9 @@ private fun BottomBarItem(tab: BottomBarTab, selected: Boolean, onClick: () -> U
             )
             .padding(horizontal = 14.dp, vertical = 8.dp),
         horizontalAlignment = androidx.compose.ui.Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(2.dp)
+        verticalArrangement = Arrangement.spacedBy(4.dp)
     ) {
-        Text(text = tab.icon, fontSize = 18.sp)
+        NumeraIcon(glyph = tab.glyph, tint = if (selected) Primary else Muted, size = 20.dp)
         Text(
             text = tab.label,
             color = if (selected) OnBackground else Muted,

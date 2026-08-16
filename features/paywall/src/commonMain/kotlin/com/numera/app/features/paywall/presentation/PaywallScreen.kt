@@ -36,6 +36,7 @@ import com.numera.app.core.commonMain.PrimarySoft
 import com.numera.app.core.commonMain.Surface
 import com.numera.app.core.commonMain.components.DefaultNumeraButton
 import com.numera.app.core.commonMain.components.NumberWheel
+import com.numera.app.core.commonMain.components.NumeraIcon
 import com.numera.app.core.commonMain.displayFontFamily
 import com.numera.app.features.paywall.presentation.model.PlanUi
 import com.numera.app.features.paywall.presentation.model.ValueItemUi
@@ -138,7 +139,7 @@ private fun ValueList(items: List<ValueItemUi>) {
                         .background(PrimarySoft),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(text = item.icon, fontSize = 14.sp)
+                    NumeraIcon(glyph = item.glyph, tint = Primary, size = 15.dp)
                 }
                 Spacer(modifier = Modifier.width(12.dp))
                 Text(

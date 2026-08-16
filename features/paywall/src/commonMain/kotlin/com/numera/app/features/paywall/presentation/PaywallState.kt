@@ -2,6 +2,7 @@ package com.numera.app.features.paywall.presentation
 
 import androidx.compose.runtime.Stable
 import com.numera.app.core.billing.SubscriptionProducts
+import com.numera.app.core.commonMain.components.NumeraGlyph
 import com.numera.app.features.paywall.presentation.model.PlanUi
 import com.numera.app.features.paywall.presentation.model.ValueItemUi
 
@@ -27,8 +28,8 @@ private val DEFAULT_PLANS = listOf(
 )
 
 private val DEFAULT_VALUE_ITEMS = listOf(
-    ValueItemUi("💫", "Число души, личности и ещё 4 расчёта"),
-    ValueItemUi("✨", "Новый персональный разбор каждый день"),
-    ValueItemUi("💞", "Совместимость с близкими"),
-    ValueItemUi("📅", "Личный календарь энергии на каждый день")
+    ValueItemUi(NumeraGlyph.Spiral, "Число души, личности и ещё 4 расчёта"),
+    ValueItemUi(NumeraGlyph.Sun, "Новый персональный разбор каждый день"),
+    ValueItemUi(NumeraGlyph.Duality, "Совместимость с близкими"),
+    ValueItemUi(NumeraGlyph.Calendar, "Личный календарь энергии на каждый день")
 )

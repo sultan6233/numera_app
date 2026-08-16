@@ -25,7 +25,7 @@ class NumberDetailViewModel(private val sessionStorage: SessionStorage) : ViewMo
             birthDate = SimpleDate(sessionStorage.birthYear(), sessionStorage.birthMonth(), sessionStorage.birthDay())
         )
         val numbers = PythagoreanCalculator.allNumbers(profile)
-        val (title, value) = when (numberType) {
+        val (categoryLabel, value) = when (numberType) {
             NumberType.LIFE_PATH -> "Число жизненного пути" to numbers.lifePath
             NumberType.EXPRESSION -> "Число судьбы" to numbers.expression
             NumberType.SOUL_URGE -> "Число души" to numbers.soulUrge
@@ -34,6 +34,6 @@ class NumberDetailViewModel(private val sessionStorage: SessionStorage) : ViewMo
             NumberType.BUSINESS -> "Код бизнеса" to numbers.businessCode
             else -> "Число" to numbers.lifePath
         }
-        _state.value = NumberDetailState.Content(title, value, NumberMeanings.descriptionFor(value))
+        _state.value = NumberDetailState.Content(categoryLabel, value, NumberMeanings.meaningFor(value))
     }
 }
