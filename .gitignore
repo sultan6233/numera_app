@@ -1,0 +1,36 @@
+# Kotlin/Java
+*.iml
+.kotlin
+**/.kotlin
+
+# Gradle
+.gradle
+**/build/
+!src/**/build/
+
+# Android
+*.apk
+*.ap_
+*.dex
+local.properties
+.cxx
+captures/
+.externalNativeBuild
+
+# IDE
+.idea
+*.hprd
+*.hprof
+
+# iOS / Xcode
+iosApp/**/xcuserdata/
+iosApp/**/*.xcworkspace/xcuserdata/
+iosApp/**/Pods/
+iosApp/**/*.ipa
+iosApp/**/*.dSYM.zip
+iosApp/**/*.dSYM
+DerivedData/
+
+# OS
+.DS_Store
+Thumbs.db
