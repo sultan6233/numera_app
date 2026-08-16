@@ -9,4 +9,5 @@ sealed interface CompatibilityAction {
     data class OnYearChanged(val value: String) : CompatibilityAction
     data object OnSaveClick : CompatibilityAction
     data class OnCompanionClick(val companionId: String) : CompatibilityAction
+    data class OnRemoveClick(val companionId: String) : CompatibilityAction
 }

@@ -84,6 +84,9 @@ fun NumbersScreen(state: NumbersState, onAction: (NumbersAction) -> Unit) {
                         items(state.cards) { card ->
                             NumberCard(card, onClick = { onAction(NumbersAction.OnCardClick(card.type)) })
                         }
+                        item {
+                            CompatibilityEntryCard(onClick = { onAction(NumbersAction.OnCompatibilityClick) })
+                        }
                         item { Spacer(modifier = Modifier.height(8.dp)) }
                     }
                 }
@@ -97,6 +100,40 @@ private fun Int.reducedDigit(): Int {
     var n = this
     while (n > 9) n = n.toString().sumOf { it.digitToInt() }
     return n
+}
+
+@Composable
+private fun CompatibilityEntryCard(onClick: () -> Unit) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 6.dp)
+            .clip(RoundedCornerShape(4.dp))
+            .background(PrimarySoft)
+            .border(1.dp, Primary, RoundedCornerShape(4.dp))
+            .clickable(onClick = onClick)
+            .padding(16.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(14.dp)
+    ) {
+        Box(
+            modifier = Modifier
+                .size(40.dp)
+                .clip(RoundedCornerShape(4.dp))
+                .background(Surface),
+            contentAlignment = Alignment.Center
+        ) {
+            NumeraIcon(glyph = NumeraGlyph.Duality, tint = Primary, size = 20.dp)
+        }
+        Text(
+            text = "Совместимость с близкими",
+            fontSize = 15.sp,
+            fontWeight = FontWeight.Medium,
+            color = MaterialTheme.colorScheme.onBackground,
+            modifier = Modifier.weight(1f)
+        )
+        Text(text = "→", fontSize = 16.sp, color = Primary)
+    }
 }
 
 @Composable

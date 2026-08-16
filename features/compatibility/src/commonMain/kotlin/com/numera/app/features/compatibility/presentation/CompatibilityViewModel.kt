@@ -33,21 +33,39 @@ class CompatibilityViewModel(private val repository: CompanionRepository) : View
             is CompatibilityAction.OnCompanionClick -> viewModelScope.launch {
                 _event.emit(CompatibilityEvent.NavigateToDetail(action.companionId))
             }
+            is CompatibilityAction.OnRemoveClick -> remove(action.companionId)
         }
     }
 
-    private fun save(content: CompatibilityState.Content) {
-        val day = content.newDay.toIntOrNull() ?: return
-        val month = content.newMonth.toIntOrNull() ?: return
-        val year = content.newYear.toIntOrNull() ?: return
-        if (content.newName.isBlank() || day !in 1..31 || month !in 1..12 || year !in 1900..2100) return
+    private fun save(content: CompatibilityState.Content) = viewModelScope.launch {
+        val day = content.newDay.toIntOrNull() ?: return@launch
+        val month = content.newMonth.toIntOrNull() ?: return@launch
+        val year = content.newYear.toIntOrNull() ?: return@launch
+        if (content.newName.isBlank() || day !in 1..31 || month !in 1..12 || year !in 1900..2100) return@launch
 
         repository.addCompanion(content.newName, SimpleDate(year, month, day))
-        _state.value = CompatibilityState.Content(companions = repository.getCompanions())
+        _state.value = (state.value as CompatibilityState.Content).copy(
+            companions = repository.getCompanions(),
+            showAddDialog = false,
+            newName = "",
+            newDay = "",
+            newMonth = "",
+            newYear = ""
+        )
     }
 
-    private fun load() {
-        _state.value = (state.value as CompatibilityState.Content).copy(companions = repository.getCompanions())
+    private fun remove(id: String) = viewModelScope.launch {
+        repository.removeCompanion(id)
+        _state.value = (state.value as CompatibilityState.Content).copy(
+            companions = (state.value as CompatibilityState.Content).companions.filter { it.id != id }
+        )
+    }
+
+    private fun load() = viewModelScope.launch {
+        _state.value = (state.value as CompatibilityState.Content).copy(
+            companions = repository.getCompanions(),
+            loading = false
+        )
     }
 
     init { load() }

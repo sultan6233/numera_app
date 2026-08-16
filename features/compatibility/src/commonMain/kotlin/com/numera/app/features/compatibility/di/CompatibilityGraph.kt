@@ -1,7 +1,8 @@
 package com.numera.app.features.compatibility.di
 
 import com.numera.app.core.commonMain.session.SessionStorage
-import com.numera.app.features.compatibility.data.CompanionLocalRepository
+import com.numera.app.features.compatibility.data.CompanionApi
+import com.numera.app.features.compatibility.data.CompanionRepositoryImpl
 import com.numera.app.features.compatibility.domain.CompanionRepository
 import com.numera.app.features.compatibility.presentation.CompatibilityDetailViewModel
 import com.numera.app.features.compatibility.presentation.CompatibilityViewModel
@@ -18,8 +19,8 @@ interface CompatibilityGraph {
 
     @Provides
     @SingleIn(CompatibilityScope::class)
-    fun provideCompanionRepository(sessionStorage: SessionStorage): CompanionRepository =
-        CompanionLocalRepository(sessionStorage)
+    fun provideCompanionRepository(companionApi: CompanionApi, sessionStorage: SessionStorage): CompanionRepository =
+        CompanionRepositoryImpl(companionApi, sessionStorage)
 
     @ContributesTo(AppScope::class)
     @GraphExtension.Factory

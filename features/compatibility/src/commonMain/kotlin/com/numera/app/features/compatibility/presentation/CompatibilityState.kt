@@ -7,6 +7,7 @@ sealed interface CompatibilityState {
     @Stable
     data class Content(
         val companions: List<CompanionUi> = emptyList(),
+        val loading: Boolean = true,
         val showAddDialog: Boolean = false,
         val newName: String = "",
         val newDay: String = "",

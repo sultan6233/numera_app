@@ -35,6 +35,7 @@ class NumbersViewModel(
         when (action) {
             NumbersAction.OnRefresh -> load()
             is NumbersAction.OnCardClick -> handleCardClick(action.numberType)
+            NumbersAction.OnCompatibilityClick -> setEvent(NumbersEvent.NavigateToCompatibility)
         }
     }
 

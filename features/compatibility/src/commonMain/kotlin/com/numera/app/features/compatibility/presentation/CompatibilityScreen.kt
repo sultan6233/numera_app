@@ -21,14 +21,18 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.numera.app.core.commonMain.Muted
 import com.numera.app.core.commonMain.Outline
 import com.numera.app.core.commonMain.Surface
 import com.numera.app.core.commonMain.components.DefaultNumeraButton
+import com.numera.app.core.commonMain.components.shimmer
+import com.numera.app.core.commonMain.displayFontFamily
 import com.numera.app.features.compatibility.presentation.model.CompanionUi
 
 @Composable
@@ -36,11 +40,27 @@ fun CompatibilityScreen(state: CompatibilityState, onAction: (CompatibilityActio
     Scaffold { innerPadding ->
         when (state) {
             is CompatibilityState.Content -> Column(modifier = Modifier.padding(innerPadding).fillMaxSize().padding(16.dp)) {
-                Text(text = "Совместимость", fontSize = 22.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onBackground)
+                Text(
+                    text = "Совместимость",
+                    fontFamily = displayFontFamily(),
+                    fontSize = 22.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onBackground
+                )
                 Spacer(modifier = Modifier.height(12.dp))
-                LazyColumn(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    items(state.companions) { companion ->
-                        CompanionRow(companion, onClick = { onAction(CompatibilityAction.OnCompanionClick(companion.id)) })
+                if (state.loading) {
+                    Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                        repeat(3) { Box(modifier = Modifier.fillMaxWidth().height(56.dp).shimmer(RoundedCornerShape(4.dp))) }
+                    }
+                } else {
+                    LazyColumn(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                        items(state.companions) { companion ->
+                            CompanionRow(
+                                companion,
+                                onClick = { onAction(CompatibilityAction.OnCompanionClick(companion.id)) },
+                                onRemove = { onAction(CompatibilityAction.OnRemoveClick(companion.id)) }
+                            )
+                        }
                     }
                 }
                 DefaultNumeraButton(text = "Добавить человека", onClick = { onAction(CompatibilityAction.OnAddClick) })
@@ -54,17 +74,25 @@ fun CompatibilityScreen(state: CompatibilityState, onAction: (CompatibilityActio
 }
 
 @Composable
-private fun CompanionRow(companion: CompanionUi, onClick: () -> Unit) {
-    Box(
+private fun CompanionRow(companion: CompanionUi, onClick: () -> Unit, onRemove: () -> Unit) {
+    Row(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(14.dp))
+            .clip(RoundedCornerShape(4.dp))
             .background(Surface)
-            .border(1.dp, Outline, RoundedCornerShape(14.dp))
+            .border(1.dp, Outline, RoundedCornerShape(4.dp))
             .clickable(onClick = onClick)
-            .padding(16.dp)
+            .padding(16.dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
     ) {
         Text(text = companion.name, fontSize = 16.sp, color = MaterialTheme.colorScheme.onBackground)
+        Text(
+            text = "×",
+            fontSize = 20.sp,
+            color = Muted,
+            modifier = Modifier.clickable(onClick = onRemove).padding(4.dp)
+        )
     }
 }
 
@@ -88,23 +116,26 @@ private fun AddCompanionDialog(state: CompatibilityState.Content, onAction: (Com
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 OutlinedTextField(
+                    modifier = Modifier.fillMaxWidth(),
                     value = state.newName,
                     onValueChange = { onAction(CompatibilityAction.OnNameChanged(it)) },
                     placeholder = { Text("Имя") }
                 )
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     OutlinedTextField(
-                        modifier = Modifier.padding(0.dp),
+                        modifier = Modifier.weight(1f),
                         value = state.newDay,
                         onValueChange = { onAction(CompatibilityAction.OnDayChanged(it)) },
                         placeholder = { Text("ДД") }
                     )
                     OutlinedTextField(
+                        modifier = Modifier.weight(1f),
                         value = state.newMonth,
                         onValueChange = { onAction(CompatibilityAction.OnMonthChanged(it)) },
                         placeholder = { Text("ММ") }
                     )
                     OutlinedTextField(
+                        modifier = Modifier.weight(1f),
                         value = state.newYear,
                         onValueChange = { onAction(CompatibilityAction.OnYearChanged(it)) },
                         placeholder = { Text("ГГГГ") }
