@@ -8,5 +8,8 @@ import com.numera.app.core.commonMain.Navigator
 @Composable
 fun NumberDetailEntry(navigator: Navigator, numberType: String, viewModel: NumberDetailViewModel) {
     LaunchedEffect(numberType) { viewModel.load(numberType) }
-    NumberDetailScreen(state = viewModel.state.collectAsStateWithLifecycle().value)
+    NumberDetailScreen(
+        state = viewModel.state.collectAsStateWithLifecycle().value,
+        onBack = navigator::goBack
+    )
 }

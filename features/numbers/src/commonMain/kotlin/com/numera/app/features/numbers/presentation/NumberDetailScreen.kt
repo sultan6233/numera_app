@@ -35,35 +35,39 @@ import com.numera.app.core.commonMain.Primary
 import com.numera.app.core.commonMain.PrimarySoft
 import com.numera.app.core.commonMain.Success
 import com.numera.app.core.commonMain.Surface
+import com.numera.app.core.commonMain.components.BackButton
 import com.numera.app.core.commonMain.displayFontFamily
 import com.numera.app.features.numbers.domain.NumberMeaning
 
 @Composable
-fun NumberDetailScreen(state: NumberDetailState) {
+fun NumberDetailScreen(state: NumberDetailState, onBack: () -> Unit) {
     Scaffold { innerPadding ->
-        when (state) {
-            NumberDetailState.Loading -> Box(
-                modifier = Modifier.padding(innerPadding).fillMaxSize(),
-                contentAlignment = Alignment.Center
-            ) {
-                CircularProgressIndicator(color = Primary)
-            }
+        Column(modifier = Modifier.padding(innerPadding).fillMaxSize().padding(horizontal = 20.dp)) {
+            BackButton(onClick = onBack)
+            when (state) {
+                NumberDetailState.Loading -> Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    CircularProgressIndicator(color = Primary)
+                }
 
-            is NumberDetailState.Content -> LazyColumn(
-                modifier = Modifier.padding(innerPadding).fillMaxSize().padding(horizontal = 20.dp),
-                contentPadding = PaddingValues(top = 20.dp, bottom = 32.dp)
-            ) {
-                item { Header(state) }
-                item { Spacer(modifier = Modifier.height(24.dp)) }
-                item { EssenceBlock(state.meaning) }
-                item { Spacer(modifier = Modifier.height(20.dp)) }
-                item { SectionLabel("Сильные стороны") }
-                items(state.meaning.strengths) { TraitRow(it, Success) }
-                item { Spacer(modifier = Modifier.height(20.dp)) }
-                item { SectionLabel("Точки роста") }
-                items(state.meaning.challenges) { TraitRow(it, Ember) }
-                item { Spacer(modifier = Modifier.height(20.dp)) }
-                item { AdviceBlock(state.meaning.advice) }
+                is NumberDetailState.Content -> LazyColumn(
+                    modifier = Modifier.fillMaxSize(),
+                    contentPadding = PaddingValues(top = 8.dp, bottom = 32.dp)
+                ) {
+                    item { Header(state) }
+                    item { Spacer(modifier = Modifier.height(24.dp)) }
+                    item { EssenceBlock(state.meaning) }
+                    item { Spacer(modifier = Modifier.height(20.dp)) }
+                    item { SectionLabel("Сильные стороны") }
+                    items(state.meaning.strengths) { TraitRow(it, Success) }
+                    item { Spacer(modifier = Modifier.height(20.dp)) }
+                    item { SectionLabel("Точки роста") }
+                    items(state.meaning.challenges) { TraitRow(it, Ember) }
+                    item { Spacer(modifier = Modifier.height(20.dp)) }
+                    item { AdviceBlock(state.meaning.advice) }
+                }
             }
         }
     }

@@ -29,14 +29,17 @@ import com.numera.app.core.commonMain.Outline
 import com.numera.app.core.commonMain.Primary
 import com.numera.app.core.commonMain.PrimarySoft
 import com.numera.app.core.commonMain.Surface
+import com.numera.app.core.commonMain.components.BackButton
 import com.numera.app.core.commonMain.components.DefaultNumeraButton
 import com.numera.app.core.commonMain.displayFontFamily
 import com.numera.app.features.numbers.domain.NumberMeanings
 
 @Composable
-fun NumerologyToolsScreen(state: NumerologyToolsState, onAction: (NumerologyToolsAction) -> Unit) {
+fun NumerologyToolsScreen(state: NumerologyToolsState, onAction: (NumerologyToolsAction) -> Unit, onBack: () -> Unit) {
     Scaffold { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding).fillMaxSize().padding(20.dp)) {
+            BackButton(onClick = onBack)
+            Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = "Инструменты нумерологии",
                 fontFamily = displayFontFamily(),

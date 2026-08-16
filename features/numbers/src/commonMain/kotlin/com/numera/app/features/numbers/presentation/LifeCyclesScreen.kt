@@ -32,41 +32,45 @@ import com.numera.app.core.commonMain.Outline
 import com.numera.app.core.commonMain.Primary
 import com.numera.app.core.commonMain.PrimarySoft
 import com.numera.app.core.commonMain.Surface
+import com.numera.app.core.commonMain.components.BackButton
 import com.numera.app.core.commonMain.displayFontFamily
 
 @Composable
-fun LifeCyclesScreen(state: LifeCyclesState) {
+fun LifeCyclesScreen(state: LifeCyclesState, onBack: () -> Unit) {
     Scaffold { innerPadding ->
-        when (state) {
-            LifeCyclesState.Loading -> Box(
-                modifier = Modifier.padding(innerPadding).fillMaxSize(),
-                contentAlignment = Alignment.Center
-            ) { CircularProgressIndicator(color = Primary) }
+        Column(modifier = Modifier.padding(innerPadding).fillMaxSize().padding(horizontal = 20.dp)) {
+            BackButton(onClick = onBack)
+            when (state) {
+                LifeCyclesState.Loading -> Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) { CircularProgressIndicator(color = Primary) }
 
-            is LifeCyclesState.Content -> LazyColumn(
-                modifier = Modifier.padding(innerPadding).fillMaxSize().padding(horizontal = 20.dp),
-                contentPadding = PaddingValues(top = 20.dp, bottom = 32.dp)
-            ) {
-                item {
-                    Text(
-                        text = "Жизненные циклы",
-                        fontFamily = displayFontFamily(),
-                        fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onBackground
-                    )
+                is LifeCyclesState.Content -> LazyColumn(
+                    modifier = Modifier.fillMaxSize(),
+                    contentPadding = PaddingValues(top = 8.dp, bottom = 32.dp)
+                ) {
+                    item {
+                        Text(
+                            text = "Жизненные циклы",
+                            fontFamily = displayFontFamily(),
+                            fontSize = 24.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.onBackground
+                        )
+                    }
+                    item { Spacer(modifier = Modifier.height(6.dp)) }
+                    item {
+                        Text(
+                            text = "Четыре возрастных этапа, у каждого — своя точка опоры (пик) и своя сложность (вызов).",
+                            fontSize = 13.sp,
+                            lineHeight = 19.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                    item { Spacer(modifier = Modifier.height(20.dp)) }
+                    items(state.stages) { StageCard(it) }
                 }
-                item { Spacer(modifier = Modifier.height(6.dp)) }
-                item {
-                    Text(
-                        text = "Четыре возрастных этапа, у каждого — своя точка опоры (пик) и своя сложность (вызов).",
-                        fontSize = 13.sp,
-                        lineHeight = 19.sp,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
-                item { Spacer(modifier = Modifier.height(20.dp)) }
-                items(state.stages) { StageCard(it) }
             }
         }
     }

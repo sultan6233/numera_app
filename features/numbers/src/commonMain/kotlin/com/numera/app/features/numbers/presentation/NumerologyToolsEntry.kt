@@ -2,11 +2,13 @@ package com.numera.app.features.numbers.presentation
 
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.numera.app.core.commonMain.Navigator
 
 @Composable
-fun NumerologyToolsEntry(viewModel: NumerologyToolsViewModel) {
+fun NumerologyToolsEntry(navigator: Navigator, viewModel: NumerologyToolsViewModel) {
     NumerologyToolsScreen(
         state = viewModel.state.collectAsStateWithLifecycle().value,
-        onAction = viewModel::onAction
+        onAction = viewModel::onAction,
+        onBack = navigator::goBack
     )
 }

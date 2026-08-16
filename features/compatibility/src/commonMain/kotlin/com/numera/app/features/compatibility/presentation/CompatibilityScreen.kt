@@ -30,16 +30,19 @@ import androidx.compose.ui.unit.sp
 import com.numera.app.core.commonMain.Muted
 import com.numera.app.core.commonMain.Outline
 import com.numera.app.core.commonMain.Surface
+import com.numera.app.core.commonMain.components.BackButton
 import com.numera.app.core.commonMain.components.DefaultNumeraButton
 import com.numera.app.core.commonMain.components.shimmer
 import com.numera.app.core.commonMain.displayFontFamily
 import com.numera.app.features.compatibility.presentation.model.CompanionUi
 
 @Composable
-fun CompatibilityScreen(state: CompatibilityState, onAction: (CompatibilityAction) -> Unit) {
+fun CompatibilityScreen(state: CompatibilityState, onAction: (CompatibilityAction) -> Unit, onBack: () -> Unit) {
     Scaffold { innerPadding ->
         when (state) {
             is CompatibilityState.Content -> Column(modifier = Modifier.padding(innerPadding).fillMaxSize().padding(16.dp)) {
+                BackButton(onClick = onBack)
+                Spacer(modifier = Modifier.height(4.dp))
                 Text(
                     text = "Совместимость",
                     fontFamily = displayFontFamily(),

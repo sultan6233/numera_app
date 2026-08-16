@@ -9,6 +9,7 @@ fun CompatibilityEntry(navigator: Navigator, viewModel: CompatibilityViewModel) 
     CompatibilityEventHandler(uiEvent = viewModel.event, navigator = navigator)
     CompatibilityScreen(
         state = viewModel.state.collectAsStateWithLifecycle().value,
-        onAction = viewModel::onAction
+        onAction = viewModel::onAction,
+        onBack = navigator::goBack
     )
 }

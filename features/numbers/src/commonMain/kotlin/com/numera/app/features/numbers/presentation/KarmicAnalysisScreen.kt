@@ -32,52 +32,56 @@ import com.numera.app.core.commonMain.Primary
 import com.numera.app.core.commonMain.PrimarySoft
 import com.numera.app.core.commonMain.Success
 import com.numera.app.core.commonMain.Surface
+import com.numera.app.core.commonMain.components.BackButton
 import com.numera.app.core.commonMain.displayFontFamily
 
 @Composable
-fun KarmicAnalysisScreen(state: KarmicAnalysisState) {
+fun KarmicAnalysisScreen(state: KarmicAnalysisState, onBack: () -> Unit) {
     Scaffold { innerPadding ->
-        when (state) {
-            KarmicAnalysisState.Loading -> Box(
-                modifier = Modifier.padding(innerPadding).fillMaxSize(),
-                contentAlignment = Alignment.Center
-            ) { CircularProgressIndicator(color = Primary) }
+        Column(modifier = Modifier.padding(innerPadding).fillMaxSize().padding(horizontal = 20.dp)) {
+            BackButton(onClick = onBack)
+            when (state) {
+                KarmicAnalysisState.Loading -> Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) { CircularProgressIndicator(color = Primary) }
 
-            is KarmicAnalysisState.Content -> LazyColumn(
-                modifier = Modifier.padding(innerPadding).fillMaxSize().padding(horizontal = 20.dp),
-                contentPadding = PaddingValues(top = 20.dp, bottom = 32.dp)
-            ) {
-                item {
-                    Text(
-                        text = "Кармический анализ",
-                        fontFamily = displayFontFamily(),
-                        fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onBackground
-                    )
-                }
-                item { Spacer(modifier = Modifier.height(20.dp)) }
-                item { SectionLabel("Кармические долги") }
-                if (state.debts.isEmpty()) {
-                    item { EmptyNote("Активных кармических долгов не найдено — ваш путь в этой сфере складывался без резких проверок.") }
-                } else {
-                    items(state.debts) { KarmicRow(it.number.toString(), it.text) }
-                }
-                item { Spacer(modifier = Modifier.height(24.dp)) }
-                item { SectionLabel("Кармические уроки") }
-                item {
-                    Text(
-                        text = "Числа, которых нет среди букв вашего имени — качества, которые не даны по умолчанию и требуют осознанной практики.",
-                        fontSize = 13.sp,
-                        lineHeight = 19.sp,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.padding(bottom = 12.dp)
-                    )
-                }
-                if (state.lessons.isEmpty()) {
-                    item { EmptyNote("В вашем имени представлены все числа от 1 до 9 — редкий и сбалансированный набор.") }
-                } else {
-                    items(state.lessons) { KarmicRow(it.number.toString(), it.text) }
+                is KarmicAnalysisState.Content -> LazyColumn(
+                    modifier = Modifier.fillMaxSize(),
+                    contentPadding = PaddingValues(top = 8.dp, bottom = 32.dp)
+                ) {
+                    item {
+                        Text(
+                            text = "Кармический анализ",
+                            fontFamily = displayFontFamily(),
+                            fontSize = 24.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.onBackground
+                        )
+                    }
+                    item { Spacer(modifier = Modifier.height(20.dp)) }
+                    item { SectionLabel("Кармические долги") }
+                    if (state.debts.isEmpty()) {
+                        item { EmptyNote("Активных кармических долгов не найдено — ваш путь в этой сфере складывался без резких проверок.") }
+                    } else {
+                        items(state.debts) { KarmicRow(it.number.toString(), it.text) }
+                    }
+                    item { Spacer(modifier = Modifier.height(24.dp)) }
+                    item { SectionLabel("Кармические уроки") }
+                    item {
+                        Text(
+                            text = "Числа, которых нет среди букв вашего имени — качества, которые не даны по умолчанию и требуют осознанной практики.",
+                            fontSize = 13.sp,
+                            lineHeight = 19.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.padding(bottom = 12.dp)
+                        )
+                    }
+                    if (state.lessons.isEmpty()) {
+                        item { EmptyNote("В вашем имени представлены все числа от 1 до 9 — редкий и сбалансированный набор.") }
+                    } else {
+                        items(state.lessons) { KarmicRow(it.number.toString(), it.text) }
+                    }
                 }
             }
         }

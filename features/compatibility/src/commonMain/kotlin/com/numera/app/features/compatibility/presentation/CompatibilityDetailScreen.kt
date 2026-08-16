@@ -24,15 +24,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.numera.app.core.commonMain.Outline
 import com.numera.app.core.commonMain.Primary
+import com.numera.app.core.commonMain.components.BackButton
 import com.numera.app.core.numerology.model.CompatibilityBreakdownItem
 
 @Composable
-fun CompatibilityDetailScreen(state: CompatibilityDetailState) {
+fun CompatibilityDetailScreen(state: CompatibilityDetailState, onBack: () -> Unit) {
     Scaffold { innerPadding ->
         Column(
             modifier = Modifier.padding(innerPadding).fillMaxSize().padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Row(modifier = Modifier.fillMaxWidth()) { BackButton(onClick = onBack) }
+            Spacer(modifier = Modifier.height(8.dp))
             when (state) {
                 CompatibilityDetailState.Loading -> CircularProgressIndicator(color = Primary)
                 is CompatibilityDetailState.Content -> {

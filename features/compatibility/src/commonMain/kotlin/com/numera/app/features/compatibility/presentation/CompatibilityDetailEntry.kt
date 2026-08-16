@@ -8,5 +8,8 @@ import com.numera.app.core.commonMain.Navigator
 @Composable
 fun CompatibilityDetailEntry(navigator: Navigator, companionId: String, viewModel: CompatibilityDetailViewModel) {
     LaunchedEffect(companionId) { viewModel.load(companionId) }
-    CompatibilityDetailScreen(state = viewModel.state.collectAsStateWithLifecycle().value)
+    CompatibilityDetailScreen(
+        state = viewModel.state.collectAsStateWithLifecycle().value,
+        onBack = navigator::goBack
+    )
 }

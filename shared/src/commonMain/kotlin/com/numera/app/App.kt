@@ -156,19 +156,19 @@ fun App() {
                             val viewModel = viewModel {
                                 appGraph.numbersGraphFactory.createNumbersGraph().karmicAnalysisViewModel
                             }
-                            KarmicAnalysisEntry(viewModel = viewModel)
+                            KarmicAnalysisEntry(navigator, viewModel = viewModel)
                         }
                         entry<LifeCycles> {
                             val viewModel = viewModel {
                                 appGraph.numbersGraphFactory.createNumbersGraph().lifeCyclesViewModel
                             }
-                            LifeCyclesEntry(viewModel = viewModel)
+                            LifeCyclesEntry(navigator, viewModel = viewModel)
                         }
                         entry<NumerologyTools> {
                             val viewModel = viewModel {
                                 appGraph.numbersGraphFactory.createNumbersGraph().numerologyToolsViewModel
                             }
-                            NumerologyToolsEntry(viewModel = viewModel)
+                            NumerologyToolsEntry(navigator, viewModel = viewModel)
                         }
                         entry<CalendarEnergy> {
                             val viewModel = viewModel {
