@@ -1,0 +1,13 @@
+<resources>
+    <string name="onboarding_name_question">Qual é o seu nome?</string>
+    <string name="onboarding_full_name">Nome completo</string>
+    <string name="next">Próximo</string>
+    <string name="onboarding_birth_date_title">Data de nascimento</string>
+    <string name="day_placeholder">DD</string>
+    <string name="month_placeholder">MM</string>
+    <string name="year_placeholder">AAAA</string>
+    <string name="calculate">Calcular</string>
+    <string name="calculating_profile">Calculando seu perfil…</string>
+    <string name="life_path_number_label">Seu número do Caminho de Vida</string>
+    <string name="see_full_picture">Ver o panorama completo</string>
+</resources>

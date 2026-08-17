@@ -14,6 +14,13 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.getString
+import numera.features.home.generated.resources.Res
+import numera.features.home.generated.resources.fallback_headline
+import numera.features.home.generated.resources.good_morning_greeting
+import numera.features.home.generated.resources.fallback_body_1
+import numera.features.home.generated.resources.fallback_body_2
+import numera.features.home.generated.resources.fallback_affirmation
 
 @Inject
 class HomeViewModel(
@@ -38,32 +45,26 @@ class HomeViewModel(
         val today = todaySimpleDate()
         val dateKey = "${today.year}-${today.month.toString().padStart(2, '0')}-${today.day.toString().padStart(2, '0')}"
         val result = repository.getDailyInsight(dateKey)
-        result.onSuccess {
-            _state.value = state.value.copy(insight = it, loading = false, userName = sessionStorage.fullName())
-        }
-        result.onFailure {
+        val insight = result.getOrNull() ?: run {
             // Backend unreachable (or not deployed yet) - fall back to a locally computed insight
             // so the screen is never empty; the Personal Day Number is real numerology math, not
             // a placeholder.
-            _state.value = state.value.copy(
-                insight = fallbackInsight(today),
-                loading = false,
-                userName = sessionStorage.fullName()
-            )
+            fallbackInsight(today)
         }
+        _state.value = state.value.copy(insight = insight, loading = false, userName = sessionStorage.fullName())
     }
 
-    private fun fallbackInsight(today: SimpleDate): DailyInsightUi {
+    private suspend fun fallbackInsight(today: SimpleDate): DailyInsightUi {
         val birthDate = SimpleDate(sessionStorage.birthYear(), sessionStorage.birthMonth(), sessionStorage.birthDay())
         val personalDay = PersonalDayCalculator.personalDay(birthDate, today)
         return DailyInsightUi(
-            headline = "Личный день: $personalDay",
-            greeting = "Доброе утро",
+            headline = getString(Res.string.fallback_headline, personalDay),
+            greeting = getString(Res.string.good_morning_greeting),
             body = listOf(
-                "Сегодня ваш личный день — $personalDay. Прислушайтесь к своим ощущениям и не спешите с крупными решениями.",
-                "Хороший день, чтобы навести порядок в делах и уделить немного времени себе."
+                getString(Res.string.fallback_body_1, personalDay),
+                getString(Res.string.fallback_body_2)
             ),
-            affirmation = "Я доверяю своему пути и двигаюсь в своём темпе.",
+            affirmation = getString(Res.string.fallback_affirmation),
             luckyNumber = personalDay
         )
     }

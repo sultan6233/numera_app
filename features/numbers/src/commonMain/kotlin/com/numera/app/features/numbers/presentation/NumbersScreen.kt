@@ -38,6 +38,44 @@ import com.numera.app.core.commonMain.components.shimmer
 import com.numera.app.core.commonMain.displayFontFamily
 import com.numera.app.features.numbers.presentation.model.NumberCardUi
 import com.numera.app.features.numbers.presentation.model.NumberType
+import org.jetbrains.compose.resources.stringResource
+import numera.features.numbers.generated.resources.Res
+import numera.features.numbers.generated.resources.your_map_title
+import numera.features.numbers.generated.resources.tool_karmic_analysis
+import numera.features.numbers.generated.resources.tool_life_cycles
+import numera.features.numbers.generated.resources.tool_numerology_tools
+import numera.features.numbers.generated.resources.compatibility_with_loved_ones
+import numera.features.numbers.generated.resources.personal_year_label
+import numera.features.numbers.generated.resources.personal_month_label
+import numera.features.numbers.generated.resources.lucky_numbers_label
+import numera.features.numbers.generated.resources.lucky_color_label
+import numera.features.numbers.generated.resources.color_red
+import numera.features.numbers.generated.resources.color_orange
+import numera.features.numbers.generated.resources.color_yellow
+import numera.features.numbers.generated.resources.color_green
+import numera.features.numbers.generated.resources.color_blue
+import numera.features.numbers.generated.resources.color_indigo
+import numera.features.numbers.generated.resources.color_violet
+import numera.features.numbers.generated.resources.color_brown
+import numera.features.numbers.generated.resources.color_gold
+import numera.features.numbers.generated.resources.color_silver
+import numera.features.numbers.generated.resources.color_emerald
+import numera.features.numbers.generated.resources.color_white
+
+private fun colorNameRes(key: String) = when (key) {
+    "red" -> Res.string.color_red
+    "orange" -> Res.string.color_orange
+    "yellow" -> Res.string.color_yellow
+    "green" -> Res.string.color_green
+    "blue" -> Res.string.color_blue
+    "indigo" -> Res.string.color_indigo
+    "violet" -> Res.string.color_violet
+    "brown" -> Res.string.color_brown
+    "gold" -> Res.string.color_gold
+    "silver" -> Res.string.color_silver
+    "emerald" -> Res.string.color_emerald
+    else -> Res.string.color_white
+}
 
 private fun glyphFor(type: String): NumeraGlyph = when (type) {
     NumberType.LIFE_PATH -> NumeraGlyph.Compass
@@ -61,7 +99,7 @@ fun NumbersScreen(state: NumbersState, onAction: (NumbersAction) -> Unit) {
                 modifier = Modifier.padding(innerPadding).fillMaxSize().padding(horizontal = 20.dp).padding(top = 20.dp)
             ) {
                 Text(
-                    text = "Ваша карта",
+                    text = stringResource(Res.string.your_map_title),
                     fontFamily = displayFontFamily(),
                     fontSize = 26.sp,
                     fontWeight = FontWeight.Bold,
@@ -106,21 +144,21 @@ fun NumbersScreen(state: NumbersState, onAction: (NumbersAction) -> Unit) {
                         item {
                             ToolEntryCard(
                                 glyph = NumeraGlyph.Spiral,
-                                title = "Кармический анализ",
+                                title = stringResource(Res.string.tool_karmic_analysis),
                                 onClick = { onAction(NumbersAction.OnKarmicAnalysisClick) }
                             )
                         }
                         item {
                             ToolEntryCard(
                                 glyph = NumeraGlyph.Calendar,
-                                title = "Жизненные циклы",
+                                title = stringResource(Res.string.tool_life_cycles),
                                 onClick = { onAction(NumbersAction.OnLifeCyclesClick) }
                             )
                         }
                         item {
                             ToolEntryCard(
                                 glyph = NumeraGlyph.Grid,
-                                title = "Инструменты нумерологии",
+                                title = stringResource(Res.string.tool_numerology_tools),
                                 onClick = { onAction(NumbersAction.OnToolsClick) }
                             )
                         }
@@ -141,7 +179,7 @@ private fun Int.reducedDigit(): Int {
 
 @Composable
 private fun CompatibilityEntryCard(onClick: () -> Unit) {
-    ToolEntryCard(glyph = NumeraGlyph.Duality, title = "Совместимость с близкими", onClick = onClick)
+    ToolEntryCard(glyph = NumeraGlyph.Duality, title = stringResource(Res.string.compatibility_with_loved_ones), onClick = onClick)
 }
 
 @Composable
@@ -181,8 +219,8 @@ private fun ToolEntryCard(glyph: NumeraGlyph, title: String, onClick: () -> Unit
 @Composable
 private fun CyclesRow(personalYear: Int, personalYearTheme: String, personalMonth: Int, personalMonthTheme: String) {
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-        CycleCard(label = "Личный год", value = personalYear, theme = personalYearTheme, modifier = Modifier.weight(1f))
-        CycleCard(label = "Личный месяц", value = personalMonth, theme = personalMonthTheme, modifier = Modifier.weight(1f))
+        CycleCard(label = stringResource(Res.string.personal_year_label), value = personalYear, theme = personalYearTheme, modifier = Modifier.weight(1f))
+        CycleCard(label = stringResource(Res.string.personal_month_label), value = personalMonth, theme = personalMonthTheme, modifier = Modifier.weight(1f))
     }
 }
 
@@ -217,11 +255,11 @@ private fun LuckyNumbersRow(numbers: List<Int>, color: String) {
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
-            text = "Счастливые числа: ${numbers.joinToString(", ")}",
+            text = stringResource(Res.string.lucky_numbers_label, numbers.joinToString(", ")),
             fontSize = 12.sp,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
-        Text(text = "Цвет: $color", fontSize = 12.sp, color = Primary)
+        Text(text = stringResource(Res.string.lucky_color_label, stringResource(colorNameRes(color))), fontSize = 12.sp, color = Primary)
     }
 }
 

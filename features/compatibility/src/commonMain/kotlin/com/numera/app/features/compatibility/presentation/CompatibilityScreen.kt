@@ -35,6 +35,17 @@ import com.numera.app.core.commonMain.components.DefaultNumeraButton
 import com.numera.app.core.commonMain.components.shimmer
 import com.numera.app.core.commonMain.displayFontFamily
 import com.numera.app.features.compatibility.presentation.model.CompanionUi
+import org.jetbrains.compose.resources.stringResource
+import numera.features.compatibility.generated.resources.Res
+import numera.features.compatibility.generated.resources.compatibility_title
+import numera.features.compatibility.generated.resources.add_person_button
+import numera.features.compatibility.generated.resources.save_button
+import numera.features.compatibility.generated.resources.cancel_button
+import numera.features.compatibility.generated.resources.new_person_title
+import numera.features.compatibility.generated.resources.name_placeholder
+import numera.features.compatibility.generated.resources.day_placeholder
+import numera.features.compatibility.generated.resources.month_placeholder
+import numera.features.compatibility.generated.resources.year_placeholder
 
 @Composable
 fun CompatibilityScreen(state: CompatibilityState, onAction: (CompatibilityAction) -> Unit, onBack: () -> Unit) {
@@ -44,7 +55,7 @@ fun CompatibilityScreen(state: CompatibilityState, onAction: (CompatibilityActio
                 BackButton(onClick = onBack)
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Совместимость",
+                    text = stringResource(Res.string.compatibility_title),
                     fontFamily = displayFontFamily(),
                     fontSize = 22.sp,
                     fontWeight = FontWeight.Bold,
@@ -66,7 +77,7 @@ fun CompatibilityScreen(state: CompatibilityState, onAction: (CompatibilityActio
                         }
                     }
                 }
-                DefaultNumeraButton(text = "Добавить человека", onClick = { onAction(CompatibilityAction.OnAddClick) })
+                DefaultNumeraButton(text = stringResource(Res.string.add_person_button), onClick = { onAction(CompatibilityAction.OnAddClick) })
 
                 if (state.showAddDialog) {
                     AddCompanionDialog(state, onAction)
@@ -106,42 +117,42 @@ private fun AddCompanionDialog(state: CompatibilityState.Content, onAction: (Com
         confirmButton = {
             Text(
                 modifier = Modifier.clickable { onAction(CompatibilityAction.OnSaveClick) }.padding(8.dp),
-                text = "Сохранить"
+                text = stringResource(Res.string.save_button)
             )
         },
         dismissButton = {
             Text(
                 modifier = Modifier.clickable { onAction(CompatibilityAction.OnDismissDialog) }.padding(8.dp),
-                text = "Отмена"
+                text = stringResource(Res.string.cancel_button)
             )
         },
-        title = { Text("Новый человек") },
+        title = { Text(stringResource(Res.string.new_person_title)) },
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 OutlinedTextField(
                     modifier = Modifier.fillMaxWidth(),
                     value = state.newName,
                     onValueChange = { onAction(CompatibilityAction.OnNameChanged(it)) },
-                    placeholder = { Text("Имя") }
+                    placeholder = { Text(stringResource(Res.string.name_placeholder)) }
                 )
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     OutlinedTextField(
                         modifier = Modifier.weight(1f),
                         value = state.newDay,
                         onValueChange = { onAction(CompatibilityAction.OnDayChanged(it)) },
-                        placeholder = { Text("ДД") }
+                        placeholder = { Text(stringResource(Res.string.day_placeholder)) }
                     )
                     OutlinedTextField(
                         modifier = Modifier.weight(1f),
                         value = state.newMonth,
                         onValueChange = { onAction(CompatibilityAction.OnMonthChanged(it)) },
-                        placeholder = { Text("ММ") }
+                        placeholder = { Text(stringResource(Res.string.month_placeholder)) }
                     )
                     OutlinedTextField(
                         modifier = Modifier.weight(1f),
                         value = state.newYear,
                         onValueChange = { onAction(CompatibilityAction.OnYearChanged(it)) },
-                        placeholder = { Text("ГГГГ") }
+                        placeholder = { Text(stringResource(Res.string.year_placeholder)) }
                     )
                 }
             }

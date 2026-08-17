@@ -1,6 +1,7 @@
 package com.numera.app.features.growth.presentation
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.numera.app.core.commonMain.session.SessionStorage
 import com.numera.app.core.numerology.DateMath
 import com.numera.app.core.numerology.PersonalDayCalculator
@@ -12,9 +13,21 @@ import com.numera.app.features.growth.presentation.model.MoodEntryUi
 import dev.zacsweers.metro.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
+import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.getPluralString
+import numera.features.growth.generated.resources.Res
+import numera.features.growth.generated.resources.mood_insight
+import numera.features.growth.generated.resources.weekly_summary
+import numera.features.growth.generated.resources.mood_entries
+import numera.features.growth.generated.resources.score_label_1
+import numera.features.growth.generated.resources.score_label_2
+import numera.features.growth.generated.resources.score_label_3
+import numera.features.growth.generated.resources.score_label_4
+import numera.features.growth.generated.resources.score_label_5
 
 private const val FIELD_SEPARATOR = ";;"
 private const val TAG_SEPARATOR = ","
@@ -24,7 +37,13 @@ private const val TREND_DAYS = 14
  *  better mood - never shown to the user as a raw number. */
 private val MOOD_SCORES = mapOf("😞" to 1, "😐" to 2, "🙂" to 3, "😄" to 4, "🤩" to 5)
 private val SCORE_EMOJI = mapOf(1 to "😞", 2 to "😐", 3 to "🙂", 4 to "😄", 5 to "🤩")
-private val SCORE_LABELS = mapOf(1 to "тяжело", 2 to "так себе", 3 to "нормально", 4 to "хорошо", 5 to "отлично")
+private val SCORE_LABELS = mapOf(
+    1 to Res.string.score_label_1,
+    2 to Res.string.score_label_2,
+    3 to Res.string.score_label_3,
+    4 to Res.string.score_label_4,
+    5 to Res.string.score_label_5
+)
 
 @Inject
 class GrowthViewModel(private val sessionStorage: SessionStorage) : ViewModel() {
@@ -47,8 +66,8 @@ class GrowthViewModel(private val sessionStorage: SessionStorage) : ViewModel() 
             is GrowthAction.OnDeleteHabit -> deleteHabit(content, action.id)
             is GrowthAction.OnMoodSelected -> _state.value = content.copy(selectedMood = action.mood)
             is GrowthAction.OnMoodNoteChanged -> _state.value = content.copy(newMoodNote = action.value)
-            GrowthAction.OnSaveMood -> saveMood(content)
-            is GrowthAction.OnDeleteMood -> deleteMood(content, action.id)
+            GrowthAction.OnSaveMood -> viewModelScope.launch { saveMood(content) }
+            is GrowthAction.OnDeleteMood -> viewModelScope.launch { deleteMood(content, action.id) }
             is GrowthAction.OnTagToggled -> toggleTag(content, action.tag)
             is GrowthAction.OnMoodEntryClick -> startEditingMood(content, action.id)
             GrowthAction.OnCancelMoodEdit -> cancelMoodEdit(content)
@@ -108,7 +127,7 @@ class GrowthViewModel(private val sessionStorage: SessionStorage) : ViewModel() 
     }
 
     @OptIn(ExperimentalUuidApi::class)
-    private fun saveMood(content: GrowthState.Content) {
+    private suspend fun saveMood(content: GrowthState.Content) {
         val editingId = content.editingMoodId
         val moods = if (editingId != null) {
             val existing = content.moods.find { it.id == editingId } ?: return
@@ -148,7 +167,7 @@ class GrowthViewModel(private val sessionStorage: SessionStorage) : ViewModel() 
         )
     }
 
-    private fun deleteMood(content: GrowthState.Content, id: String) {
+    private suspend fun deleteMood(content: GrowthState.Content, id: String) {
         sessionStorage.saveMoodRecords(
             sessionStorage.moodRecords().filterNot { it.substringBefore(FIELD_SEPARATOR) == id }
         )
@@ -236,25 +255,26 @@ class GrowthViewModel(private val sessionStorage: SessionStorage) : ViewModel() 
      * Looks for a personal-day number where logged moods are, on average, meaningfully better
      * than a neutral score - purely a local pattern in the user's own data, no claim beyond that.
      */
-    private fun computeMoodInsight(moods: List<MoodEntryUi>): String? {
+    private suspend fun computeMoodInsight(moods: List<MoodEntryUi>): String? {
         if (moods.size < 3) return null
         val byPersonalDay = moods
             .groupBy { PersonalDayCalculator.personalDay(birthDate, SimpleDate(it.year, it.month, it.day)) }
             .filterValues { it.size >= 2 }
         val best = byPersonalDay.maxByOrNull { (_, entries) -> entries.averageScore() } ?: return null
         if (best.value.averageScore() < 3.5) return null
-        return "Похоже, дни с личным числом ${best.key} у вас чаще проходят лучше — вы отмечаете хорошее настроение заметно чаще обычного."
+        return getString(Res.string.mood_insight, best.key)
     }
 
-    private fun computeWeeklySummary(moods: List<MoodEntryUi>): String? {
+    private suspend fun computeWeeklySummary(moods: List<MoodEntryUi>): String? {
         val last7 = lastNDays(7)
         val thisWeek = moods.filter { SimpleDate(it.year, it.month, it.day) in last7 }
         if (thisWeek.isEmpty()) return null
         val avg = thisWeek.averageScore()
         val rounded = avg.roundToInt().coerceIn(1, 5)
         val emoji = SCORE_EMOJI.getValue(rounded)
-        val label = SCORE_LABELS.getValue(rounded)
-        return "За последние 7 дней: в среднем $emoji — $label (${thisWeek.size} ${entryWord(thisWeek.size)})."
+        val label = getString(SCORE_LABELS.getValue(rounded))
+        val entriesPhrase = getPluralString(Res.plurals.mood_entries, thisWeek.size, thisWeek.size)
+        return getString(Res.string.weekly_summary, emoji, label, entriesPhrase)
     }
 
     private fun computeMoodTrend(moods: List<MoodEntryUi>): List<Double?> {
@@ -281,18 +301,7 @@ class GrowthViewModel(private val sessionStorage: SessionStorage) : ViewModel() 
     private fun List<MoodEntryUi>.averageScore(): Double =
         mapNotNull { MOOD_SCORES[it.mood] }.average()
 
-    private fun entryWord(count: Int): String {
-        val mod100 = count % 100
-        val mod10 = count % 10
-        return when {
-            mod100 in 11..14 -> "записей"
-            mod10 == 1 -> "запись"
-            mod10 in 2..4 -> "записи"
-            else -> "записей"
-        }
-    }
-
-    private fun load() {
+    private suspend fun load() {
         val moods = sessionStorage.moodRecords().mapNotNull { it.toMoodOrNull() }.reversed()
         val personalDay = PersonalDayCalculator.personalDay(birthDate, today)
         _state.value = (state.value as GrowthState.Content).copy(
@@ -306,5 +315,5 @@ class GrowthViewModel(private val sessionStorage: SessionStorage) : ViewModel() 
         )
     }
 
-    init { load() }
+    init { viewModelScope.launch { load() } }
 }

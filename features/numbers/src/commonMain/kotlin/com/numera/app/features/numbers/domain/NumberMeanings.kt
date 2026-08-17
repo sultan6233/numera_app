@@ -1,231 +1,209 @@
 package com.numera.app.features.numbers.domain
 
+import org.jetbrains.compose.resources.StringResource
+import numera.features.numbers.generated.resources.Res
+import numera.features.numbers.generated.resources.number_1_title
+import numera.features.numbers.generated.resources.number_1_essence
+import numera.features.numbers.generated.resources.number_1_strength_1
+import numera.features.numbers.generated.resources.number_1_strength_2
+import numera.features.numbers.generated.resources.number_1_strength_3
+import numera.features.numbers.generated.resources.number_1_challenge_1
+import numera.features.numbers.generated.resources.number_1_challenge_2
+import numera.features.numbers.generated.resources.number_1_advice
+import numera.features.numbers.generated.resources.number_2_title
+import numera.features.numbers.generated.resources.number_2_essence
+import numera.features.numbers.generated.resources.number_2_strength_1
+import numera.features.numbers.generated.resources.number_2_strength_2
+import numera.features.numbers.generated.resources.number_2_strength_3
+import numera.features.numbers.generated.resources.number_2_challenge_1
+import numera.features.numbers.generated.resources.number_2_challenge_2
+import numera.features.numbers.generated.resources.number_2_advice
+import numera.features.numbers.generated.resources.number_3_title
+import numera.features.numbers.generated.resources.number_3_essence
+import numera.features.numbers.generated.resources.number_3_strength_1
+import numera.features.numbers.generated.resources.number_3_strength_2
+import numera.features.numbers.generated.resources.number_3_strength_3
+import numera.features.numbers.generated.resources.number_3_challenge_1
+import numera.features.numbers.generated.resources.number_3_challenge_2
+import numera.features.numbers.generated.resources.number_3_advice
+import numera.features.numbers.generated.resources.number_4_title
+import numera.features.numbers.generated.resources.number_4_essence
+import numera.features.numbers.generated.resources.number_4_strength_1
+import numera.features.numbers.generated.resources.number_4_strength_2
+import numera.features.numbers.generated.resources.number_4_strength_3
+import numera.features.numbers.generated.resources.number_4_challenge_1
+import numera.features.numbers.generated.resources.number_4_challenge_2
+import numera.features.numbers.generated.resources.number_4_advice
+import numera.features.numbers.generated.resources.number_5_title
+import numera.features.numbers.generated.resources.number_5_essence
+import numera.features.numbers.generated.resources.number_5_strength_1
+import numera.features.numbers.generated.resources.number_5_strength_2
+import numera.features.numbers.generated.resources.number_5_strength_3
+import numera.features.numbers.generated.resources.number_5_challenge_1
+import numera.features.numbers.generated.resources.number_5_challenge_2
+import numera.features.numbers.generated.resources.number_5_advice
+import numera.features.numbers.generated.resources.number_6_title
+import numera.features.numbers.generated.resources.number_6_essence
+import numera.features.numbers.generated.resources.number_6_strength_1
+import numera.features.numbers.generated.resources.number_6_strength_2
+import numera.features.numbers.generated.resources.number_6_strength_3
+import numera.features.numbers.generated.resources.number_6_challenge_1
+import numera.features.numbers.generated.resources.number_6_challenge_2
+import numera.features.numbers.generated.resources.number_6_advice
+import numera.features.numbers.generated.resources.number_7_title
+import numera.features.numbers.generated.resources.number_7_essence
+import numera.features.numbers.generated.resources.number_7_strength_1
+import numera.features.numbers.generated.resources.number_7_strength_2
+import numera.features.numbers.generated.resources.number_7_strength_3
+import numera.features.numbers.generated.resources.number_7_challenge_1
+import numera.features.numbers.generated.resources.number_7_challenge_2
+import numera.features.numbers.generated.resources.number_7_advice
+import numera.features.numbers.generated.resources.number_8_title
+import numera.features.numbers.generated.resources.number_8_essence
+import numera.features.numbers.generated.resources.number_8_strength_1
+import numera.features.numbers.generated.resources.number_8_strength_2
+import numera.features.numbers.generated.resources.number_8_strength_3
+import numera.features.numbers.generated.resources.number_8_challenge_1
+import numera.features.numbers.generated.resources.number_8_challenge_2
+import numera.features.numbers.generated.resources.number_8_advice
+import numera.features.numbers.generated.resources.number_9_title
+import numera.features.numbers.generated.resources.number_9_essence
+import numera.features.numbers.generated.resources.number_9_strength_1
+import numera.features.numbers.generated.resources.number_9_strength_2
+import numera.features.numbers.generated.resources.number_9_strength_3
+import numera.features.numbers.generated.resources.number_9_challenge_1
+import numera.features.numbers.generated.resources.number_9_challenge_2
+import numera.features.numbers.generated.resources.number_9_advice
+import numera.features.numbers.generated.resources.number_11_title
+import numera.features.numbers.generated.resources.number_11_essence
+import numera.features.numbers.generated.resources.number_11_strength_1
+import numera.features.numbers.generated.resources.number_11_strength_2
+import numera.features.numbers.generated.resources.number_11_strength_3
+import numera.features.numbers.generated.resources.number_11_challenge_1
+import numera.features.numbers.generated.resources.number_11_challenge_2
+import numera.features.numbers.generated.resources.number_11_advice
+import numera.features.numbers.generated.resources.number_22_title
+import numera.features.numbers.generated.resources.number_22_essence
+import numera.features.numbers.generated.resources.number_22_strength_1
+import numera.features.numbers.generated.resources.number_22_strength_2
+import numera.features.numbers.generated.resources.number_22_strength_3
+import numera.features.numbers.generated.resources.number_22_challenge_1
+import numera.features.numbers.generated.resources.number_22_challenge_2
+import numera.features.numbers.generated.resources.number_22_advice
+import numera.features.numbers.generated.resources.number_33_title
+import numera.features.numbers.generated.resources.number_33_essence
+import numera.features.numbers.generated.resources.number_33_strength_1
+import numera.features.numbers.generated.resources.number_33_strength_2
+import numera.features.numbers.generated.resources.number_33_strength_3
+import numera.features.numbers.generated.resources.number_33_challenge_1
+import numera.features.numbers.generated.resources.number_33_challenge_2
+import numera.features.numbers.generated.resources.number_33_advice
+
 /**
  * Static reference text - the standardized part of Pythagorean numerology (the archetypal
  * meaning of each digit is centuries-old public tradition), written originally for this app
  * rather than pulled from any one source. Each entry mirrors the depth of a real numerology
  * reference (essence + strengths + challenges + practical advice), not a one-line label.
+ *
+ * Fields hold StringResource ids rather than resolved strings - meaningFor() is called from
+ * plain (non-@Composable) call sites, so resolution to localized text happens later, wherever
+ * the value is actually rendered, via stringResource().
  */
 data class NumberMeaning(
-    val title: String,
-    val essence: String,
-    val strengths: List<String>,
-    val challenges: List<String>,
-    val advice: String
+    val title: StringResource,
+    val essence: StringResource,
+    val strengths: List<StringResource>,
+    val challenges: List<StringResource>,
+    val advice: StringResource
 )
 
 object NumberMeanings {
     private val meanings = mapOf(
         1 to NumberMeaning(
-            title = "Первопроходец",
-            essence = "Число 1 — это энергия начала. Вы не ждёте разрешения и не любите идти проторенной " +
-                "дорогой: там, где другие видят препятствие, вы видите повод попробовать первым. Эта " +
-                "независимость — не упрямство, а способ учиться на собственном опыте быстрее, чем на чужих " +
-                "советах.",
-            strengths = listOf(
-                "Решительность — вы редко застреваете в раздумьях, когда нужно действовать",
-                "Естественное лидерство: люди подтягиваются за вашей уверенностью, даже если вы её не демонстрируете",
-                "Умение начинать с нуля там, где другие боятся рисковать"
-            ),
-            challenges = listOf(
-                "Нетерпение к чужому темпу — легко обесценить тех, кто медленнее",
-                "Сложности с делегированием: проще сделать самому, чем объяснять"
-            ),
-            advice = "Ваша сила — в первом шаге, а не в том, чтобы довести всё до конца в одиночку. Учитесь " +
-                "передавать эстафету, когда проект уже запущен — это освобождает энергию для следующего начала."
+            title = Res.string.number_1_title,
+            essence = Res.string.number_1_essence,
+            strengths = listOf(Res.string.number_1_strength_1, Res.string.number_1_strength_2, Res.string.number_1_strength_3),
+            challenges = listOf(Res.string.number_1_challenge_1, Res.string.number_1_challenge_2),
+            advice = Res.string.number_1_advice
         ),
         2 to NumberMeaning(
-            title = "Миротворец",
-            essence = "Число 2 отвечает за связь между людьми. Вы считываете настроение комнаты раньше, чем " +
-                "кто-то успевает заговорить, и почти инстинктивно ищете точку, где интересы сторон совпадают. " +
-                "Партнёрство для вас не компромисс, а естественная среда, в которой раскрываются лучшие " +
-                "качества.",
-            strengths = listOf(
-                "Эмпатия — вы чувствуете невысказанное и реагируете на него первыми",
-                "Дипломатичность: умеете сказать неудобную правду так, что её слышат",
-                "Терпение в выстраивании долгих, доверительных отношений"
-            ),
-            challenges = listOf(
-                "Растворение в чужих ожиданиях в ущерб собственным границам",
-                "Избегание конфликта даже там, где прямой разговор был бы полезнее"
-            ),
-            advice = "Гармония, которую вы создаёте для других, должна начинаться с вас самих. Прежде чем " +
-                "сглаживать чужой конфликт, спросите — а что в этой ситуации важно лично вам?"
+            title = Res.string.number_2_title,
+            essence = Res.string.number_2_essence,
+            strengths = listOf(Res.string.number_2_strength_1, Res.string.number_2_strength_2, Res.string.number_2_strength_3),
+            challenges = listOf(Res.string.number_2_challenge_1, Res.string.number_2_challenge_2),
+            advice = Res.string.number_2_advice
         ),
         3 to NumberMeaning(
-            title = "Голос",
-            essence = "Число 3 — про то, что рождается на стыке чувства и слова. Вам мало пережить впечатление — " +
-                "важно превратить его в историю, шутку, образ, которым можно поделиться. Энергия этого числа " +
-                "заразительна: рядом с вами люди чаще смеются и легче открываются.",
-            strengths = listOf(
-                "Природная выразительность — слово, звук или образ даются вам легче, чем большинству",
-                "Способность поднять настроение группе одним точным замечанием",
-                "Быстрая генерация идей — вы редко застреваете в творческом тупике"
-            ),
-            challenges = listOf(
-                "Распыление внимания между слишком многими идеями одновременно",
-                "Использование юмора как щита, когда стоило бы говорить серьёзно"
-            ),
-            advice = "Выберите одну идею и доведите её до конца, прежде чем увлекаться следующей. Ваш талант " +
-                "убеждать работает сильнее всего, когда за ним стоит завершённый результат, а не только замысел."
+            title = Res.string.number_3_title,
+            essence = Res.string.number_3_essence,
+            strengths = listOf(Res.string.number_3_strength_1, Res.string.number_3_strength_2, Res.string.number_3_strength_3),
+            challenges = listOf(Res.string.number_3_challenge_1, Res.string.number_3_challenge_2),
+            advice = Res.string.number_3_advice
         ),
         4 to NumberMeaning(
-            title = "Строитель",
-            essence = "Число 4 держит на себе то, что должно простоять долго. Там, где другие видят рутину, вы " +
-                "видите фундамент: систему, распорядок, договорённость, на которую можно опереться. Вам " +
-                "искренне спокойнее, когда понятно, из чего состоит следующий шаг.",
-            strengths = listOf(
-                "Надёжность — данное слово и взятое обязательство для вас не формальность",
-                "Способность превращать хаотичный замысел в работающую систему",
-                "Устойчивость в длинной дистанции, когда у других заканчивается запал"
-            ),
-            challenges = listOf(
-                "Сопротивление переменам даже тогда, когда старая система уже не работает",
-                "Риск спутать порядок с контролем и задушить чужую инициативу"
-            ),
-            advice = "Прочный фундамент — не то же самое, что неизменная конструкция. Периодически спрашивайте " +
-                "себя, служит ли ещё эта система цели, ради которой была построена, или держится по инерции."
+            title = Res.string.number_4_title,
+            essence = Res.string.number_4_essence,
+            strengths = listOf(Res.string.number_4_strength_1, Res.string.number_4_strength_2, Res.string.number_4_strength_3),
+            challenges = listOf(Res.string.number_4_challenge_1, Res.string.number_4_challenge_2),
+            advice = Res.string.number_4_advice
         ),
         5 to NumberMeaning(
-            title = "Странник",
-            essence = "Число 5 — это движение как способ познания. Вам нужно пробовать, а не читать инструкцию; " +
-                "видеть своими глазами, а не доверять чужому пересказу. Рутина забирает у вас энергию быстрее, " +
-                "чем любая физическая нагрузка.",
-            strengths = listOf(
-                "Адаптивность — вы осваиваетесь в новых обстоятельствах быстрее большинства",
-                "Живое любопытство, которое притягивает интересных людей и неожиданные возможности",
-                "Смелость менять курс, когда прежний путь перестал вести куда нужно"
-            ),
-            challenges = listOf(
-                "Сложности с доведением долгих проектов до финала",
-                "Импульсивные решения, о которых на следующий день думаешь иначе"
-            ),
-            advice = "Свобода не исчезает от одного постоянного обязательства — исчезает только иллюзия, что " +
-                "выбора больше нет. Найдите один проект или отношения, где готовы остаться, даже когда станет " +
-                "скучно, и наблюдайте, что откроется за этой границей."
+            title = Res.string.number_5_title,
+            essence = Res.string.number_5_essence,
+            strengths = listOf(Res.string.number_5_strength_1, Res.string.number_5_strength_2, Res.string.number_5_strength_3),
+            challenges = listOf(Res.string.number_5_challenge_1, Res.string.number_5_challenge_2),
+            advice = Res.string.number_5_advice
         ),
         6 to NumberMeaning(
-            title = "Хранитель",
-            essence = "Число 6 отвечает за заботу, которая ничего не просит взамен. Вы одним взглядом видите, " +
-                "кому в комнате сейчас нужна поддержка, и почти рефлекторно её предлагаете. Дом, семья, близкий " +
-                "круг — там, где вы чувствуете ответственность, вы выкладываетесь без остатка.",
-            strengths = listOf(
-                "Искренняя забота, которую окружающие чувствуют без слов",
-                "Способность создавать вокруг себя ощущение дома и стабильности",
-                "Верность обязательствам перед теми, кто вам дорог"
-            ),
-            challenges = listOf(
-                "Гиперответственность за чужие проблемы, которые вам не принадлежат",
-                "Забота о других в ущерб собственным потребностям"
-            ),
-            advice = "Забота, которая истощает вас, перестаёт быть подарком и становится долгом. Прежде чем " +
-                "снова взять на себя чужую ношу, честно спросите — просили ли вас об этом, или вы решили сами?"
+            title = Res.string.number_6_title,
+            essence = Res.string.number_6_essence,
+            strengths = listOf(Res.string.number_6_strength_1, Res.string.number_6_strength_2, Res.string.number_6_strength_3),
+            challenges = listOf(Res.string.number_6_challenge_1, Res.string.number_6_challenge_2),
+            advice = Res.string.number_6_advice
         ),
         7 to NumberMeaning(
-            title = "Искатель",
-            essence = "Число 7 не принимает объяснение на веру — ему нужно докопаться до сути самостоятельно. " +
-                "Вы можете часами сидеть с одним вопросом, если чувствуете, что за очевидным ответом прячется " +
-                "что-то настоящее. Одиночество для вас не наказание, а рабочий инструмент.",
-            strengths = listOf(
-                "Глубина анализа — вы видите закономерности там, где другие видят случайность",
-                "Развитая интуиция, которая часто опережает логические доводы",
-                "Независимость мышления: чужое мнение не заменяет вам собственный вывод"
-            ),
-            challenges = listOf(
-                "Отстранённость, которую окружающие иногда читают как холодность",
-                "Затягивание решения в поисках уже не нужной дополнительной ясности"
-            ),
-            advice = "Не всякий вопрос требует полного разбора перед тем, как действовать. Позвольте части " +
-                "решений оставаться основанными на интуиции — доверие к себе тоже форма знания."
+            title = Res.string.number_7_title,
+            essence = Res.string.number_7_essence,
+            strengths = listOf(Res.string.number_7_strength_1, Res.string.number_7_strength_2, Res.string.number_7_strength_3),
+            challenges = listOf(Res.string.number_7_challenge_1, Res.string.number_7_challenge_2),
+            advice = Res.string.number_7_advice
         ),
         8 to NumberMeaning(
-            title = "Управляющий",
-            essence = "Число 8 видит систему целиком — где деньги, влияние и усилия сходятся в результат. Вы " +
-                "мыслите масштабом: не \"как прожить этот месяц\", а \"как выстроить это на годы вперёд\". " +
-                "Амбиции для вас не порок, а честное признание, что вы способны на большее.",
-            strengths = listOf(
-                "Стратегическое мышление — вы видите на несколько ходов вперёд",
-                "Умение доводить крупные начинания до измеримого результата",
-                "Естественный авторитет в вопросах, где нужна твёрдая рука"
-            ),
-            challenges = listOf(
-                "Риск мерить собственную (и чужую) ценность исключительно результатом",
-                "Трудность остановиться и отдохнуть, пока цель не достигнута"
-            ),
-            advice = "Власть, которую вы умеете выстраивать вовне, стоит иногда направлять и на себя — на " +
-                "заботу о собственном ресурсе. Пустой бак ничего не построит, каким бы точным ни был план."
+            title = Res.string.number_8_title,
+            essence = Res.string.number_8_essence,
+            strengths = listOf(Res.string.number_8_strength_1, Res.string.number_8_strength_2, Res.string.number_8_strength_3),
+            challenges = listOf(Res.string.number_8_challenge_1, Res.string.number_8_challenge_2),
+            advice = Res.string.number_8_advice
         ),
         9 to NumberMeaning(
-            title = "Гуманист",
-            essence = "Число 9 завершает цикл от 1 до 9, и в этом — его суть: способность видеть общую картину " +
-                "и отпускать то, что её сдерживает. Вы редко делите людей на \"своих\" и \"чужих\" — сострадание " +
-                "у вас шире личных границ.",
-            strengths = listOf(
-                "Широта взглядов, свободная от мелкой личной выгоды",
-                "Способность прощать и отпускать там, где другие держатся за обиду",
-                "Вдохновляющее присутствие: рядом с вами люди задумываются о большем, чем быт"
-            ),
-            challenges = listOf(
-                "Идеализм, который сталкивается с разочарованием в конкретных людях",
-                "Сложности с завершением личных дел — тянет к общему, а не к частному"
-            ),
-            advice = "Забота о мире не отменяет необходимости позаботиться о себе и ближнем круге в первую " +
-                "очередь. Масштабные идеалы держатся крепче, если под ними — устроенная собственная жизнь."
+            title = Res.string.number_9_title,
+            essence = Res.string.number_9_essence,
+            strengths = listOf(Res.string.number_9_strength_1, Res.string.number_9_strength_2, Res.string.number_9_strength_3),
+            challenges = listOf(Res.string.number_9_challenge_1, Res.string.number_9_challenge_2),
+            advice = Res.string.number_9_advice
         ),
         11 to NumberMeaning(
-            title = "Мастер интуиции",
-            essence = "11 — первое мастер-число: удвоенная энергия единицы, обращённая внутрь. Вы улавливаете " +
-                "вещи, которые сложно объяснить логикой — предчувствие, атмосферу, невысказанное. Эта " +
-                "чувствительность — дар, но и источник перегрузки, если её не научиться заземлять.",
-            strengths = listOf(
-                "Обострённая интуиция, часто на грани с провидением",
-                "Способность вдохновлять людей самим своим присутствием",
-                "Восприимчивость к тонким деталям, которые другие пропускают"
-            ),
-            challenges = listOf(
-                "Эмоциональная перегрузка от избытка внешних впечатлений",
-                "Тревожность и самокритика, когда высокие внутренние стандарты не совпадают с реальностью"
-            ),
-            advice = "Мастер-число требует заземления не меньше, чем вдохновения. Найдите регулярную практику " +
-                "(тело, природа, тишина), которая возвращает вас из тонкого мира ощущений в опору настоящего момента."
+            title = Res.string.number_11_title,
+            essence = Res.string.number_11_essence,
+            strengths = listOf(Res.string.number_11_strength_1, Res.string.number_11_strength_2, Res.string.number_11_strength_3),
+            challenges = listOf(Res.string.number_11_challenge_1, Res.string.number_11_challenge_2),
+            advice = Res.string.number_11_advice
         ),
         22 to NumberMeaning(
-            title = "Мастер-строитель",
-            essence = "22 соединяет масштабное видение 11 со способностью 4 воплощать. Это число тех, кто " +
-                "способен задумать что-то по-настоящему крупное — и, в отличие от чистых мечтателей, реально " +
-                "довести это до формы, которую можно потрогать.",
-            strengths = listOf(
-                "Редкое сочетание большого видения и практической дисциплины",
-                "Способность организовать сложную систему людей и ресурсов вокруг одной цели",
-                "Наследие как естественная мотивация — вы строите на десятилетия, не на сезон"
-            ),
-            challenges = listOf(
-                "Давление собственных ожиданий — планка \"построить что-то великое\" утомляет",
-                "Риск утонуть в масштабе замысла и не начать с малого первого шага"
-            ),
-            advice = "Величайшие постройки начинаются с одного заложенного камня. Разбейте масштабный замысел " +
-                "на конкретный шаг этой недели — потенциал 22 раскрывается в действии, а не в замысле."
+            title = Res.string.number_22_title,
+            essence = Res.string.number_22_essence,
+            strengths = listOf(Res.string.number_22_strength_1, Res.string.number_22_strength_2, Res.string.number_22_strength_3),
+            challenges = listOf(Res.string.number_22_challenge_1, Res.string.number_22_challenge_2),
+            advice = Res.string.number_22_advice
         ),
         33 to NumberMeaning(
-            title = "Мастер-учитель",
-            essence = "33 — самое редкое мастер-число, соединение заботы 6 с масштабом мастер-чисел. Это " +
-                "энергия безусловного служения: не ради награды, а потому что забота о других органична для " +
-                "вас в самом широком смысле — не только о близких, но и о посторонних людях.",
-            strengths = listOf(
-                "Способность к безусловной, почти родительской заботе о широком круге людей",
-                "Природный дар объяснять сложное просто, вести и наставлять",
-                "Готовность нести ответственность там, где другие устраняются"
-            ),
-            challenges = listOf(
-                "Полное растворение в заботе о других до потери себя",
-                "Ощущение непосильного груза от масштаба взятой на себя ответственности"
-            ),
-            advice = "Учитель, который не заботится о себе, быстро теряет то, чем может делиться. Служение " +
-                "устойчиво только тогда, когда ваш собственный ресурс восполняется так же регулярно, как расходуется."
+            title = Res.string.number_33_title,
+            essence = Res.string.number_33_essence,
+            strengths = listOf(Res.string.number_33_strength_1, Res.string.number_33_strength_2, Res.string.number_33_strength_3),
+            challenges = listOf(Res.string.number_33_challenge_1, Res.string.number_33_challenge_2),
+            advice = Res.string.number_33_advice
         )
     )
 
     fun meaningFor(value: Int): NumberMeaning = meanings[value] ?: meanings.getValue(9)
-
-    fun descriptionFor(value: Int): String = meaningFor(value).essence
 }

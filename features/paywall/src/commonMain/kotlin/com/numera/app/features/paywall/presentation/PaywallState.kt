@@ -5,6 +5,22 @@ import com.numera.app.core.billing.SubscriptionProducts
 import com.numera.app.core.commonMain.components.NumeraGlyph
 import com.numera.app.features.paywall.presentation.model.PlanUi
 import com.numera.app.features.paywall.presentation.model.ValueItemUi
+import numera.features.paywall.generated.resources.Res
+import numera.features.paywall.generated.resources.plan_weekly_title
+import numera.features.paywall.generated.resources.plan_weekly_price
+import numera.features.paywall.generated.resources.plan_weekly_period
+import numera.features.paywall.generated.resources.plan_monthly_title
+import numera.features.paywall.generated.resources.plan_monthly_price
+import numera.features.paywall.generated.resources.plan_monthly_period
+import numera.features.paywall.generated.resources.plan_yearly_title
+import numera.features.paywall.generated.resources.plan_yearly_price
+import numera.features.paywall.generated.resources.plan_yearly_period
+import numera.features.paywall.generated.resources.plan_yearly_badge
+import numera.features.paywall.generated.resources.plan_yearly_per_day
+import numera.features.paywall.generated.resources.paywall_value_1
+import numera.features.paywall.generated.resources.paywall_value_2
+import numera.features.paywall.generated.resources.paywall_value_3
+import numera.features.paywall.generated.resources.paywall_value_4
 
 sealed interface PaywallState {
     @Stable
@@ -19,17 +35,17 @@ sealed interface PaywallState {
 }
 
 private val DEFAULT_PLANS = listOf(
-    PlanUi(SubscriptionProducts.WEEKLY, "Неделя", "699 ₽", "в неделю"),
-    PlanUi(SubscriptionProducts.MONTHLY, "Месяц", "1 190 ₽", "в месяц"),
+    PlanUi(SubscriptionProducts.WEEKLY, Res.string.plan_weekly_title, Res.string.plan_weekly_price, Res.string.plan_weekly_period),
+    PlanUi(SubscriptionProducts.MONTHLY, Res.string.plan_monthly_title, Res.string.plan_monthly_price, Res.string.plan_monthly_period),
     PlanUi(
-        SubscriptionProducts.YEARLY, "Год", "4 990 ₽", "в год",
-        badge = "Выгоднее всего", perDayNote = "≈ 14 ₽ в день"
+        SubscriptionProducts.YEARLY, Res.string.plan_yearly_title, Res.string.plan_yearly_price, Res.string.plan_yearly_period,
+        badgeRes = Res.string.plan_yearly_badge, perDayNoteRes = Res.string.plan_yearly_per_day
     )
 )
 
 private val DEFAULT_VALUE_ITEMS = listOf(
-    ValueItemUi(NumeraGlyph.Spiral, "Число души, личности и ещё 6 расчётов"),
-    ValueItemUi(NumeraGlyph.Sun, "Новый персональный разбор каждый день"),
-    ValueItemUi(NumeraGlyph.Duality, "Совместимость с близкими"),
-    ValueItemUi(NumeraGlyph.Calendar, "Личный календарь энергии на каждый день")
+    ValueItemUi(NumeraGlyph.Spiral, Res.string.paywall_value_1),
+    ValueItemUi(NumeraGlyph.Sun, Res.string.paywall_value_2),
+    ValueItemUi(NumeraGlyph.Duality, Res.string.paywall_value_3),
+    ValueItemUi(NumeraGlyph.Calendar, Res.string.paywall_value_4)
 )

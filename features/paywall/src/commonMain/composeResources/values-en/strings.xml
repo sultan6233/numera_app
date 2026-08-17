@@ -1,0 +1,22 @@
+﻿<resources>
+    <string name="paywall_headline">This is your map. We've revealed two of your nine numbers.</string>
+    <string name="paywall_value_1">Soul and Personality numbers, plus 6 more calculations</string>
+    <string name="paywall_value_2">A new personal reading every day</string>
+    <string name="paywall_value_3">Compatibility with your loved ones</string>
+    <string name="paywall_value_4">A personal energy calendar for every day</string>
+    <string name="plan_weekly_title">Week</string>
+    <string name="plan_weekly_price">$4.99</string>
+    <string name="plan_weekly_period">per week</string>
+    <string name="plan_monthly_title">Month</string>
+    <string name="plan_monthly_price">$12.99</string>
+    <string name="plan_monthly_period">per month</string>
+    <string name="plan_yearly_title">Year</string>
+    <string name="plan_yearly_price">$39.99</string>
+    <string name="plan_yearly_period">per year</string>
+    <string name="plan_yearly_badge">Best value</string>
+    <string name="plan_yearly_per_day">≈ $0.11 a day</string>
+    <string name="restore_purchases">Restore purchases</string>
+    <string name="continue_free">Continue for free</string>
+    <string name="paywall_cta_reveal">Unlock the other 8 numbers</string>
+    <string name="paywall_continue">Continue</string>
+</resources>

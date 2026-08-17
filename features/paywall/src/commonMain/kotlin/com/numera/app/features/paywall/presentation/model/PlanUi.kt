@@ -1,10 +1,12 @@
 package com.numera.app.features.paywall.presentation.model
 
+import org.jetbrains.compose.resources.StringResource
+
 data class PlanUi(
     val productId: String,
-    val title: String,
-    val price: String,
-    val period: String,
-    val badge: String? = null,
-    val perDayNote: String? = null
+    val titleRes: StringResource,
+    val priceRes: StringResource,
+    val periodRes: StringResource,
+    val badgeRes: StringResource? = null,
+    val perDayNoteRes: StringResource? = null
 )

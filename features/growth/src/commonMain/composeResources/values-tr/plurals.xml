@@ -1,0 +1,8 @@
+﻿<resources>
+    <plurals name="streak_days">
+        <item quantity="other">%1$d gün üst üste</item>
+    </plurals>
+    <plurals name="mood_entries">
+        <item quantity="other">%1$d kayıt</item>
+    </plurals>
+</resources>

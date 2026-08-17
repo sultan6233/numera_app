@@ -22,6 +22,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.numera.app.core.commonMain.components.DefaultNumeraButton
 import com.numera.app.core.commonMain.components.DefaultNumeraOutlinedButton
+import org.jetbrains.compose.resources.stringResource
+import numera.features.profile.generated.resources.Res
+import numera.features.profile.generated.resources.subscription_active
+import numera.features.profile.generated.resources.free_version
+import numera.features.profile.generated.resources.subscribe_button
+import numera.features.profile.generated.resources.restore_purchases
+import numera.features.profile.generated.resources.notifications_label
 
 @Composable
 fun ProfileScreen(state: ProfileState, onAction: (ProfileAction) -> Unit, snackbarHostState: SnackbarHostState) {
@@ -32,17 +39,17 @@ fun ProfileScreen(state: ProfileState, onAction: (ProfileAction) -> Unit, snackb
                 Text(text = state.birthDateText, fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 Spacer(modifier = Modifier.height(24.dp))
                 Text(
-                    text = if (state.subscribed) "Подписка активна" else "Бесплатная версия",
+                    text = if (state.subscribed) stringResource(Res.string.subscription_active) else stringResource(Res.string.free_version),
                     fontSize = 15.sp,
                     color = MaterialTheme.colorScheme.onBackground
                 )
                 Spacer(modifier = Modifier.height(12.dp))
                 if (!state.subscribed) {
-                    DefaultNumeraButton(text = "Оформить подписку", onClick = { onAction(ProfileAction.OnUpgradeClick) })
+                    DefaultNumeraButton(text = stringResource(Res.string.subscribe_button), onClick = { onAction(ProfileAction.OnUpgradeClick) })
                     Spacer(modifier = Modifier.height(8.dp))
                 }
                 DefaultNumeraOutlinedButton(
-                    text = "Восстановить покупки",
+                    text = stringResource(Res.string.restore_purchases),
                     onClick = { onAction(ProfileAction.OnRestoreClick) }
                 )
                 Spacer(modifier = Modifier.height(24.dp))
@@ -51,7 +58,7 @@ fun ProfileScreen(state: ProfileState, onAction: (ProfileAction) -> Unit, snackb
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text(text = "Уведомления", fontSize = 15.sp, color = MaterialTheme.colorScheme.onBackground)
+                    Text(text = stringResource(Res.string.notifications_label), fontSize = 15.sp, color = MaterialTheme.colorScheme.onBackground)
                     Switch(
                         checked = state.notificationsEnabled,
                         onCheckedChange = { onAction(ProfileAction.OnNotificationsToggled(it)) }

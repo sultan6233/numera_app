@@ -1,0 +1,62 @@
+﻿<resources>
+    <string name="tab_habits">Habits</string>
+    <string name="tab_mood">Mood</string>
+    <string name="habit_today_insight">Day number %1$d: %2$s</string>
+    <string name="new_habit_placeholder">New habit</string>
+    <string name="add_button">Add</string>
+    <string name="swipe_hint_habits">Swipe a card left to delete</string>
+    <string name="delete_habit_title">Delete habit?</string>
+    <string name="delete_habit_text">"%1$s" will be deleted along with its completion history.</string>
+    <string name="editing_mood_entry">Editing entry</string>
+    <string name="mood_note_placeholder">What affected your mood today?</string>
+    <string name="update_button">Update</string>
+    <string name="save_button">Save</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="swipe_hint_mood">Tap an entry to edit — swipe left to delete</string>
+    <string name="delete_mood_title">Delete entry?</string>
+    <string name="delete_mood_text">This mood entry will be permanently deleted.</string>
+    <string name="mood_trend_title">Mood over the last 14 days</string>
+    <string name="delete_action">Delete</string>
+    <string name="weekly_summary">Over the last 7 days: on average %1$s — %2$s (%3$s).</string>
+    <string name="mood_insight">It looks like days with Personal Day %1$d tend to go better for you — you log a good mood noticeably more often than usual.</string>
+    <string name="score_label_1">tough</string>
+    <string name="score_label_2">meh</string>
+    <string name="score_label_3">okay</string>
+    <string name="score_label_4">good</string>
+    <string name="score_label_5">great</string>
+
+    <string name="tag_work">Work</string>
+    <string name="tag_relationships">Relationships</string>
+    <string name="tag_health">Health</string>
+    <string name="tag_sleep">Sleep</string>
+    <string name="tag_money">Money</string>
+    <string name="tag_weather">Weather</string>
+    <string name="tag_sport">Sport</string>
+    <string name="tag_rest">Rest</string>
+
+    <string name="habit_suggestion_1">A good day to start a new habit — no guarantee it sticks, but the first step comes easier today.</string>
+    <string name="habit_suggestion_2">A day for habits you do together with someone — partnership works better than a solo effort.</string>
+    <string name="habit_suggestion_3">A good time for habits tied to self-expression — journaling, creativity, conversation.</string>
+    <string name="habit_suggestion_4">A day of discipline — perfect for closing out the habits you usually put off.</string>
+    <string name="habit_suggestion_5">Routine feels especially heavy today — don't blame yourself if you slip, just come back tomorrow.</string>
+    <string name="habit_suggestion_6">A good day for habits tied to caring for home or loved ones.</string>
+    <string name="habit_suggestion_7">Today suits reflection more than new commitments — don't be hard on yourself if you don't get it all done.</string>
+    <string name="habit_suggestion_8">A good day for habits tied to money and getting your affairs in order.</string>
+    <string name="habit_suggestion_9">A day to finish or reconsider a habit that no longer serves its purpose.</string>
+    <string name="habit_suggestion_11">Heightened sensitivity today — a good time for grounding practices.</string>
+    <string name="habit_suggestion_22">A rare day for habits you're building for years to come — don't spend it on small stuff.</string>
+    <string name="habit_suggestion_33">A day when caring for others comes especially naturally — but there's room for a habit of caring for yourself too.</string>
+
+    <string name="month_short_1">Jan</string>
+    <string name="month_short_2">Feb</string>
+    <string name="month_short_3">Mar</string>
+    <string name="month_short_4">Apr</string>
+    <string name="month_short_5">May</string>
+    <string name="month_short_6">Jun</string>
+    <string name="month_short_7">Jul</string>
+    <string name="month_short_8">Aug</string>
+    <string name="month_short_9">Sep</string>
+    <string name="month_short_10">Oct</string>
+    <string name="month_short_11">Nov</string>
+    <string name="month_short_12">Dec</string>
+</resources>

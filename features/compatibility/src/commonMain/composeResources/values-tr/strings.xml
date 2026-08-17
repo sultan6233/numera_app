@@ -1,0 +1,19 @@
+<resources>
+    <string name="compatibility_title">Uyum</string>
+    <string name="add_person_button">Kişi ekle</string>
+    <string name="save_button">Kaydet</string>
+    <string name="cancel_button">İptal</string>
+    <string name="new_person_title">Yeni Kişi</string>
+    <string name="name_placeholder">İsim</string>
+    <string name="day_placeholder">GG</string>
+    <string name="month_placeholder">AA</string>
+    <string name="year_placeholder">YYYY</string>
+    <string name="you_and_label">Siz ve %1$s</string>
+    <string name="compat_life_path">Yaşam Yolu</string>
+    <string name="compat_expression">İfade</string>
+    <string name="compat_soul_urge">Ruh</string>
+    <string name="compat_personality">Kişilik</string>
+    <string name="compat_label_strong">Güçlü uyum</string>
+    <string name="compat_label_good">İyi uyum</string>
+    <string name="compat_label_needs_work">İlişki üzerinde çalışma gerekiyor</string>
+</resources>

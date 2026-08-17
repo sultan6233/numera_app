@@ -1,0 +1,19 @@
+<resources>
+    <string name="compatibility_title">Compatibilità</string>
+    <string name="add_person_button">Aggiungi persona</string>
+    <string name="save_button">Salva</string>
+    <string name="cancel_button">Annulla</string>
+    <string name="new_person_title">Nuova persona</string>
+    <string name="name_placeholder">Nome</string>
+    <string name="day_placeholder">GG</string>
+    <string name="month_placeholder">MM</string>
+    <string name="year_placeholder">AAAA</string>
+    <string name="you_and_label">Tu e %1$s</string>
+    <string name="compat_life_path">Percorso di Vita</string>
+    <string name="compat_expression">Espressione</string>
+    <string name="compat_soul_urge">Anima</string>
+    <string name="compat_personality">Personalità</string>
+    <string name="compat_label_strong">Forte compatibilità</string>
+    <string name="compat_label_good">Buona compatibilità</string>
+    <string name="compat_label_needs_work">La relazione richiede lavoro</string>
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="back">Назад</string>
+    <string name="tab_today">Сьогодні</string>
+    <string name="tab_numbers">Числа</string>
+    <string name="tab_calendar">Календар</string>
+    <string name="tab_growth">Розвиток</string>
+    <string name="tab_profile">Профіль</string>
+</resources>

@@ -1,34 +1,57 @@
 package com.numera.app.features.numbers.domain
 
+import org.jetbrains.compose.resources.getString
+import numera.features.numbers.generated.resources.Res
+import numera.features.numbers.generated.resources.pinnacle_theme_0
+import numera.features.numbers.generated.resources.pinnacle_theme_1
+import numera.features.numbers.generated.resources.pinnacle_theme_2
+import numera.features.numbers.generated.resources.pinnacle_theme_3
+import numera.features.numbers.generated.resources.pinnacle_theme_4
+import numera.features.numbers.generated.resources.pinnacle_theme_5
+import numera.features.numbers.generated.resources.pinnacle_theme_6
+import numera.features.numbers.generated.resources.pinnacle_theme_7
+import numera.features.numbers.generated.resources.pinnacle_theme_8
+import numera.features.numbers.generated.resources.pinnacle_theme_9
+import numera.features.numbers.generated.resources.challenge_theme_0
+import numera.features.numbers.generated.resources.challenge_theme_1
+import numera.features.numbers.generated.resources.challenge_theme_2
+import numera.features.numbers.generated.resources.challenge_theme_3
+import numera.features.numbers.generated.resources.challenge_theme_4
+import numera.features.numbers.generated.resources.challenge_theme_5
+import numera.features.numbers.generated.resources.challenge_theme_6
+import numera.features.numbers.generated.resources.challenge_theme_7
+import numera.features.numbers.generated.resources.challenge_theme_8
+import numera.features.numbers.generated.resources.challenge_theme_9
+
 /** Short opportunity/obstacle framing for Pinnacle and Challenge numbers - distinct from
  *  NumberMeanings, which describes identity traits rather than a life stage's theme. */
 object LifeCycleMeanings {
     private val pinnacleThemes = mapOf(
-        0 to "Пик открытых возможностей — путь не предопределён жёстко, выбор становится вашим главным инструментом.",
-        1 to "Пик независимости и инициативы — время начинать своё, не оглядываясь на чужой пример.",
-        2 to "Пик партнёрства — успех приходит через союзы, а не в одиночку.",
-        3 to "Пик самовыражения — благоприятное время для творчества и публичности.",
-        4 to "Пик труда — то, что вы построите методично, продержится долго.",
-        5 to "Пик перемен — новые возможности приходят через готовность рисковать и меняться.",
-        6 to "Пик ответственности — в фокусе семья, дом, забота о близких.",
-        7 to "Пик внутреннего роста — время для анализа, обучения, специализации.",
-        8 to "Пик достижений — усилия конвертируются в статус и деньги.",
-        9 to "Пик завершения — время подводить итоги и передавать накопленный опыт дальше."
+        0 to Res.string.pinnacle_theme_0,
+        1 to Res.string.pinnacle_theme_1,
+        2 to Res.string.pinnacle_theme_2,
+        3 to Res.string.pinnacle_theme_3,
+        4 to Res.string.pinnacle_theme_4,
+        5 to Res.string.pinnacle_theme_5,
+        6 to Res.string.pinnacle_theme_6,
+        7 to Res.string.pinnacle_theme_7,
+        8 to Res.string.pinnacle_theme_8,
+        9 to Res.string.pinnacle_theme_9
     )
 
     private val challengeThemes = mapOf(
-        0 to "Вызов выбора — способностей много, и главная сложность не в том, чтобы найти дар, а в том, чтобы не распылить его.",
-        1 to "Вызов самостоятельности — учиться доверять собственным решениям, не оглядываясь на других.",
-        2 to "Вызов чувствительности — тонкая грань между чуткостью к другим и растворением в их ожиданиях.",
-        3 to "Вызов рассеянности — начинать легче, чем доводить до конца.",
-        4 to "Вызов дисциплины — рутина ощущается тяжелее, чем есть на самом деле, но без неё результат не держится.",
-        5 to "Вызов избыточной свободы — соблазн менять курс раньше, чем он успевает принести плоды.",
-        6 to "Вызов гиперответственности — забота о других легко переходит в жертву собственными границами.",
-        7 to "Вызов доверия — склонность анализировать вместо того, чтобы открыться и поверить.",
-        8 to "Вызов баланса — власть и деньги легко становятся мерилом собственной ценности вместо инструмента.",
-        9 to "Вызов отпускания — сложно завершать этапы и прощаться с тем, что уже сыграло свою роль."
+        0 to Res.string.challenge_theme_0,
+        1 to Res.string.challenge_theme_1,
+        2 to Res.string.challenge_theme_2,
+        3 to Res.string.challenge_theme_3,
+        4 to Res.string.challenge_theme_4,
+        5 to Res.string.challenge_theme_5,
+        6 to Res.string.challenge_theme_6,
+        7 to Res.string.challenge_theme_7,
+        8 to Res.string.challenge_theme_8,
+        9 to Res.string.challenge_theme_9
     )
 
-    fun pinnacleTheme(number: Int): String = pinnacleThemes[number] ?: pinnacleThemes.getValue(0)
-    fun challengeTheme(number: Int): String = challengeThemes[number] ?: challengeThemes.getValue(0)
+    suspend fun pinnacleTheme(number: Int): String = getString(pinnacleThemes[number] ?: pinnacleThemes.getValue(0))
+    suspend fun challengeTheme(number: Int): String = getString(challengeThemes[number] ?: challengeThemes.getValue(0))
 }

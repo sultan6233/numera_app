@@ -33,15 +33,23 @@ import com.numera.app.core.commonMain.Primary
 import com.numera.app.core.commonMain.PrimarySoft
 import com.numera.app.core.commonMain.Profile
 import com.numera.app.core.commonMain.Surface
+import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.stringResource
+import numera.core.designsystem.generated.resources.Res
+import numera.core.designsystem.generated.resources.tab_today
+import numera.core.designsystem.generated.resources.tab_numbers
+import numera.core.designsystem.generated.resources.tab_calendar
+import numera.core.designsystem.generated.resources.tab_growth
+import numera.core.designsystem.generated.resources.tab_profile
 
-private data class BottomBarTab(val route: NavKey, val glyph: NumeraGlyph, val label: String)
+private data class BottomBarTab(val route: NavKey, val glyph: NumeraGlyph, val labelRes: StringResource)
 
 private val TABS = listOf(
-    BottomBarTab(Home, NumeraGlyph.Sun, "Сегодня"),
-    BottomBarTab(Numbers, NumeraGlyph.Grid, "Числа"),
-    BottomBarTab(CalendarEnergy, NumeraGlyph.Calendar, "Календарь"),
-    BottomBarTab(Growth, NumeraGlyph.Sprout, "Рост"),
-    BottomBarTab(Profile, NumeraGlyph.Person, "Профиль")
+    BottomBarTab(Home, NumeraGlyph.Sun, Res.string.tab_today),
+    BottomBarTab(Numbers, NumeraGlyph.Grid, Res.string.tab_numbers),
+    BottomBarTab(CalendarEnergy, NumeraGlyph.Calendar, Res.string.tab_calendar),
+    BottomBarTab(Growth, NumeraGlyph.Sprout, Res.string.tab_growth),
+    BottomBarTab(Profile, NumeraGlyph.Person, Res.string.tab_profile)
 )
 
 @Composable
@@ -92,7 +100,7 @@ private fun BottomBarItem(tab: BottomBarTab, selected: Boolean, onClick: () -> U
     ) {
         NumeraIcon(glyph = tab.glyph, tint = if (selected) Primary else Muted, size = 20.dp)
         Text(
-            text = tab.label,
+            text = stringResource(tab.labelRes),
             color = if (selected) OnBackground else Muted,
             fontSize = 11.sp,
             fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Normal

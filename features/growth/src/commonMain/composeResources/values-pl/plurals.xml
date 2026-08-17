@@ -1,0 +1,14 @@
+﻿<resources>
+    <plurals name="streak_days">
+        <item quantity="one">%1$d dzień z rzędu</item>
+        <item quantity="few">%1$d dni z rzędu</item>
+        <item quantity="many">%1$d dni z rzędu</item>
+        <item quantity="other">%1$d dnia z rzędu</item>
+    </plurals>
+    <plurals name="mood_entries">
+        <item quantity="one">%1$d wpis</item>
+        <item quantity="few">%1$d wpisy</item>
+        <item quantity="many">%1$d wpisów</item>
+        <item quantity="other">%1$d wpisu</item>
+    </plurals>
+</resources>

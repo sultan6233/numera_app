@@ -22,6 +22,18 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.getString
+import numera.features.numbers.generated.resources.Res
+import numera.features.numbers.generated.resources.number_life_path
+import numera.features.numbers.generated.resources.number_expression
+import numera.features.numbers.generated.resources.number_soul_urge
+import numera.features.numbers.generated.resources.number_personality
+import numera.features.numbers.generated.resources.number_health
+import numera.features.numbers.generated.resources.number_business
+import numera.features.numbers.generated.resources.number_maturity
+import numera.features.numbers.generated.resources.number_hidden_passion
+import numera.features.numbers.generated.resources.number_cornerstone
+import numera.features.numbers.generated.resources.number_capstone
 
 @Inject
 class NumbersViewModel(
@@ -79,28 +91,28 @@ class NumbersViewModel(
                 val subscribed = subscriptionState is SubscriptionState.Subscribed
                 val numbers = PythagoreanCalculator.allNumbers(profile)
                 val cards = listOf(
-                    NumberCardUi(NumberType.LIFE_PATH, "Число жизненного пути", numbers.lifePath, locked = false),
-                    NumberCardUi(NumberType.EXPRESSION, "Число судьбы", numbers.expression, locked = false),
-                    NumberCardUi(NumberType.SOUL_URGE, "Число души", numbers.soulUrge, locked = !subscribed),
-                    NumberCardUi(NumberType.PERSONALITY, "Число личности", numbers.personality, locked = !subscribed),
-                    NumberCardUi(NumberType.HEALTH, "Код здоровья", numbers.healthCode, locked = !subscribed),
-                    NumberCardUi(NumberType.BUSINESS, "Код бизнеса", numbers.businessCode, locked = !subscribed),
-                    NumberCardUi(NumberType.MATURITY, "Число зрелости", AdvancedNumerology.maturityNumber(profile), locked = !subscribed),
+                    NumberCardUi(NumberType.LIFE_PATH, getString(Res.string.number_life_path), numbers.lifePath, locked = false),
+                    NumberCardUi(NumberType.EXPRESSION, getString(Res.string.number_expression), numbers.expression, locked = false),
+                    NumberCardUi(NumberType.SOUL_URGE, getString(Res.string.number_soul_urge), numbers.soulUrge, locked = !subscribed),
+                    NumberCardUi(NumberType.PERSONALITY, getString(Res.string.number_personality), numbers.personality, locked = !subscribed),
+                    NumberCardUi(NumberType.HEALTH, getString(Res.string.number_health), numbers.healthCode, locked = !subscribed),
+                    NumberCardUi(NumberType.BUSINESS, getString(Res.string.number_business), numbers.businessCode, locked = !subscribed),
+                    NumberCardUi(NumberType.MATURITY, getString(Res.string.number_maturity), AdvancedNumerology.maturityNumber(profile), locked = !subscribed),
                     NumberCardUi(
                         NumberType.HIDDEN_PASSION,
-                        "Скрытая страсть",
+                        getString(Res.string.number_hidden_passion),
                         AdvancedNumerology.hiddenPassionNumber(profile.fullName),
                         locked = !subscribed
                     ),
                     NumberCardUi(
                         NumberType.CORNERSTONE,
-                        "Краеугольный камень",
+                        getString(Res.string.number_cornerstone),
                         AdvancedNumerology.cornerstoneNumber(profile.fullName),
                         locked = !subscribed
                     ),
                     NumberCardUi(
                         NumberType.CAPSTONE,
-                        "Завершающий камень",
+                        getString(Res.string.number_capstone),
                         AdvancedNumerology.capstoneNumber(profile.fullName),
                         locked = !subscribed
                     )

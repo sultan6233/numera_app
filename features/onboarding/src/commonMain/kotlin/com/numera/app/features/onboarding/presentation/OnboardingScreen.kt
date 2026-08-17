@@ -25,6 +25,19 @@ import androidx.compose.ui.unit.sp
 import com.numera.app.core.commonMain.components.DefaultNumeraButton
 import com.numera.app.core.commonMain.components.NumberWheel
 import com.numera.app.core.commonMain.displayFontFamily
+import org.jetbrains.compose.resources.stringResource
+import numera.features.onboarding.generated.resources.Res
+import numera.features.onboarding.generated.resources.onboarding_name_question
+import numera.features.onboarding.generated.resources.onboarding_full_name
+import numera.features.onboarding.generated.resources.next
+import numera.features.onboarding.generated.resources.onboarding_birth_date_title
+import numera.features.onboarding.generated.resources.day_placeholder
+import numera.features.onboarding.generated.resources.month_placeholder
+import numera.features.onboarding.generated.resources.year_placeholder
+import numera.features.onboarding.generated.resources.calculate
+import numera.features.onboarding.generated.resources.calculating_profile
+import numera.features.onboarding.generated.resources.life_path_number_label
+import numera.features.onboarding.generated.resources.see_full_picture
 
 @Composable
 fun OnboardingScreen(state: OnboardingState, onAction: (OnboardingAction) -> Unit) {
@@ -52,7 +65,7 @@ private fun NameStep(name: String, onAction: (OnboardingAction) -> Unit) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Как вас зовут?",
+            text = stringResource(Res.string.onboarding_name_question),
             fontFamily = displayFontFamily(),
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
@@ -63,11 +76,11 @@ private fun NameStep(name: String, onAction: (OnboardingAction) -> Unit) {
             modifier = Modifier.fillMaxWidth(),
             value = name,
             onValueChange = { onAction(OnboardingAction.OnNameChanged(it)) },
-            placeholder = { Text("Полное имя") }
+            placeholder = { Text(stringResource(Res.string.onboarding_full_name)) }
         )
         Spacer(modifier = Modifier.height(24.dp))
         DefaultNumeraButton(
-            text = "Далее",
+            text = stringResource(Res.string.next),
             enabled = name.isNotBlank(),
             onClick = { onAction(OnboardingAction.OnNameNext) }
         )
@@ -82,7 +95,7 @@ private fun BirthDateStep(state: OnboardingState.Content, onAction: (OnboardingA
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Дата рождения",
+            text = stringResource(Res.string.onboarding_birth_date_title),
             fontFamily = displayFontFamily(),
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
@@ -94,24 +107,24 @@ private fun BirthDateStep(state: OnboardingState.Content, onAction: (OnboardingA
                 modifier = Modifier.width(80.dp),
                 value = state.day,
                 onValueChange = { onAction(OnboardingAction.OnDayChanged(it)) },
-                placeholder = { Text("ДД") }
+                placeholder = { Text(stringResource(Res.string.day_placeholder)) }
             )
             OutlinedTextField(
                 modifier = Modifier.width(80.dp),
                 value = state.month,
                 onValueChange = { onAction(OnboardingAction.OnMonthChanged(it)) },
-                placeholder = { Text("ММ") }
+                placeholder = { Text(stringResource(Res.string.month_placeholder)) }
             )
             OutlinedTextField(
                 modifier = Modifier.width(110.dp),
                 value = state.year,
                 onValueChange = { onAction(OnboardingAction.OnYearChanged(it)) },
-                placeholder = { Text("ГГГГ") }
+                placeholder = { Text(stringResource(Res.string.year_placeholder)) }
             )
         }
         Spacer(modifier = Modifier.height(24.dp))
         DefaultNumeraButton(
-            text = "Рассчитать",
+            text = stringResource(Res.string.calculate),
             onClick = { onAction(OnboardingAction.OnBirthDateNext) }
         )
     }
@@ -127,7 +140,7 @@ private fun CalculatingStep() {
         CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
         Spacer(modifier = Modifier.height(16.dp))
         Text(
-            text = "Рассчитываем ваш профиль…",
+            text = stringResource(Res.string.calculating_profile),
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             fontSize = 14.sp
         )
@@ -152,13 +165,13 @@ private fun TeaserStep(lifePath: Int?, onAction: (OnboardingAction) -> Unit) {
         }
         Spacer(modifier = Modifier.height(12.dp))
         Text(
-            text = "Ваше число жизненного пути",
+            text = stringResource(Res.string.life_path_number_label),
             fontSize = 15.sp,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
         Spacer(modifier = Modifier.height(28.dp))
         DefaultNumeraButton(
-            text = "Узнать полную картину",
+            text = stringResource(Res.string.see_full_picture),
             onClick = { onAction(OnboardingAction.OnContinueClick) }
         )
     }

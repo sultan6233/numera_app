@@ -11,6 +11,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.getString
+import numera.features.profile.generated.resources.Res
+import numera.features.profile.generated.resources.purchases_restored
 
 @Inject
 class ProfileViewModel(
@@ -45,7 +48,7 @@ class ProfileViewModel(
             subscribed = billingClient.subscriptionState.value is SubscriptionState.Subscribed
         )
         result.onFailure { _event.emit(ProfileEvent.ShowMessage(it.message.orEmpty())) }
-        result.onSuccess { _event.emit(ProfileEvent.ShowMessage("Покупки восстановлены")) }
+        result.onSuccess { _event.emit(ProfileEvent.ShowMessage(getString(Res.string.purchases_restored))) }
     }
 
     private fun load() {

@@ -1,0 +1,222 @@
+﻿<resources>
+    <string name="your_map_title">Haritanız</string>
+    <string name="tool_karmic_analysis">Karmik Analiz</string>
+    <string name="tool_life_cycles">Yaşam Döngüleri</string>
+    <string name="tool_numerology_tools">Numeroloji Araçları</string>
+    <string name="compatibility_with_loved_ones">Sevdiklerinizle uyum</string>
+    <string name="personal_year_label">Kişisel Yıl</string>
+    <string name="personal_month_label">Kişisel Ay</string>
+    <string name="lucky_numbers_label">Şanslı sayılar: %1$s</string>
+    <string name="lucky_color_label">Renk: %1$s</string>
+    <string name="number_life_path">Yaşam Yolu sayısı</string>
+    <string name="number_expression">İfade sayısı</string>
+    <string name="number_soul_urge">Ruh sayısı</string>
+    <string name="number_personality">Kişilik sayısı</string>
+    <string name="number_health">Sağlık kodu</string>
+    <string name="number_business">İş kodu</string>
+    <string name="number_maturity">Olgunluk sayısı</string>
+    <string name="number_hidden_passion">Gizli Tutku sayısı</string>
+    <string name="number_cornerstone">Temel Taşı</string>
+    <string name="number_capstone">Kapak Taşı</string>
+    <string name="number_generic">Sayı</string>
+    <string name="age_and_older">%1$d yaş ve üzeri</string>
+    <string name="age_range">%1$d–%2$d yaş</string>
+    <string name="strengths_label">Güçlü yönler</string>
+    <string name="growth_points_label">Gelişim alanları</string>
+    <string name="how_to_use_label">Bunu nasıl kullanmalı</string>
+    <string name="karmic_analysis_title">Karmik Analiz</string>
+    <string name="karmic_debts_label">Karmik Borçlar</string>
+    <string name="no_karmic_debts">Aktif karmik borç bulunamadı — bu alandaki yolunuz sert sınavlar olmadan şekillenmiş.</string>
+    <string name="karmic_lessons_label">Karmik Dersler</string>
+    <string name="karmic_lessons_description">Adınızın harflerinde eksik olan sayılar — varsayılan olarak verilmeyen ve bilinçli pratik gerektiren nitelikler.</string>
+    <string name="no_karmic_lessons">Adınızda 1'den 9'a kadar tüm sayılar mevcut — nadir ve dengeli bir set.</string>
+    <string name="life_cycles_title">Yaşam Döngüleri</string>
+    <string name="life_cycles_description">Kendine has bir güç noktası (Zirve) ve kendine has bir zorluğu (Meydan Okuma) olan dört yaş evresi.</string>
+    <string name="pinnacle_label">Zirve</string>
+    <string name="challenge_label">Meydan Okuma</string>
+    <string name="numerology_tools_title">Numeroloji Araçları</string>
+    <string name="numerology_tools_description">Kişisel isim için kullanılan aynı tablolarla bir işletme adı, adres veya telefon numarası için sayı hesaplayın.</string>
+    <string name="mode_name_business">İsim / İşletme</string>
+    <string name="mode_phone_address">Telefon / Adres</string>
+    <string name="name_example_placeholder">Örn. Papatya</string>
+    <string name="phone_example_placeholder">Örn. +90 500 123 45 67</string>
+    <string name="calculate">Hesapla</string>
+
+    <string name="color_red">Kırmızı</string>
+    <string name="color_orange">Turuncu</string>
+    <string name="color_yellow">Sarı</string>
+    <string name="color_green">Yeşil</string>
+    <string name="color_blue">Mavi</string>
+    <string name="color_indigo">Çivit mavisi</string>
+    <string name="color_violet">Mor</string>
+    <string name="color_brown">Kahverengi</string>
+    <string name="color_gold">Altın</string>
+    <string name="color_silver">Gümüş</string>
+    <string name="color_emerald">Zümrüt</string>
+    <string name="color_white">Beyaz</string>
+
+    <string name="number_1_title">Öncü</string>
+    <string name="number_1_essence">1 sayısı başlangıçların enerjisidir. İzin beklemezsiniz ve çiğnenmiş yoldan gitmeyi sevmezsiniz: başkalarının engel gördüğü yerde siz ilk deneme fırsatı görürsünüz. Bu bağımsızlık inatçılık değil, başkalarının tavsiyesinden değil kendi deneyiminizden daha hızlı öğrenmenin bir yoludur.</string>
+    <string name="number_1_strength_1">Kararlılık — harekete geçmek gerektiğinde nadiren düşünceye takılıp kalırsınız</string>
+    <string name="number_1_strength_2">Doğal liderlik: sergilemeseniz bile insanlar özgüveninizin arkasında toplanır</string>
+    <string name="number_1_strength_3">Başkalarının risk almaktan korktuğu yerde sıfırdan başlayabilme yeteneği</string>
+    <string name="number_1_challenge_1">Başkalarının temposuna sabırsızlık — daha yavaş olanları küçümsemek kolaydır</string>
+    <string name="number_1_challenge_2">Devretmekte zorlanma: açıklamaktansa kendin yapmak daha kolay gelir</string>
+    <string name="number_1_advice">Gücünüz ilk adımda, her şeyi tek başınıza sonuna kadar götürmekte değil. Proje başladıktan sonra bayrağı devretmeyi öğrenin — bu bir sonraki başlangıç için enerji açığa çıkarır.</string>
+
+    <string name="number_2_title">Barış Yapıcı</string>
+    <string name="number_2_essence">2 sayısı insanlar arasındaki bağı yönetir. Kimse konuşmadan bir odanın havasını okursunuz ve neredeyse içgüdüsel olarak tarafların çıkarlarının örtüştüğü noktayı bulursunuz. Ortaklık sizin için bir uzlaşma değil, en iyi niteliklerinizin ortaya çıktığı doğal ortamdır.</string>
+    <string name="number_2_strength_1">Empati — söylenmeyeni hissedersiniz ve buna ilk siz tepki verirsiniz</string>
+    <string name="number_2_strength_2">Diplomasi: rahatsız edici bir gerçeği duyulacak şekilde söylemeyi bilirsiniz</string>
+    <string name="number_2_strength_3">Uzun, güvene dayalı ilişkiler kurmakta sabır</string>
+    <string name="number_2_challenge_1">Kendi sınırlarınız pahasına başkalarının beklentilerinde erimek</string>
+    <string name="number_2_challenge_2">Doğrudan bir konuşmanın daha faydalı olacağı yerlerde bile çatışmadan kaçınmak</string>
+    <string name="number_2_advice">Başkaları için yarattığınız uyum sizden başlamalı. Birinin çatışmasını yumuşatmadan önce kendinize sorun — bu durumda gerçekten size önemli olan ne?</string>
+
+    <string name="number_3_title">Ses</string>
+    <string name="number_3_essence">3 sayısı, duygu ile sözün kesiştiği yerde doğan şeylerle ilgilidir. Bir izlenimi yaşamak size yetmez — onu paylaşılabilecek bir hikâyeye, şakaya, imgeye dönüştürmeniz gerekir. Bu sayının enerjisi bulaşıcıdır: yanınızdaki insanlar daha çok güler ve daha kolay açılır.</string>
+    <string name="number_3_strength_1">Doğal ifade gücü — söz, ses veya imge sizin için çoğu insana göre daha kolay gelir</string>
+    <string name="number_3_strength_2">Tek bir isabetli sözle bir grubun moralini yükseltebilme yeteneği</string>
+    <string name="number_3_strength_3">Hızlı fikir üretimi — yaratıcı bir tıkanıklığa nadiren düşersiniz</string>
+    <string name="number_3_challenge_1">Dikkati aynı anda çok fazla fikre dağıtmak</string>
+    <string name="number_3_challenge_2">Ciddi konuşmak gerektiğinde mizahı kalkan olarak kullanmak</string>
+    <string name="number_3_advice">Bir sonrakine kapılmadan önce bir fikri seçip sonuna kadar götürün. İkna yeteneğiniz, sadece bir niyetin değil tamamlanmış bir sonucun arkasında olduğunda en güçlü şekilde işler.</string>
+
+    <string name="number_4_title">İnşacı</string>
+    <string name="number_4_essence">4 sayısı, uzun süre ayakta kalması gerekeni taşır. Başkalarının rutin gördüğü yerde siz temel görürsünüz: dayanabileceğiniz bir sistem, bir düzen, bir anlaşma. Bir sonraki adımın neyden oluştuğunu anladığınızda gerçekten daha sakin hissedersiniz.</string>
+    <string name="number_4_strength_1">Güvenilirlik — verilen söz veya üstlenilen taahhüt sizin için asla formalite değildir</string>
+    <string name="number_4_strength_2">Kaotik bir fikri işleyen bir sisteme dönüştürebilme yeteneği</string>
+    <string name="number_4_strength_3">Başkalarının hevesi tükendiğinde uzun mesafede dayanıklılık</string>
+    <string name="number_4_challenge_1">Eski sistem artık işlemese bile değişime direnmek</string>
+    <string name="number_4_challenge_2">Düzeni kontrolle karıştırıp başkasının inisiyatifini boğma riski</string>
+    <string name="number_4_advice">Sağlam bir temel, değişmez bir yapıyla aynı şey değildir. Ara sıra kendinize bu sistemin hâlâ kurulduğu amaca mı hizmet ettiğini, yoksa sadece atalet mi ile devam ettiğini sorun.</string>
+
+    <string name="number_5_title">Gezgin</string>
+    <string name="number_5_essence">5 sayısı, bir bilme yolu olarak harekettir. Talimatı okumak değil, denemeniz gerekir; başkasının anlatımına güvenmek değil, kendi gözlerinizle görmeniz gerekir. Rutin, enerjinizi her türlü fiziksel çabadan daha hızlı tüketir.</string>
+    <string name="number_5_strength_1">Uyum sağlama — yeni koşullara çoğu insandan daha hızlı alışırsınız</string>
+    <string name="number_5_strength_2">İlginç insanları ve beklenmedik fırsatları çeken canlı bir merak</string>
+    <string name="number_5_strength_3">Eski yol artık faydalı bir yere götürmediğinde rota değiştirme cesareti</string>
+    <string name="number_5_challenge_1">Uzun projeleri sonuna kadar götürmekte zorlanma</string>
+    <string name="number_5_challenge_2">Ertesi gün farklı düşündüğünüz dürtüsel kararlar</string>
+    <string name="number_5_advice">Özgürlük tek bir kalıcı taahhütle ortadan kalkmaz — sadece artık seçeneğiniz kalmadığı yanılsaması kalkar. Sıkıcı hale geldiğinde bile kalmaya istekli olduğunuz bir proje veya ilişki bulun ve o sınırın ötesinde ne açıldığını gözlemleyin.</string>
+
+    <string name="number_6_title">Koruyucu</string>
+    <string name="number_6_essence">6 sayısı, karşılığında hiçbir şey istemeyen bakımı yönetir. Odadaki kimin desteğe ihtiyacı olduğunu tek bakışta görür ve bunu neredeyse refleks olarak sunarsınız. Ev, aile, yakın çevre — sorumluluk hissettiğiniz yerde kendinizi sonuna kadar verirsiniz.</string>
+    <string name="number_6_strength_1">Çevrenizdekilerin söz söylenmeden hissettiği samimi bakım</string>
+    <string name="number_6_strength_2">Etrafınızda bir ev ve istikrar duygusu yaratabilme yeteneği</string>
+    <string name="number_6_strength_3">Sevdiklerinize karşı taahhütlere sadakat</string>
+    <string name="number_6_challenge_1">Size ait olmayan sorunlara aşırı sorumluluk hissetmek</string>
+    <string name="number_6_challenge_2">Kendi ihtiyaçlarınız pahasına başkalarına bakmak</string>
+    <string name="number_6_advice">Sizi tüketen bakım, bir hediye olmaktan çıkıp bir yüke dönüşür. Birinin yükünü tekrar üstlenmeden önce dürüstçe sorun — bunu sizden mi istediler, yoksa kendiniz mi karar verdiniz?</string>
+
+    <string name="number_7_title">Arayıcı</string>
+    <string name="number_7_essence">7 sayısı bir açıklamayı körü körüne kabul etmez — özüne kendisi inmesi gerekir. Açık cevabın arkasında gerçek bir şeyin gizlendiğini hissederseniz tek bir soruyla saatler geçirebilirsiniz. Yalnızlık sizin için bir ceza değil, bir çalışma aracıdır.</string>
+    <string name="number_7_strength_1">Analiz derinliği — başkalarının tesadüf gördüğü yerde örüntüler görürsünüz</string>
+    <string name="number_7_strength_2">Genellikle mantıksal argümanları geride bırakan gelişmiş bir sezgi</string>
+    <string name="number_7_strength_3">Düşünce bağımsızlığı: başkasının fikri kendi sonucunuzun yerini tutmaz</string>
+    <string name="number_7_challenge_1">Çevrenizdekilerin bazen soğukluk olarak okuduğu bir mesafelilik</string>
+    <string name="number_7_challenge_2">Artık ihtiyaç duyulmayan ek netlik arayışıyla kararı geciktirmek</string>
+    <string name="number_7_advice">Her soru harekete geçmeden önce tam bir analiz gerektirmez. Bazı kararların sezgiye dayanmasına izin verin — kendinize güvenmek de bir bilgi biçimidir.</string>
+
+    <string name="number_8_title">Yönetici</string>
+    <string name="number_8_essence">8 sayısı sistemin tamamını görür — para, etki ve çabanın bir sonuçta buluştuğu yeri. Ölçekte düşünürsünüz: "bu ayı nasıl geçiririm" değil, "bunu gelecek yıllar için nasıl inşa ederim". Hırs sizin için bir kusur değil, daha fazlasına muktedir olduğunuzun dürüst bir kabulüdür.</string>
+    <string name="number_8_strength_1">Stratejik düşünme — birkaç hamle ilerisini görürsünüz</string>
+    <string name="number_8_strength_2">Büyük girişimleri ölçülebilir bir sonuca taşıyabilme yeteneği</string>
+    <string name="number_8_strength_3">Sağlam bir el gerektiren konularda doğal bir otorite</string>
+    <string name="number_8_challenge_1">Kendi (ve başkalarının) değerini yalnızca sonuçla ölçme riski</string>
+    <string name="number_8_challenge_2">Hedefe ulaşmadan durup dinlenmekte zorlanma</string>
+    <string name="number_8_advice">Dışa doğru inşa etmeyi bildiğiniz gücü bazen içe, kendi kaynağınızı korumaya yöneltmeye değer. Ne kadar hassas olursa olsun boş bir depo hiçbir şey inşa etmez.</string>
+
+    <string name="number_9_title">Hümanist</string>
+    <string name="number_9_essence">9 sayısı 1'den 9'a olan döngüyü tamamlar ve özü de tam olarak budur: büyük resmi görme ve onu kısıtlayan şeyi bırakabilme yeteneği. İnsanları nadiren "bizden" ve "onlardan" diye ayırırsınız — merhametiniz kişisel sınırlardan daha geniştir.</string>
+    <string name="number_9_strength_1">Küçük kişisel çıkardan uzak, geniş bir bakış açısı</string>
+    <string name="number_9_strength_2">Başkalarının kırgınlığa tutunduğu yerde affetme ve bırakabilme yeteneği</string>
+    <string name="number_9_strength_3">İlham verici bir varlık: yanınızdaki insanlar günlük yaşamdan daha fazlasını düşünmeye başlar</string>
+    <string name="number_9_challenge_1">Belirli insanlarla yaşanan hayal kırıklığıyla çatışan bir idealizm</string>
+    <string name="number_9_challenge_2">Kişisel işleri bitirmekte zorlanma — kolektif olana çekilirsiniz, özele değil</string>
+    <string name="number_9_advice">Dünyayı önemsemek, önce kendinize ve yakın çevrenize bakma ihtiyacını ortadan kaldırmaz. Büyük idealler, altlarında düzenli bir yaşam olduğunda daha sağlam durur.</string>
+
+    <string name="number_11_title">Sezgi Ustası</string>
+    <string name="number_11_essence">11, ilk usta sayıdır: 1'in içe dönük, ikiye katlanmış enerjisi. Mantıkla açıklaması zor şeyleri yakalarsınız — bir önsezi, bir atmosfer, söylenmeyen bir şey. Bu hassasiyet bir armağandır, ama topraklanmayı öğrenmezseniz aşırı yüklenmenin de kaynağıdır.</string>
+    <string name="number_11_strength_1">Sıklıkla öngörünün sınırında olan keskinleşmiş bir sezgi</string>
+    <string name="number_11_strength_2">Sadece varlığınızla insanlara ilham verebilme yeteneği</string>
+    <string name="number_11_strength_3">Başkalarının kaçırdığı ince ayrıntılara duyarlılık</string>
+    <string name="number_11_challenge_1">Aşırı dış izlenimden kaynaklanan duygusal aşırı yüklenme</string>
+    <string name="number_11_challenge_2">Yüksek içsel standartlarınız gerçeklikle örtüşmediğinde kaygı ve öz eleştiri</string>
+    <string name="number_11_advice">Bir usta sayı, ilham kadar topraklanmaya da ihtiyaç duyar. Sizi duyumların ince dünyasından şimdiki anın demirine geri getiren düzenli bir pratik (beden, doğa, sessizlik) bulun.</string>
+
+    <string name="number_22_title">Usta İnşacı</string>
+    <string name="number_22_essence">22, 11'in geniş vizyonunu 4'ün inşa etme yeteneğiyle birleştirir. Bu, gerçekten büyük bir şey hayal edebilen ve saf hayalcilerden farklı olarak bunu dokunulabilir bir forma dönüştürebilen kişilerin sayısıdır.</string>
+    <string name="number_22_strength_1">Büyük vizyon ile pratik disiplinin nadir bir birleşimi</string>
+    <string name="number_22_strength_2">Karmaşık bir insan ve kaynak sistemini tek bir hedef etrafında organize edebilme yeteneği</string>
+    <string name="number_22_strength_3">Doğal bir motivasyon olarak miras — bir mevsim için değil, on yıllar için inşa edersiniz</string>
+    <string name="number_22_challenge_1">Kendi beklentilerinizin baskısı — "büyük bir şey inşa etme" çıtası yorucudur</string>
+    <string name="number_22_challenge_2">Fikrin ölçeğinde boğulup küçük ilk adımı atamama riski</string>
+    <string name="number_22_advice">En büyük yapılar tek bir taşın konulmasıyla başlar. Büyük fikri bu hafta için somut bir adıma bölün — 22'nin potansiyeli planda değil eylemde açığa çıkar.</string>
+
+    <string name="number_33_title">Usta Öğretmen</string>
+    <string name="number_33_essence">33, en nadir usta sayıdır; 6'nın bakımını usta sayıların ölçeğiyle birleştirir. Bu, koşulsuz hizmetin enerjisidir: ödül için değil, başkalarına bakmak sizin için en geniş anlamda doğal olduğu için — sadece sevdikleriniz değil, yabancılar için de.</string>
+    <string name="number_33_strength_1">Geniş bir insan çevresine koşulsuz, neredeyse ebeveynsel bakım sunabilme yeteneği</string>
+    <string name="number_33_strength_2">Karmaşık olanı basitçe açıklama, yol gösterme ve rehberlik etme konusunda doğal bir yetenek</string>
+    <string name="number_33_strength_3">Başkalarının geri çekildiği yerde sorumluluk üstlenme isteği</string>
+    <string name="number_33_challenge_1">Kendinizi kaybedene kadar başkalarına bakmakta tamamen erimek</string>
+    <string name="number_33_challenge_2">Üstlenilen sorumluluğun ölçeğinden gelen dayanılmaz bir ağırlık hissi</string>
+    <string name="number_33_advice">Kendine bakmayan bir öğretmen, verecek hiçbir şeyi kalmadan tükenir. Hizmet, yalnızca kendi kaynaklarınız harcandığı kadar düzenli olarak yenilendiğinde sürdürülebilir.</string>
+
+    <string name="karmic_debt_13">13/4 — disipline karşı bir borç. Geçmiş deneyimde düzen eksikti; bu hayattaki başarı kestirme yollardan değil, yöntemli çalışmadan gelir.</string>
+    <string name="karmic_debt_14">14/5 — özgürlüğe karşı bir borç. Ders, değişim ve sorumluluk arasındaki dengedir: hem aşırı hem de yetersiz özgürlük bir sınav gibi hissettirir.</string>
+    <string name="karmic_debt_16">16/7 — egoya karşı bir borç. Tema düşüş ve yeniden değerlendirmedir: aşırı gurur ya da başkalarının fikrine bağımlılık, kendinize daha dürüst bir bakış açısına yol açan beklenmedik sarsıntılarla sınanır.</string>
+    <string name="karmic_debt_19">19/1 — kendine yeterliliğe karşı bir borç. Başkasının sizin için işi yapmasını beklemeden ve bencilliğe kaymadan kendinize güvenmeyi öğrenmeniz gerekir.</string>
+
+    <string name="karmic_lesson_1">Bağımsızlık — onay beklemeden kendi başına başlamayı ve karar vermeyi öğrenmek</string>
+    <string name="karmic_lesson_2">Başkalarıyla ilişkilerde işbirliği ve sabır</string>
+    <string name="karmic_lesson_3">Kendini ifade etme — içinde tutmak yerine hissettiklerini söylemek</string>
+    <string name="karmic_lesson_4">Günlük işlerde disiplin ve düzen</string>
+    <string name="karmic_lesson_5">Esneklik — değişime direnmek yerine onu kabul etmek</string>
+    <string name="karmic_lesson_6">Kendini kaybetmeden sevdiklerine karşı sorumluluk</string>
+    <string name="karmic_lesson_7">Kendine ve sürece güven — her şey inanmadan önce tam bir analiz gerektirmez</string>
+    <string name="karmic_lesson_8">Para ve güçle sağlıklı bir ilişki</string>
+    <string name="karmic_lesson_9">Merhamet ve bırakabilme yeteneği</string>
+
+    <string name="pinnacle_theme_0">Açık olasılıkların zirvesi — yol katı bir şekilde belirlenmemiştir ve seçim ana aracınız haline gelir.</string>
+    <string name="pinnacle_theme_1">Bağımsızlık ve inisiyatif zirvesi — başkasının örneğine bakmadan kendi işine başlama zamanı.</string>
+    <string name="pinnacle_theme_2">Ortaklık zirvesi — başarı tek başına değil, ittifaklar yoluyla gelir.</string>
+    <string name="pinnacle_theme_3">Kendini ifade etme zirvesi — yaratıcılık ve görünürlük için elverişli bir zaman.</string>
+    <string name="pinnacle_theme_4">Emek zirvesi — şimdi yöntemli bir şekilde inşa ettikleriniz uzun süre dayanacak.</string>
+    <string name="pinnacle_theme_5">Değişim zirvesi — yeni fırsatlar risk alma ve değişme istekliliğiyle gelir.</string>
+    <string name="pinnacle_theme_6">Sorumluluk zirvesi — odak noktası aile, ev ve sevdiklerine bakmaktır.</string>
+    <string name="pinnacle_theme_7">İçsel gelişim zirvesi — analiz, öğrenme ve uzmanlaşma zamanı.</string>
+    <string name="pinnacle_theme_8">Başarı zirvesi — çaba statü ve paraya dönüşür.</string>
+    <string name="pinnacle_theme_9">Tamamlanma zirvesi — bilanço çıkarma ve birikmiş deneyimi aktarma zamanı.</string>
+
+    <string name="challenge_theme_0">Seçim meydan okuması — çok fazla yetenek var ve asıl zorluk armağanı bulmak değil, onu dağıtmamaktır.</string>
+    <string name="challenge_theme_1">Kendine yeterlilik meydan okuması — başkalarına bakmadan kendi kararlarına güvenmeyi öğrenmek.</string>
+    <string name="challenge_theme_2">Hassasiyet meydan okuması — başkalarına duyarlı olmakla onların beklentilerinde erimek arasındaki ince çizgi.</string>
+    <string name="challenge_theme_3">Dağınıklık meydan okuması — başlamak bitirmekten daha kolaydır.</string>
+    <string name="challenge_theme_4">Disiplin meydan okuması — rutin, gerçekte olduğundan daha ağır hissettirir ama onsuz sonuç kalıcı olmaz.</string>
+    <string name="challenge_theme_5">Aşırı özgürlük meydan okuması — meyve vermeden önce rota değiştirme cazibesi.</string>
+    <string name="challenge_theme_6">Aşırı sorumluluk meydan okuması — başkalarına bakmak kolayca kendi sınırlarınızdan fedakarlığa dönüşür.</string>
+    <string name="challenge_theme_7">Güven meydan okuması — açılıp inanmak yerine analiz etme eğilimi.</string>
+    <string name="challenge_theme_8">Denge meydan okuması — güç ve para kolayca bir araç yerine kendi değerinizin ölçüsü haline gelir.</string>
+    <string name="challenge_theme_9">Bırakma meydan okuması — evreleri kapatmak ve rolünü zaten oynamış olana veda etmek zordur.</string>
+
+    <string name="personal_year_theme_1">Yeni başlangıçlar yılı. Hasat değil, ekim zamanı — şimdi verdiğiniz kararlar önümüzdeki dokuz yılın tonunu belirleyecek.</string>
+    <string name="personal_year_theme_2">Ortaklık ve sabır yılı. Sonuç tek başına bir atılımla değil, işbirliğiyle gelir.</string>
+    <string name="personal_year_theme_3">Kendini ifade etme ve bağlantı yılı. Yaratıcı projeler ve çevrenizi genişletmek için iyi bir zaman.</string>
+    <string name="personal_year_theme_4">Temel yılı. Disiplin ve istikrarlı çalışma daha sonra karşılığını verecek — riskli sıçramalar için zaman değil.</string>
+    <string name="personal_year_theme_5">Değişim yılı. Planlar değişir, beklenmedik fırsatlar ortaya çıkar — esneklik kontrolden daha önemlidir.</string>
+    <string name="personal_year_theme_6">Sorumluluk ve bakım yılı — ev, aile, yakın ilişkiler için. Evlilik veya taşınma konusunda önemli kararlar mümkündür.</string>
+    <string name="personal_year_theme_7">İçsel çalışma yılı. Daha az dışsal telaş, daha fazla rota gözden geçirme ve bilgi biriktirme.</string>
+    <string name="personal_year_theme_8">Sonuç yılı. Yıllardır inşa ettikleriniz somutlaşabilir — parada, statüde, tanınmada.</string>
+    <string name="personal_year_theme_9">Sonlar yılı. Süresini doldurmuş olanı bırakma zamanı, yeni bir dokuz yıllık döngü için yer açma.</string>
+
+    <string name="personal_month_theme_1">Ertelediğiniz şeye başlayın — ay ilk adımı destekliyor.</string>
+    <string name="personal_month_theme_2">Tek başına kararlar için değil, diyalog ve ortaklık için bir ay.</string>
+    <string name="personal_month_theme_3">Önemli bir konuşmadan yaratıcı bir projeye kadar kendini ifade etmek için iyi bir zaman.</string>
+    <string name="personal_month_theme_4">Uzun süredir bekleyen düzen ve rutin görevlere odaklanın.</string>
+    <string name="personal_month_theme_5">Planlardaki değişikliklere hazır olun — tek bir senaryoya bağlı kalmayın.</string>
+    <string name="personal_month_theme_6">Odak noktası ev ve yakın ilişkilerdir.</string>
+    <string name="personal_month_theme_7">Yeni taahhütler için değil, duraklama ve analiz için bir ay.</string>
+    <string name="personal_month_theme_8">Çabaların bilançosunu çıkarma ve para ile statü hakkında açıkça konuşma zamanı.</string>
+    <string name="personal_month_theme_9">Başladığınızı bitirin — bu ay yeni bir şeye başlamak için değil, tamamlamak için.</string>
+</resources>

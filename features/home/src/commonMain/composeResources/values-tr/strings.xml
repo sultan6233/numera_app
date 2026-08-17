@@ -1,0 +1,10 @@
+<resources>
+    <string name="personal_day_label">kişisel gün</string>
+    <string name="streak_days">%1$d gün seri</string>
+    <string name="good_morning_greeting">Günaydın</string>
+    <string name="your_day_fallback">Senin günün</string>
+    <string name="fallback_headline">Kişisel Gün: %1$d</string>
+    <string name="fallback_body_1">Bugün Kişisel Gününüz %1$d. Hissettiklerinizi dinleyin ve büyük kararlarda acele etmeyin.</string>
+    <string name="fallback_body_2">İşlerinizi düzene koymak ve kendinize biraz zaman ayırmak için iyi bir gün.</string>
+    <string name="fallback_affirmation">Kendi yoluma güveniyorum ve kendi hızımda ilerliyorum.</string>
+</resources>

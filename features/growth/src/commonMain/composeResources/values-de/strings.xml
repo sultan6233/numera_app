@@ -1,0 +1,62 @@
+﻿<resources>
+    <string name="tab_habits">Gewohnheiten</string>
+    <string name="tab_mood">Stimmung</string>
+    <string name="habit_today_insight">Tageszahl %1$d: %2$s</string>
+    <string name="new_habit_placeholder">Neue Gewohnheit</string>
+    <string name="add_button">Hinzufügen</string>
+    <string name="swipe_hint_habits">Wische eine Karte nach links, um sie zu löschen</string>
+    <string name="delete_habit_title">Gewohnheit löschen?</string>
+    <string name="delete_habit_text">„%1$s" wird zusammen mit dem Erledigungsverlauf gelöscht.</string>
+    <string name="editing_mood_entry">Eintrag wird bearbeitet</string>
+    <string name="mood_note_placeholder">Was hat deine Stimmung heute beeinflusst?</string>
+    <string name="update_button">Aktualisieren</string>
+    <string name="save_button">Speichern</string>
+    <string name="cancel_button">Abbrechen</string>
+    <string name="swipe_hint_mood">Tippe auf einen Eintrag zum Bearbeiten — wische nach links zum Löschen</string>
+    <string name="delete_mood_title">Eintrag löschen?</string>
+    <string name="delete_mood_text">Dieser Stimmungseintrag wird dauerhaft gelöscht.</string>
+    <string name="mood_trend_title">Stimmung der letzten 14 Tage</string>
+    <string name="delete_action">Löschen</string>
+    <string name="weekly_summary">In den letzten 7 Tagen: im Durchschnitt %1$s — %2$s (%3$s).</string>
+    <string name="mood_insight">Es sieht so aus, als würden Tage mit persönlichem Tag %1$d bei dir besser laufen — du hältst deutlich häufiger als sonst eine gute Stimmung fest.</string>
+    <string name="score_label_1">schwer</string>
+    <string name="score_label_2">so lala</string>
+    <string name="score_label_3">okay</string>
+    <string name="score_label_4">gut</string>
+    <string name="score_label_5">großartig</string>
+
+    <string name="tag_work">Arbeit</string>
+    <string name="tag_relationships">Beziehungen</string>
+    <string name="tag_health">Gesundheit</string>
+    <string name="tag_sleep">Schlaf</string>
+    <string name="tag_money">Geld</string>
+    <string name="tag_weather">Wetter</string>
+    <string name="tag_sport">Sport</string>
+    <string name="tag_rest">Erholung</string>
+
+    <string name="habit_suggestion_1">Ein guter Tag, um eine neue Gewohnheit zu beginnen — keine Garantie, dass sie hält, aber der erste Schritt fällt heute leichter.</string>
+    <string name="habit_suggestion_2">Ein Tag für Gewohnheiten, die du mit jemandem zusammen pflegst — Partnerschaft funktioniert besser als ein Alleingang.</string>
+    <string name="habit_suggestion_3">Eine gute Zeit für Gewohnheiten rund um Selbstausdruck — Tagebuch, Kreativität, Gespräch.</string>
+    <string name="habit_suggestion_4">Ein Tag der Disziplin — perfekt, um Gewohnheiten abzuschließen, die du sonst aufschiebst.</string>
+    <string name="habit_suggestion_5">Routine fühlt sich heute besonders schwer an — mach dir keine Vorwürfe, wenn du aussetzt, komm einfach morgen wieder.</string>
+    <string name="habit_suggestion_6">Ein guter Tag für Gewohnheiten rund um die Fürsorge für dein Zuhause oder deine Liebsten.</string>
+    <string name="habit_suggestion_7">Heute eignet sich eher für Reflexion als für neue Verpflichtungen — sei nicht streng mit dir, wenn nicht alles klappt.</string>
+    <string name="habit_suggestion_8">Ein guter Tag für Gewohnheiten rund um Geld und das Ordnen deiner Angelegenheiten.</string>
+    <string name="habit_suggestion_9">Ein Tag, um eine Gewohnheit zu beenden oder zu überdenken, die ihren Zweck nicht mehr erfüllt.</string>
+    <string name="habit_suggestion_11">Heute erhöhte Sensibilität — eine gute Zeit für Erdungspraktiken.</string>
+    <string name="habit_suggestion_22">Ein seltener Tag für Gewohnheiten, die du für die kommenden Jahre aufbaust — verschwende ihn nicht an Kleinigkeiten.</string>
+    <string name="habit_suggestion_33">Ein Tag, an dem die Fürsorge für andere besonders natürlich gelingt — aber auch für die Gewohnheit, auf dich selbst zu achten, ist Platz.</string>
+
+    <string name="month_short_1">Jan</string>
+    <string name="month_short_2">Feb</string>
+    <string name="month_short_3">Mär</string>
+    <string name="month_short_4">Apr</string>
+    <string name="month_short_5">Mai</string>
+    <string name="month_short_6">Jun</string>
+    <string name="month_short_7">Jul</string>
+    <string name="month_short_8">Aug</string>
+    <string name="month_short_9">Sep</string>
+    <string name="month_short_10">Okt</string>
+    <string name="month_short_11">Nov</string>
+    <string name="month_short_12">Dez</string>
+</resources>

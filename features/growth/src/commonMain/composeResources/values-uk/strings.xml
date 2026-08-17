@@ -1,0 +1,62 @@
+﻿<resources>
+    <string name="tab_habits">Звички</string>
+    <string name="tab_mood">Настрій</string>
+    <string name="habit_today_insight">Число дня %1$d: %2$s</string>
+    <string name="new_habit_placeholder">Нова звичка</string>
+    <string name="add_button">Додати</string>
+    <string name="swipe_hint_habits">Змахніть картку вліво, щоб видалити</string>
+    <string name="delete_habit_title">Видалити звичку?</string>
+    <string name="delete_habit_text">«%1$s» буде видалено разом з історією виконання.</string>
+    <string name="editing_mood_entry">Редагування запису</string>
+    <string name="mood_note_placeholder">Що сьогодні вплинуло на настрій?</string>
+    <string name="update_button">Оновити</string>
+    <string name="save_button">Зберегти</string>
+    <string name="cancel_button">Скасувати</string>
+    <string name="swipe_hint_mood">Натисніть на запис, щоб змінити — змахніть вліво, щоб видалити</string>
+    <string name="delete_mood_title">Видалити запис?</string>
+    <string name="delete_mood_text">Запис настрою буде видалено без можливості відновлення.</string>
+    <string name="mood_trend_title">Настрій за 14 днів</string>
+    <string name="delete_action">Видалити</string>
+    <string name="weekly_summary">За останні 7 днів: у середньому %1$s — %2$s (%3$s).</string>
+    <string name="mood_insight">Схоже, дні з особистим числом %1$d у вас частіше проходять краще — ви фіксуєте гарний настрій помітно частіше звичайного.</string>
+    <string name="score_label_1">важко</string>
+    <string name="score_label_2">так собі</string>
+    <string name="score_label_3">нормально</string>
+    <string name="score_label_4">добре</string>
+    <string name="score_label_5">чудово</string>
+
+    <string name="tag_work">Робота</string>
+    <string name="tag_relationships">Стосунки</string>
+    <string name="tag_health">Здоров'я</string>
+    <string name="tag_sleep">Сон</string>
+    <string name="tag_money">Гроші</string>
+    <string name="tag_weather">Погода</string>
+    <string name="tag_sport">Спорт</string>
+    <string name="tag_rest">Відпочинок</string>
+
+    <string name="habit_suggestion_1">Гарний день почати нову звичку — не факт, що затримається, але перший крок сьогодні дається легше.</string>
+    <string name="habit_suggestion_2">День для звичок, які ви робите разом з кимось — партнерство працює краще за сольне зусилля.</string>
+    <string name="habit_suggestion_3">Гарний час для звичок, пов'язаних із самовираженням — щоденник, творчість, розмова.</string>
+    <string name="habit_suggestion_4">День дисципліни — ідеально закрити звички, які зазвичай відкладаєте.</string>
+    <string name="habit_suggestion_5">Рутина сьогодні відчувається особливо важко — не звинувачуйте себе, якщо зірветеся, просто поверніться завтра.</string>
+    <string name="habit_suggestion_6">Гарний день для звичок, пов'язаних із турботою про дім чи близьких.</string>
+    <string name="habit_suggestion_7">День більше підходить для роздумів, ніж для нових зобов'язань — не засмучуйтеся, якщо не виконаєте все.</string>
+    <string name="habit_suggestion_8">Гарний день для звичок, пов'язаних із грошима і порядком у справах.</string>
+    <string name="habit_suggestion_9">День, щоб завершити або переглянути звичку, яка вже не служить меті.</string>
+    <string name="habit_suggestion_11">Загострена чутливість сьогодні — гарний час для практик заземлення.</string>
+    <string name="habit_suggestion_22">Рідкісний день для звичок, які ви будуєте на роки вперед — не розмінюватися на дрібниці.</string>
+    <string name="habit_suggestion_33">День, коли турбота про інших особливо органічна — але звичка подбати про себе теж на місці.</string>
+
+    <string name="month_short_1">січ</string>
+    <string name="month_short_2">лют</string>
+    <string name="month_short_3">бер</string>
+    <string name="month_short_4">кві</string>
+    <string name="month_short_5">тра</string>
+    <string name="month_short_6">чер</string>
+    <string name="month_short_7">лип</string>
+    <string name="month_short_8">сер</string>
+    <string name="month_short_9">вер</string>
+    <string name="month_short_10">жов</string>
+    <string name="month_short_11">лис</string>
+    <string name="month_short_12">гру</string>
+</resources>

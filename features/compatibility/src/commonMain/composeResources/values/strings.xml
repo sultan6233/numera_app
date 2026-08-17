@@ -1,0 +1,19 @@
+<resources>
+    <string name="compatibility_title">Совместимость</string>
+    <string name="add_person_button">Добавить человека</string>
+    <string name="save_button">Сохранить</string>
+    <string name="cancel_button">Отмена</string>
+    <string name="new_person_title">Новый человек</string>
+    <string name="name_placeholder">Имя</string>
+    <string name="day_placeholder">ДД</string>
+    <string name="month_placeholder">ММ</string>
+    <string name="year_placeholder">ГГГГ</string>
+    <string name="you_and_label">Вы и %1$s</string>
+    <string name="compat_life_path">Жизненный путь</string>
+    <string name="compat_expression">Судьба</string>
+    <string name="compat_soul_urge">Душа</string>
+    <string name="compat_personality">Личность</string>
+    <string name="compat_label_strong">Сильная совместимость</string>
+    <string name="compat_label_good">Хорошая совместимость</string>
+    <string name="compat_label_needs_work">Требует работы над отношениями</string>
+</resources>

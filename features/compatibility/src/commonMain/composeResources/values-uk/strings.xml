@@ -1,0 +1,19 @@
+﻿<resources>
+    <string name="compatibility_title">Сумісність</string>
+    <string name="add_person_button">Додати людину</string>
+    <string name="save_button">Зберегти</string>
+    <string name="cancel_button">Скасувати</string>
+    <string name="new_person_title">Нова людина</string>
+    <string name="name_placeholder">Ім'я</string>
+    <string name="day_placeholder">ДД</string>
+    <string name="month_placeholder">ММ</string>
+    <string name="year_placeholder">РРРР</string>
+    <string name="you_and_label">Ви і %1$s</string>
+    <string name="compat_life_path">Життєвий шлях</string>
+    <string name="compat_expression">Доля</string>
+    <string name="compat_soul_urge">Душа</string>
+    <string name="compat_personality">Особистість</string>
+    <string name="compat_label_strong">Сильна сумісність</string>
+    <string name="compat_label_good">Гарна сумісність</string>
+    <string name="compat_label_needs_work">Потребує роботи над стосунками</string>
+</resources>

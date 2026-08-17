@@ -1,0 +1,22 @@
+﻿<resources>
+    <string name="paywall_headline">Це ваша карта. Ми розкрили два з дев'яти чисел.</string>
+    <string name="paywall_value_1">Число душі, особистості та ще 6 розрахунків</string>
+    <string name="paywall_value_2">Новий персональний розбір щодня</string>
+    <string name="paywall_value_3">Сумісність з близькими</string>
+    <string name="paywall_value_4">Особистий календар енергії на щодень</string>
+    <string name="plan_weekly_title">Тиждень</string>
+    <string name="plan_weekly_price">199 ₴</string>
+    <string name="plan_weekly_period">на тиждень</string>
+    <string name="plan_monthly_title">Місяць</string>
+    <string name="plan_monthly_price">349 ₴</string>
+    <string name="plan_monthly_period">на місяць</string>
+    <string name="plan_yearly_title">Рік</string>
+    <string name="plan_yearly_price">1 199 ₴</string>
+    <string name="plan_yearly_period">на рік</string>
+    <string name="plan_yearly_badge">Найвигідніше</string>
+    <string name="plan_yearly_per_day">≈ 3,3 ₴ на день</string>
+    <string name="restore_purchases">Відновити покупки</string>
+    <string name="continue_free">Продовжити безкоштовно</string>
+    <string name="paywall_cta_reveal">Відкрити решту 8 чисел</string>
+    <string name="paywall_continue">Продовжити</string>
+</resources>

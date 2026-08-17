@@ -1,25 +1,41 @@
 package com.numera.app.features.numbers.domain
 
+import org.jetbrains.compose.resources.getString
+import numera.features.numbers.generated.resources.Res
+import numera.features.numbers.generated.resources.karmic_debt_13
+import numera.features.numbers.generated.resources.karmic_debt_14
+import numera.features.numbers.generated.resources.karmic_debt_16
+import numera.features.numbers.generated.resources.karmic_debt_19
+import numera.features.numbers.generated.resources.karmic_lesson_1
+import numera.features.numbers.generated.resources.karmic_lesson_2
+import numera.features.numbers.generated.resources.karmic_lesson_3
+import numera.features.numbers.generated.resources.karmic_lesson_4
+import numera.features.numbers.generated.resources.karmic_lesson_5
+import numera.features.numbers.generated.resources.karmic_lesson_6
+import numera.features.numbers.generated.resources.karmic_lesson_7
+import numera.features.numbers.generated.resources.karmic_lesson_8
+import numera.features.numbers.generated.resources.karmic_lesson_9
+
 object KarmicMeanings {
     private val debtMeanings = mapOf(
-        13 to "13/4 — долг перед дисциплиной. В прошлом опыте не хватало системности; успех в этой жизни приходит через методичный труд, а не короткие пути.",
-        14 to "14/5 — долг перед свободой. Урок — баланс между переменами и ответственностью: избыток или недостаток свободы одинаково ощущается как проверка.",
-        16 to "16/7 — долг перед эго. Тема — падение и переосмысление: чрезмерная гордость или зависимость от чужого мнения проверяются через неожиданные потрясения, которые ведут к более честному взгляду на себя.",
-        19 to "19/1 — долг перед самостоятельностью. Нужно научиться опираться на себя, не ожидая, что кто-то сделает работу за вас, и не скатываясь в эгоцентризм."
+        13 to Res.string.karmic_debt_13,
+        14 to Res.string.karmic_debt_14,
+        16 to Res.string.karmic_debt_16,
+        19 to Res.string.karmic_debt_19
     )
 
     private val lessonMeanings = mapOf(
-        1 to "Независимость — научиться начинать и решать самостоятельно, не дожидаясь одобрения",
-        2 to "Сотрудничество и терпение в отношениях с людьми",
-        3 to "Самовыражение — говорить о том, что чувствуете, вместо того чтобы держать в себе",
-        4 to "Дисциплина и порядок в повседневных делах",
-        5 to "Гибкость — принимать перемены, а не сопротивляться им",
-        6 to "Ответственность за близких без потери себя",
-        7 to "Доверие к себе и к процессу — не всё требует полного анализа перед тем, как поверить",
-        8 to "Здоровые отношения с деньгами и властью",
-        9 to "Сострадание и способность отпускать"
+        1 to Res.string.karmic_lesson_1,
+        2 to Res.string.karmic_lesson_2,
+        3 to Res.string.karmic_lesson_3,
+        4 to Res.string.karmic_lesson_4,
+        5 to Res.string.karmic_lesson_5,
+        6 to Res.string.karmic_lesson_6,
+        7 to Res.string.karmic_lesson_7,
+        8 to Res.string.karmic_lesson_8,
+        9 to Res.string.karmic_lesson_9
     )
 
-    fun debtMeaning(debtNumber: Int): String = debtMeanings[debtNumber].orEmpty()
-    fun lessonMeaning(number: Int): String = lessonMeanings[number].orEmpty()
+    suspend fun debtMeaning(debtNumber: Int): String = debtMeanings[debtNumber]?.let { getString(it) }.orEmpty()
+    suspend fun lessonMeaning(number: Int): String = lessonMeanings[number]?.let { getString(it) }.orEmpty()
 }

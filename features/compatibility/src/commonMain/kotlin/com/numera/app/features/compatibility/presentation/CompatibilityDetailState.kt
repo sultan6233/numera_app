@@ -7,7 +7,7 @@ sealed interface CompatibilityDetailState {
     data class Content(
         val companionName: String,
         val score: Int,
-        val label: String,
+        val labelKey: String,
         val breakdown: List<CompatibilityBreakdownItem> = emptyList()
     ) : CompatibilityDetailState
 }

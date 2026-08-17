@@ -18,10 +18,25 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.getString
+import numera.features.calendar.generated.resources.Res
+import numera.features.calendar.generated.resources.month_january
+import numera.features.calendar.generated.resources.month_february
+import numera.features.calendar.generated.resources.month_march
+import numera.features.calendar.generated.resources.month_april
+import numera.features.calendar.generated.resources.month_may
+import numera.features.calendar.generated.resources.month_june
+import numera.features.calendar.generated.resources.month_july
+import numera.features.calendar.generated.resources.month_august
+import numera.features.calendar.generated.resources.month_september
+import numera.features.calendar.generated.resources.month_october
+import numera.features.calendar.generated.resources.month_november
+import numera.features.calendar.generated.resources.month_december
 
-private val MONTH_NAMES = listOf(
-    "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
-    "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+private val MONTH_NAME_RES = listOf(
+    Res.string.month_january, Res.string.month_february, Res.string.month_march, Res.string.month_april,
+    Res.string.month_may, Res.string.month_june, Res.string.month_july, Res.string.month_august,
+    Res.string.month_september, Res.string.month_october, Res.string.month_november, Res.string.month_december
 )
 
 @Inject
@@ -85,7 +100,7 @@ class CalendarViewModel(
                     )
                 }
                 _state.value = content.copy(
-                    monthLabel = "${MONTH_NAMES[content.month - 1]} ${content.year}",
+                    monthLabel = "${getString(MONTH_NAME_RES[content.month - 1])} ${content.year}",
                     leadingBlanks = leadingBlanks,
                     days = days,
                     subscribed = subscriptionState is SubscriptionState.Subscribed

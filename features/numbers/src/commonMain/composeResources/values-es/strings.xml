@@ -1,0 +1,222 @@
+﻿<resources>
+    <string name="your_map_title">Tu Mapa</string>
+    <string name="tool_karmic_analysis">Análisis Kármico</string>
+    <string name="tool_life_cycles">Ciclos de Vida</string>
+    <string name="tool_numerology_tools">Herramientas de Numerología</string>
+    <string name="compatibility_with_loved_ones">Compatibilidad con tus seres queridos</string>
+    <string name="personal_year_label">Año Personal</string>
+    <string name="personal_month_label">Mes Personal</string>
+    <string name="lucky_numbers_label">Números de la suerte: %1$s</string>
+    <string name="lucky_color_label">Color: %1$s</string>
+    <string name="number_life_path">Número de Camino de Vida</string>
+    <string name="number_expression">Número de Expresión</string>
+    <string name="number_soul_urge">Número del Alma</string>
+    <string name="number_personality">Número de Personalidad</string>
+    <string name="number_health">Código de salud</string>
+    <string name="number_business">Código de negocio</string>
+    <string name="number_maturity">Número de Madurez</string>
+    <string name="number_hidden_passion">Pasión Oculta</string>
+    <string name="number_cornerstone">Piedra Angular</string>
+    <string name="number_capstone">Piedra Final</string>
+    <string name="number_generic">Número</string>
+    <string name="age_and_older">%1$d años o más</string>
+    <string name="age_range">%1$d–%2$d años</string>
+    <string name="strengths_label">Fortalezas</string>
+    <string name="growth_points_label">Puntos de crecimiento</string>
+    <string name="how_to_use_label">Cómo aprovecharlo</string>
+    <string name="karmic_analysis_title">Análisis Kármico</string>
+    <string name="karmic_debts_label">Deudas kármicas</string>
+    <string name="no_karmic_debts">No se encontraron deudas kármicas activas — tu camino en esta área se ha desarrollado sin pruebas bruscas.</string>
+    <string name="karmic_lessons_label">Lecciones kármicas</string>
+    <string name="karmic_lessons_description">Números ausentes en las letras de tu nombre — cualidades que no vienen por defecto y requieren práctica consciente.</string>
+    <string name="no_karmic_lessons">Tu nombre contiene todos los números del 1 al 9 — un conjunto raro y equilibrado.</string>
+    <string name="life_cycles_title">Ciclos de Vida</string>
+    <string name="life_cycles_description">Cuatro etapas de edad, cada una con su propio punto de apoyo (Pináculo) y su propia dificultad (Desafío).</string>
+    <string name="pinnacle_label">Pináculo</string>
+    <string name="challenge_label">Desafío</string>
+    <string name="numerology_tools_title">Herramientas de Numerología</string>
+    <string name="numerology_tools_description">Calcula un número para el nombre de un negocio, una dirección o un teléfono — con las mismas tablas que para un nombre personal.</string>
+    <string name="mode_name_business">Nombre / Negocio</string>
+    <string name="mode_phone_address">Teléfono / Dirección</string>
+    <string name="name_example_placeholder">Ej. Margarita</string>
+    <string name="phone_example_placeholder">Ej. +34 600 123 456</string>
+    <string name="calculate">Calcular</string>
+
+    <string name="color_red">Rojo</string>
+    <string name="color_orange">Naranja</string>
+    <string name="color_yellow">Amarillo</string>
+    <string name="color_green">Verde</string>
+    <string name="color_blue">Azul</string>
+    <string name="color_indigo">Índigo</string>
+    <string name="color_violet">Violeta</string>
+    <string name="color_brown">Marrón</string>
+    <string name="color_gold">Dorado</string>
+    <string name="color_silver">Plateado</string>
+    <string name="color_emerald">Esmeralda</string>
+    <string name="color_white">Blanco</string>
+
+    <string name="number_1_title">El Pionero</string>
+    <string name="number_1_essence">El número 1 es la energía de los comienzos. No esperas permiso ni te gusta seguir el camino trillado: donde otros ven un obstáculo, tú ves una razón para ir primero. Esta independencia no es terquedad, es una forma de aprender de tu propia experiencia más rápido que de los consejos ajenos.</string>
+    <string name="number_1_strength_1">Decisión — rara vez te quedas atrapado pensando cuando hay que actuar</string>
+    <string name="number_1_strength_2">Liderazgo natural: la gente se suma a tu confianza, incluso cuando no la exhibes</string>
+    <string name="number_1_strength_3">La capacidad de empezar de cero donde otros temen arriesgarse</string>
+    <string name="number_1_challenge_1">Impaciencia con el ritmo ajeno — es fácil desestimar a quienes son más lentos</string>
+    <string name="number_1_challenge_2">Dificultad para delegar: parece más fácil hacerlo tú mismo que explicarlo</string>
+    <string name="number_1_advice">Tu fuerza está en el primer paso, no en llevarlo todo a término tú solo. Aprende a pasar el relevo cuando el proyecto ya está en marcha — eso libera energía para el próximo comienzo.</string>
+
+    <string name="number_2_title">El Pacificador</string>
+    <string name="number_2_essence">El número 2 gobierna la conexión entre las personas. Percibes el ambiente de una sala antes de que nadie hable, y casi por instinto encuentras el punto donde coinciden los intereses de todos. La asociación no es un compromiso para ti, es el entorno natural donde salen a relucir tus mejores cualidades.</string>
+    <string name="number_2_strength_1">Empatía — sientes lo no dicho y reaccionas a ello antes que nadie</string>
+    <string name="number_2_strength_2">Diplomacia: sabes decir una verdad incómoda de forma que se escuche</string>
+    <string name="number_2_strength_3">Paciencia para construir relaciones largas y de confianza</string>
+    <string name="number_2_challenge_1">Disolverte en las expectativas ajenas a costa de tus propios límites</string>
+    <string name="number_2_challenge_2">Evitar el conflicto incluso donde una conversación directa sería más útil</string>
+    <string name="number_2_advice">La armonía que creas para los demás debe empezar por ti mismo. Antes de suavizar el conflicto de otra persona, pregúntate — ¿qué es lo que realmente te importa a ti en esta situación?</string>
+
+    <string name="number_3_title">La Voz</string>
+    <string name="number_3_essence">El número 3 trata de lo que nace en el cruce entre el sentimiento y la palabra. No te basta con vivir una impresión — necesitas convertirla en una historia, un chiste, una imagen que se pueda compartir. La energía de este número es contagiosa: a tu lado la gente se ríe más y se abre con más facilidad.</string>
+    <string name="number_3_strength_1">Expresividad natural — la palabra, el sonido o la imagen te resultan más fáciles que a la mayoría</string>
+    <string name="number_3_strength_2">La capacidad de levantar el ánimo de un grupo con un solo comentario acertado</string>
+    <string name="number_3_strength_3">Generación rápida de ideas — rara vez te quedas atascado creativamente</string>
+    <string name="number_3_challenge_1">Dispersar la atención entre demasiadas ideas a la vez</string>
+    <string name="number_3_challenge_2">Usar el humor como escudo cuando convendría hablar en serio</string>
+    <string name="number_3_advice">Elige una idea y llévala hasta el final antes de dejarte llevar por la siguiente. Tu talento para convencer funciona mejor cuando lo respalda un resultado terminado, no solo una intención.</string>
+
+    <string name="number_4_title">El Constructor</string>
+    <string name="number_4_essence">El número 4 sostiene lo que está destinado a durar. Donde otros ven rutina, tú ves un cimiento: un sistema, una rutina, un compromiso en el que apoyarte. Te sientes genuinamente más tranquilo cuando entiendes de qué está hecho el siguiente paso.</string>
+    <string name="number_4_strength_1">Fiabilidad — una palabra dada o un compromiso asumido nunca es una formalidad para ti</string>
+    <string name="number_4_strength_2">La capacidad de convertir una idea caótica en un sistema que funciona</string>
+    <string name="number_4_strength_3">Resistencia en la larga distancia, cuando a otros ya se les acabó el impulso</string>
+    <string name="number_4_challenge_1">Resistirte al cambio incluso cuando el sistema antiguo ya no funciona</string>
+    <string name="number_4_challenge_2">El riesgo de confundir orden con control y ahogar la iniciativa de otros</string>
+    <string name="number_4_advice">Un cimiento sólido no es lo mismo que una estructura inmutable. Pregúntate de vez en cuando si este sistema todavía sirve al propósito para el que se construyó, o si sigue funcionando solo por inercia.</string>
+
+    <string name="number_5_title">El Viajero</string>
+    <string name="number_5_essence">El número 5 es el movimiento como forma de conocer. Necesitas probarlo, no leer las instrucciones; verlo con tus propios ojos, no confiar en el relato de otro. La rutina te agota más rápido que cualquier esfuerzo físico.</string>
+    <string name="number_5_strength_1">Adaptabilidad — te acomodas a circunstancias nuevas más rápido que la mayoría</string>
+    <string name="number_5_strength_2">Una curiosidad viva que atrae a gente interesante y oportunidades inesperadas</string>
+    <string name="number_5_strength_3">Valentía para cambiar de rumbo cuando el camino anterior ya no lleva a ningún sitio útil</string>
+    <string name="number_5_challenge_1">Dificultad para llevar proyectos largos hasta el final</string>
+    <string name="number_5_challenge_2">Decisiones impulsivas que al día siguiente ves de otra manera</string>
+    <string name="number_5_advice">La libertad no desaparece por un solo compromiso duradero — solo desaparece la ilusión de que ya no hay más opciones. Encuentra un proyecto o una relación en la que estés dispuesto a quedarte incluso cuando se vuelva aburrido, y observa qué se abre más allá de ese límite.</string>
+
+    <string name="number_6_title">El Guardián</string>
+    <string name="number_6_essence">El número 6 gobierna el cuidado que no pide nada a cambio. Con una sola mirada ves quién en la sala necesita apoyo ahora mismo, y lo ofreces casi por reflejo. Hogar, familia, círculo cercano — donde sientes responsabilidad, te entregas por completo.</string>
+    <string name="number_6_strength_1">Un cuidado sincero que los demás sienten sin necesidad de palabras</string>
+    <string name="number_6_strength_2">La capacidad de crear a tu alrededor una sensación de hogar y estabilidad</string>
+    <string name="number_6_strength_3">Fidelidad a los compromisos con quienes quieres</string>
+    <string name="number_6_challenge_1">Hiper-responsabilidad por problemas ajenos que no te corresponden</string>
+    <string name="number_6_challenge_2">Cuidar de otros a costa de tus propias necesidades</string>
+    <string name="number_6_advice">El cuidado que te agota deja de ser un regalo y se convierte en una carga. Antes de volver a cargar con el peso de otra persona, pregúntate con honestidad — ¿te lo pidieron, o lo decidiste tú solo?</string>
+
+    <string name="number_7_title">El Buscador</string>
+    <string name="number_7_essence">El número 7 no acepta una explicación por fe — necesita llegar al fondo por sí mismo. Puedes pasar horas con una sola pregunta si sientes que detrás de la respuesta obvia se esconde algo real. La soledad no es un castigo para ti, es una herramienta de trabajo.</string>
+    <string name="number_7_strength_1">Profundidad de análisis — ves patrones donde otros ven casualidad</string>
+    <string name="number_7_strength_2">Una intuición desarrollada que a menudo se adelanta a los argumentos lógicos</string>
+    <string name="number_7_strength_3">Independencia de pensamiento: la opinión ajena no sustituye a tu propia conclusión</string>
+    <string name="number_7_challenge_1">Un distanciamiento que otros a veces leen como frialdad</string>
+    <string name="number_7_challenge_2">Alargar una decisión buscando una claridad extra que ya no hace falta</string>
+    <string name="number_7_advice">No toda pregunta necesita un análisis completo antes de actuar. Permite que algunas decisiones se apoyen en la intuición — confiar en ti mismo también es una forma de conocimiento.</string>
+
+    <string name="number_8_title">El Ejecutivo</string>
+    <string name="number_8_essence">El número 8 ve el sistema completo — dónde convergen el dinero, la influencia y el esfuerzo en un resultado. Piensas a gran escala: no "cómo paso este mes" sino "cómo construyo esto para los próximos años". La ambición no es un defecto para ti, es un reconocimiento honesto de que eres capaz de más.</string>
+    <string name="number_8_strength_1">Pensamiento estratégico — ves varias jugadas por delante</string>
+    <string name="number_8_strength_2">La capacidad de llevar grandes proyectos hasta un resultado medible</string>
+    <string name="number_8_strength_3">Una autoridad natural en asuntos que requieren mano firme</string>
+    <string name="number_8_challenge_1">El riesgo de medir tu propio valor (y el de los demás) únicamente por el resultado</string>
+    <string name="number_8_challenge_2">Dificultad para detenerte a descansar antes de alcanzar la meta</string>
+    <string name="number_8_advice">El poder que sabes construir hacia afuera vale la pena dirigirlo también hacia adentro — al cuidado de tus propios recursos. Un depósito vacío no construye nada, por muy preciso que sea el plan.</string>
+
+    <string name="number_9_title">El Humanista</string>
+    <string name="number_9_essence">El número 9 cierra el ciclo del 1 al 9, y en eso está su esencia: la capacidad de ver el panorama completo y soltar lo que lo retiene. Rara vez divides a la gente entre "los tuyos" y "los demás" — tu compasión es más amplia que las fronteras personales.</string>
+    <string name="number_9_strength_1">Una amplitud de miras libre de intereses personales mezquinos</string>
+    <string name="number_9_strength_2">La capacidad de perdonar y soltar donde otros se aferran al rencor</string>
+    <string name="number_9_strength_3">Una presencia inspiradora: a tu lado la gente se plantea algo más que lo cotidiano</string>
+    <string name="number_9_challenge_1">Un idealismo que choca con la decepción ante personas concretas</string>
+    <string name="number_9_challenge_2">Dificultad para cerrar asuntos personales — te atrae lo colectivo, no lo particular</string>
+    <string name="number_9_advice">Cuidar del mundo no elimina la necesidad de cuidarte primero a ti mismo y a tu círculo cercano. Los grandes ideales se sostienen mejor cuando debajo hay una vida propia bien organizada.</string>
+
+    <string name="number_11_title">Maestro de la Intuición</string>
+    <string name="number_11_essence">El 11 es el primer número maestro: la energía duplicada del 1, vuelta hacia adentro. Percibes cosas difíciles de explicar con lógica — una premonición, una atmósfera, lo no dicho. Esa sensibilidad es un don, pero también una fuente de sobrecarga si nunca aprendes a conectarla con tierra.</string>
+    <string name="number_11_strength_1">Una intuición aguda, a menudo al borde de la clarividencia</string>
+    <string name="number_11_strength_2">La capacidad de inspirar a la gente solo con tu presencia</string>
+    <string name="number_11_strength_3">Sensibilidad a detalles sutiles que otros pasan por alto</string>
+    <string name="number_11_challenge_1">Sobrecarga emocional por exceso de estímulos externos</string>
+    <string name="number_11_challenge_2">Ansiedad y autocrítica cuando tus altos estándares internos no coinciden con la realidad</string>
+    <string name="number_11_advice">Un número maestro necesita conexión a tierra tanto como inspiración. Busca una práctica regular (cuerpo, naturaleza, silencio) que te devuelva del mundo sutil de las sensaciones al ancla del momento presente.</string>
+
+    <string name="number_22_title">Maestro Constructor</string>
+    <string name="number_22_essence">El 22 une la visión expansiva del 11 con la capacidad de construir del 4. Es el número de quienes son capaces de imaginar algo verdaderamente grande — y, a diferencia de los simples soñadores, de convertirlo en algo que se puede tocar.</string>
+    <string name="number_22_strength_1">Una combinación poco común de gran visión y disciplina práctica</string>
+    <string name="number_22_strength_2">La capacidad de organizar un sistema complejo de personas y recursos en torno a un solo objetivo</string>
+    <string name="number_22_strength_3">El legado como motivación natural — construyes para décadas, no para una temporada</string>
+    <string name="number_22_challenge_1">La presión de tus propias expectativas — el listón de "construir algo grande" agota</string>
+    <string name="number_22_challenge_2">El riesgo de ahogarte en la escala de la idea y no dar el primer paso pequeño</string>
+    <string name="number_22_advice">Los edificios más grandes empiezan con una sola piedra colocada. Divide la gran idea en un paso concreto para esta semana — el potencial del 22 se despliega en la acción, no en el plan.</string>
+
+    <string name="number_33_title">Maestro Guía</string>
+    <string name="number_33_essence">El 33 es el número maestro más raro, la unión del cuidado del 6 con la escala de los números maestros. Es la energía del servicio incondicional: no por recompensa, sino porque cuidar de los demás te resulta natural en el sentido más amplio — no solo con los seres queridos, también con extraños.</string>
+    <string name="number_33_strength_1">La capacidad de ofrecer un cuidado incondicional, casi parental, a un círculo amplio de personas</string>
+    <string name="number_33_strength_2">Un don natural para explicar lo complejo de forma sencilla, guiar y ser mentor</string>
+    <string name="number_33_strength_3">Disposición a asumir responsabilidad donde otros se apartan</string>
+    <string name="number_33_challenge_1">Disolverte por completo en el cuidado de los demás hasta perderte a ti mismo</string>
+    <string name="number_33_challenge_2">Una sensación de peso insoportable por la escala de la responsabilidad asumida</string>
+    <string name="number_33_advice">Un maestro que no se cuida a sí mismo se queda pronto sin nada que dar. El servicio solo es sostenible cuando tus propios recursos se reponen tan a menudo como se gastan.</string>
+
+    <string name="karmic_debt_13">13/4 — una deuda con la disciplina. En experiencias pasadas faltó método; el éxito en esta vida llega a través del trabajo metódico, no de atajos.</string>
+    <string name="karmic_debt_14">14/5 — una deuda con la libertad. La lección es el equilibrio entre el cambio y la responsabilidad: tanto el exceso como la falta de libertad se sienten como una prueba.</string>
+    <string name="karmic_debt_16">16/7 — una deuda con el ego. El tema es la caída y la reconsideración: el orgullo excesivo o la dependencia de la opinión ajena se ponen a prueba a través de sacudidas inesperadas que llevan a una mirada más honesta sobre ti mismo.</string>
+    <string name="karmic_debt_19">19/1 — una deuda con la autosuficiencia. Hay que aprender a apoyarte en ti mismo, sin esperar que otro haga el trabajo por ti, y sin caer en el egocentrismo.</string>
+
+    <string name="karmic_lesson_1">Independencia — aprender a empezar y decidir por ti mismo, sin esperar aprobación</string>
+    <string name="karmic_lesson_2">Cooperación y paciencia en las relaciones con los demás</string>
+    <string name="karmic_lesson_3">Autoexpresión — decir lo que sientes en lugar de guardártelo</string>
+    <string name="karmic_lesson_4">Disciplina y orden en los asuntos cotidianos</string>
+    <string name="karmic_lesson_5">Flexibilidad — aceptar el cambio en lugar de resistirte a él</string>
+    <string name="karmic_lesson_6">Responsabilidad hacia los seres queridos sin perderte a ti mismo</string>
+    <string name="karmic_lesson_7">Confianza en ti mismo y en el proceso — no todo requiere un análisis completo antes de creer en ello</string>
+    <string name="karmic_lesson_8">Una relación sana con el dinero y el poder</string>
+    <string name="karmic_lesson_9">Compasión y capacidad de soltar</string>
+
+    <string name="pinnacle_theme_0">Un pináculo de posibilidades abiertas — el camino no está predeterminado, y la elección se convierte en tu herramienta principal.</string>
+    <string name="pinnacle_theme_1">Un pináculo de independencia e iniciativa — momento de empezar lo propio, sin mirar el ejemplo de otros.</string>
+    <string name="pinnacle_theme_2">Un pináculo de asociación — el éxito llega a través de alianzas, no en solitario.</string>
+    <string name="pinnacle_theme_3">Un pináculo de autoexpresión — un momento favorable para la creatividad y la visibilidad pública.</string>
+    <string name="pinnacle_theme_4">Un pináculo de trabajo — lo que construyas con método ahora durará mucho tiempo.</string>
+    <string name="pinnacle_theme_5">Un pináculo de cambio — nuevas oportunidades llegan a través de la disposición a arriesgarse y cambiar.</string>
+    <string name="pinnacle_theme_6">Un pináculo de responsabilidad — el foco está en la familia, el hogar y el cuidado de los seres queridos.</string>
+    <string name="pinnacle_theme_7">Un pináculo de crecimiento interior — momento para el análisis, el aprendizaje y la especialización.</string>
+    <string name="pinnacle_theme_8">Un pináculo de logros — el esfuerzo se convierte en estatus y dinero.</string>
+    <string name="pinnacle_theme_9">Un pináculo de cierre — momento de hacer balance y transmitir la experiencia acumulada.</string>
+
+    <string name="challenge_theme_0">El desafío de la elección — hay muchas capacidades, y la dificultad principal no es encontrar el don, sino no dispersarlo.</string>
+    <string name="challenge_theme_1">El desafío de la autosuficiencia — aprender a confiar en tus propias decisiones sin mirar a los demás.</string>
+    <string name="challenge_theme_2">El desafío de la sensibilidad — la línea fina entre estar atento a los demás y disolverte en sus expectativas.</string>
+    <string name="challenge_theme_3">El desafío de la dispersión — empezar es más fácil que terminar.</string>
+    <string name="challenge_theme_4">El desafío de la disciplina — la rutina se siente más pesada de lo que realmente es, pero sin ella el resultado no se sostiene.</string>
+    <string name="challenge_theme_5">El desafío del exceso de libertad — la tentación de cambiar de rumbo antes de que dé frutos.</string>
+    <string name="challenge_theme_6">El desafío de la hiper-responsabilidad — cuidar de los demás se convierte fácilmente en sacrificar tus propios límites.</string>
+    <string name="challenge_theme_7">El desafío de la confianza — tendencia a analizar en lugar de abrirte y creer.</string>
+    <string name="challenge_theme_8">El desafío del equilibrio — el poder y el dinero se convierten fácilmente en la medida de tu propio valor en lugar de una herramienta.</string>
+    <string name="challenge_theme_9">El desafío de soltar — cuesta cerrar etapas y despedirse de lo que ya cumplió su papel.</string>
+
+    <string name="personal_year_theme_1">Un año de nuevos comienzos. Tiempo de sembrar, no de cosechar — las decisiones que tomes ahora marcarán el tono de los próximos nueve años.</string>
+    <string name="personal_year_theme_2">Un año de asociación y paciencia. El resultado llega a través de la cooperación, no de un impulso en solitario.</string>
+    <string name="personal_year_theme_3">Un año de autoexpresión y conexión. Buen momento para proyectos creativos y ampliar tu círculo social.</string>
+    <string name="personal_year_theme_4">Un año de cimientos. La disciplina y el trabajo constante darán frutos más adelante — no es momento para saltos arriesgados.</string>
+    <string name="personal_year_theme_5">Un año de cambios. Los planes cambian, aparecen oportunidades inesperadas — la flexibilidad importa más que el control.</string>
+    <string name="personal_year_theme_6">Un año de responsabilidad y cuidado — del hogar, la familia, las relaciones cercanas. Son posibles decisiones importantes sobre matrimonio o mudanza.</string>
+    <string name="personal_year_theme_7">Un año de trabajo interior. Menos agitación externa, más revisión de rumbo y acumulación de conocimiento.</string>
+    <string name="personal_year_theme_8">Un año de resultados. Lo que has construido durante años puede materializarse — en dinero, estatus, reconocimiento.</string>
+    <string name="personal_year_theme_9">Un año de cierres. Es momento de soltar lo que ya cumplió su etapa, dejando espacio para un nuevo ciclo de nueve años.</string>
+
+    <string name="personal_month_theme_1">Empieza lo que has estado posponiendo — el mes favorece el primer paso.</string>
+    <string name="personal_month_theme_2">Un mes para el diálogo y la colaboración, no para decisiones en solitario.</string>
+    <string name="personal_month_theme_3">Buen momento para la autoexpresión — desde una conversación importante hasta un proyecto creativo.</string>
+    <string name="personal_month_theme_4">Concéntrate en el orden y en las tareas rutinarias que llevan tiempo esperando.</string>
+    <string name="personal_month_theme_5">Prepárate para cambios de planes — no te aferres a un solo escenario.</string>
+    <string name="personal_month_theme_6">El foco está en el hogar y las relaciones cercanas.</string>
+    <string name="personal_month_theme_7">Un mes para la pausa y el análisis, no para nuevos compromisos.</string>
+    <string name="personal_month_theme_8">Momento de hacer balance de tus esfuerzos y hablar de dinero y estatus con claridad.</string>
+    <string name="personal_month_theme_9">Termina lo que empezaste — el mes es para cerrar, no para empezar algo nuevo.</string>
+</resources>

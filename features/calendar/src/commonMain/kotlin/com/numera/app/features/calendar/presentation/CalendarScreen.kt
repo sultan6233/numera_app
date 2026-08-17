@@ -44,8 +44,29 @@ import com.numera.app.core.commonMain.components.DefaultNumeraButton
 import com.numera.app.core.commonMain.displayFontFamily
 import com.numera.app.features.calendar.domain.DayEnergyMeanings
 import com.numera.app.features.calendar.presentation.model.CalendarDayUi
+import org.jetbrains.compose.resources.stringResource
+import numera.features.calendar.generated.resources.Res
+import numera.features.calendar.generated.resources.weekday_mon
+import numera.features.calendar.generated.resources.weekday_tue
+import numera.features.calendar.generated.resources.weekday_wed
+import numera.features.calendar.generated.resources.weekday_thu
+import numera.features.calendar.generated.resources.weekday_fri
+import numera.features.calendar.generated.resources.weekday_sat
+import numera.features.calendar.generated.resources.weekday_sun
+import numera.features.calendar.generated.resources.legend_action
+import numera.features.calendar.generated.resources.legend_pause
+import numera.features.calendar.generated.resources.legend_stability
+import numera.features.calendar.generated.resources.legend_special
+import numera.features.calendar.generated.resources.close_button
+import numera.features.calendar.generated.resources.day_detail_title
+import numera.features.calendar.generated.resources.calendar_locked_title
+import numera.features.calendar.generated.resources.calendar_locked_description
+import numera.features.calendar.generated.resources.subscribe_button
 
-private val WEEKDAY_LABELS = listOf("ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС")
+private val WEEKDAY_LABEL_RES = listOf(
+    Res.string.weekday_mon, Res.string.weekday_tue, Res.string.weekday_wed, Res.string.weekday_thu,
+    Res.string.weekday_fri, Res.string.weekday_sat, Res.string.weekday_sun
+)
 
 @Composable
 fun CalendarScreen(state: CalendarState, onAction: (CalendarAction) -> Unit) {
@@ -98,9 +119,9 @@ private fun CalendarContent(state: CalendarState.Content, onAction: (CalendarAct
         }
         Spacer(modifier = Modifier.height(8.dp))
         Row(modifier = Modifier.fillMaxWidth()) {
-            WEEKDAY_LABELS.forEach { label ->
+            WEEKDAY_LABEL_RES.forEach { labelRes ->
                 Box(modifier = Modifier.weight(1f), contentAlignment = Alignment.Center) {
-                    Text(text = label, fontSize = 11.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Text(text = stringResource(labelRes), fontSize = 11.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
             }
         }
@@ -159,10 +180,10 @@ private fun energyAccent(personalDay: Int): Color = when (personalDay) {
 @Composable
 private fun Legend() {
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(14.dp)) {
-        LegendItem(Success, "Действие")
-        LegendItem(Ember, "Пауза")
-        LegendItem(Muted, "Стабильность")
-        LegendItem(Primary, "Особый")
+        LegendItem(Success, stringResource(Res.string.legend_action))
+        LegendItem(Ember, stringResource(Res.string.legend_pause))
+        LegendItem(Muted, stringResource(Res.string.legend_stability))
+        LegendItem(Primary, stringResource(Res.string.legend_special))
     }
 }
 
@@ -181,14 +202,14 @@ private fun DayDetailDialog(day: CalendarDayUi, onDismiss: () -> Unit) {
     AlertDialog(
         onDismissRequest = onDismiss,
         confirmButton = {
-            Text(modifier = Modifier.clickable(onClick = onDismiss).padding(8.dp), text = "Закрыть")
+            Text(modifier = Modifier.clickable(onClick = onDismiss).padding(8.dp), text = stringResource(Res.string.close_button))
         },
-        title = { Text("День ${day.day} — число ${day.personalDay}") },
+        title = { Text(stringResource(Res.string.day_detail_title, day.day, day.personalDay)) },
         text = {
             Column {
-                Text(text = meaning.title, fontFamily = displayFontFamily(), fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                Text(text = stringResource(meaning.title), fontFamily = displayFontFamily(), fontWeight = FontWeight.Bold, fontSize = 16.sp)
                 Spacer(modifier = Modifier.height(8.dp))
-                Text(text = meaning.text, fontSize = 13.sp, lineHeight = 19.sp)
+                Text(text = stringResource(meaning.text), fontSize = 13.sp, lineHeight = 19.sp)
             }
         }
     )
@@ -213,7 +234,7 @@ private fun BoxScope.LockOverlay(onUnlockClick: () -> Unit) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Календарь энергии — в подписке",
+            text = stringResource(Res.string.calendar_locked_title),
             fontFamily = displayFontFamily(),
             fontSize = 17.sp,
             fontWeight = FontWeight.Bold,
@@ -222,13 +243,13 @@ private fun BoxScope.LockOverlay(onUnlockClick: () -> Unit) {
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
-            text = "Открывайте личное число и разбор для каждого дня месяца",
+            text = stringResource(Res.string.calendar_locked_description),
             fontSize = 13.sp,
             lineHeight = 18.sp,
             textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
         Spacer(modifier = Modifier.height(16.dp))
-        DefaultNumeraButton(text = "Оформить подписку", onClick = onUnlockClick)
+        DefaultNumeraButton(text = stringResource(Res.string.subscribe_button), onClick = onUnlockClick)
     }
 }

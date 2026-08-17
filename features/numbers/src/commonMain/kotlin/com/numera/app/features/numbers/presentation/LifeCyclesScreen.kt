@@ -34,6 +34,12 @@ import com.numera.app.core.commonMain.PrimarySoft
 import com.numera.app.core.commonMain.Surface
 import com.numera.app.core.commonMain.components.BackButton
 import com.numera.app.core.commonMain.displayFontFamily
+import org.jetbrains.compose.resources.stringResource
+import numera.features.numbers.generated.resources.Res
+import numera.features.numbers.generated.resources.life_cycles_title
+import numera.features.numbers.generated.resources.life_cycles_description
+import numera.features.numbers.generated.resources.pinnacle_label
+import numera.features.numbers.generated.resources.challenge_label
 
 @Composable
 fun LifeCyclesScreen(state: LifeCyclesState, onBack: () -> Unit) {
@@ -52,7 +58,7 @@ fun LifeCyclesScreen(state: LifeCyclesState, onBack: () -> Unit) {
                 ) {
                     item {
                         Text(
-                            text = "Жизненные циклы",
+                            text = stringResource(Res.string.life_cycles_title),
                             fontFamily = displayFontFamily(),
                             fontSize = 24.sp,
                             fontWeight = FontWeight.Bold,
@@ -62,7 +68,7 @@ fun LifeCyclesScreen(state: LifeCyclesState, onBack: () -> Unit) {
                     item { Spacer(modifier = Modifier.height(6.dp)) }
                     item {
                         Text(
-                            text = "Четыре возрастных этапа, у каждого — своя точка опоры (пик) и своя сложность (вызов).",
+                            text = stringResource(Res.string.life_cycles_description),
                             fontSize = 13.sp,
                             lineHeight = 19.sp,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -95,9 +101,9 @@ private fun StageCard(stage: LifeStageUi) {
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
         Spacer(modifier = Modifier.height(12.dp))
-        NumberLine(label = "Пик", number = stage.pinnacleNumber, text = stage.pinnacleText, accent = Primary, accentSoft = PrimarySoft)
+        NumberLine(label = stringResource(Res.string.pinnacle_label), number = stage.pinnacleNumber, text = stage.pinnacleText, accent = Primary, accentSoft = PrimarySoft)
         Spacer(modifier = Modifier.height(12.dp))
-        NumberLine(label = "Вызов", number = stage.challengeNumber, text = stage.challengeText, accent = Ember, accentSoft = Ember.copy(alpha = 0.15f))
+        NumberLine(label = stringResource(Res.string.challenge_label), number = stage.challengeNumber, text = stage.challengeText, accent = Ember, accentSoft = Ember.copy(alpha = 0.15f))
     }
 }
 

@@ -1,0 +1,62 @@
+<resources>
+    <string name="tab_habits">Hábitos</string>
+    <string name="tab_mood">Estado de ánimo</string>
+    <string name="habit_today_insight">Número del día %1$d: %2$s</string>
+    <string name="new_habit_placeholder">Nuevo hábito</string>
+    <string name="add_button">Añadir</string>
+    <string name="swipe_hint_habits">Desliza una tarjeta a la izquierda para eliminarla</string>
+    <string name="delete_habit_title">¿Eliminar hábito?</string>
+    <string name="delete_habit_text">«%1$s» se eliminará junto con su historial de cumplimiento.</string>
+    <string name="editing_mood_entry">Editando registro</string>
+    <string name="mood_note_placeholder">¿Qué influyó hoy en tu estado de ánimo?</string>
+    <string name="update_button">Actualizar</string>
+    <string name="save_button">Guardar</string>
+    <string name="cancel_button">Cancelar</string>
+    <string name="swipe_hint_mood">Toca un registro para editarlo — desliza a la izquierda para eliminarlo</string>
+    <string name="delete_mood_title">¿Eliminar registro?</string>
+    <string name="delete_mood_text">Este registro de estado de ánimo se eliminará de forma permanente.</string>
+    <string name="mood_trend_title">Estado de ánimo de los últimos 14 días</string>
+    <string name="delete_action">Eliminar</string>
+    <string name="weekly_summary">En los últimos 7 días: en promedio %1$s — %2$s (%3$s).</string>
+    <string name="mood_insight">Parece que los días con Día Personal %1$d suelen irte mejor — registras buen ánimo notablemente más a menudo de lo habitual.</string>
+    <string name="score_label_1">difícil</string>
+    <string name="score_label_2">regular</string>
+    <string name="score_label_3">normal</string>
+    <string name="score_label_4">bien</string>
+    <string name="score_label_5">genial</string>
+
+    <string name="tag_work">Trabajo</string>
+    <string name="tag_relationships">Relaciones</string>
+    <string name="tag_health">Salud</string>
+    <string name="tag_sleep">Sueño</string>
+    <string name="tag_money">Dinero</string>
+    <string name="tag_weather">Clima</string>
+    <string name="tag_sport">Deporte</string>
+    <string name="tag_rest">Descanso</string>
+
+    <string name="habit_suggestion_1">Buen día para empezar un hábito nuevo — no hay garantía de que perdure, pero hoy el primer paso resulta más fácil.</string>
+    <string name="habit_suggestion_2">Un día para hábitos que haces junto a alguien — la colaboración funciona mejor que el esfuerzo en solitario.</string>
+    <string name="habit_suggestion_3">Buen momento para hábitos ligados a la autoexpresión — diario, creatividad, conversación.</string>
+    <string name="habit_suggestion_4">Un día de disciplina — perfecto para cerrar los hábitos que sueles posponer.</string>
+    <string name="habit_suggestion_5">Hoy la rutina se siente especialmente pesada — no te culpes si fallas, simplemente vuelve mañana.</string>
+    <string name="habit_suggestion_6">Buen día para hábitos relacionados con el cuidado del hogar o de tus seres queridos.</string>
+    <string name="habit_suggestion_7">Hoy conviene más la reflexión que nuevos compromisos — no te exijas si no terminas todo.</string>
+    <string name="habit_suggestion_8">Buen día para hábitos relacionados con el dinero y poner tus asuntos en orden.</string>
+    <string name="habit_suggestion_9">Un día para terminar o reconsiderar un hábito que ya no cumple su propósito.</string>
+    <string name="habit_suggestion_11">Sensibilidad elevada hoy — buen momento para prácticas de conexión con tierra.</string>
+    <string name="habit_suggestion_22">Un día poco común para hábitos que construyes para los próximos años — no lo gastes en pequeñeces.</string>
+    <string name="habit_suggestion_33">Un día en el que cuidar a los demás resulta especialmente natural — pero también hay lugar para el hábito de cuidarte a ti mismo.</string>
+
+    <string name="month_short_1">ene</string>
+    <string name="month_short_2">feb</string>
+    <string name="month_short_3">mar</string>
+    <string name="month_short_4">abr</string>
+    <string name="month_short_5">may</string>
+    <string name="month_short_6">jun</string>
+    <string name="month_short_7">jul</string>
+    <string name="month_short_8">ago</string>
+    <string name="month_short_9">sep</string>
+    <string name="month_short_10">oct</string>
+    <string name="month_short_11">nov</string>
+    <string name="month_short_12">dic</string>
+</resources>

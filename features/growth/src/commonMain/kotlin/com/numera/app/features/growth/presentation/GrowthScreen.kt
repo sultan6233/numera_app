@@ -66,9 +66,47 @@ import com.numera.app.features.growth.presentation.model.HabitUi
 import com.numera.app.features.growth.presentation.model.MoodEntryUi
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
+import org.jetbrains.compose.resources.stringResource
+import org.jetbrains.compose.resources.pluralStringResource
+import numera.features.growth.generated.resources.Res
+import numera.features.growth.generated.resources.tab_habits
+import numera.features.growth.generated.resources.tab_mood
+import numera.features.growth.generated.resources.habit_today_insight
+import numera.features.growth.generated.resources.new_habit_placeholder
+import numera.features.growth.generated.resources.add_button
+import numera.features.growth.generated.resources.swipe_hint_habits
+import numera.features.growth.generated.resources.delete_habit_title
+import numera.features.growth.generated.resources.delete_habit_text
+import numera.features.growth.generated.resources.editing_mood_entry
+import numera.features.growth.generated.resources.mood_note_placeholder
+import numera.features.growth.generated.resources.update_button
+import numera.features.growth.generated.resources.save_button
+import numera.features.growth.generated.resources.cancel_button
+import numera.features.growth.generated.resources.swipe_hint_mood
+import numera.features.growth.generated.resources.delete_mood_title
+import numera.features.growth.generated.resources.delete_mood_text
+import numera.features.growth.generated.resources.mood_trend_title
+import numera.features.growth.generated.resources.delete_action
+import numera.features.growth.generated.resources.streak_days
+import numera.features.growth.generated.resources.month_short_1
+import numera.features.growth.generated.resources.month_short_2
+import numera.features.growth.generated.resources.month_short_3
+import numera.features.growth.generated.resources.month_short_4
+import numera.features.growth.generated.resources.month_short_5
+import numera.features.growth.generated.resources.month_short_6
+import numera.features.growth.generated.resources.month_short_7
+import numera.features.growth.generated.resources.month_short_8
+import numera.features.growth.generated.resources.month_short_9
+import numera.features.growth.generated.resources.month_short_10
+import numera.features.growth.generated.resources.month_short_11
+import numera.features.growth.generated.resources.month_short_12
 
 private val MOOD_OPTIONS = listOf("😞", "😐", "🙂", "😄", "🤩")
-private val SHORT_MONTHS = listOf("янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек")
+private val SHORT_MONTH_RES = listOf(
+    Res.string.month_short_1, Res.string.month_short_2, Res.string.month_short_3, Res.string.month_short_4,
+    Res.string.month_short_5, Res.string.month_short_6, Res.string.month_short_7, Res.string.month_short_8,
+    Res.string.month_short_9, Res.string.month_short_10, Res.string.month_short_11, Res.string.month_short_12
+)
 
 @Composable
 fun GrowthScreen(state: GrowthState, onAction: (GrowthAction) -> Unit) {
@@ -92,7 +130,7 @@ private fun TabRow(selected: GrowthTab, onAction: (GrowthAction) -> Unit) {
         GrowthTab.entries.forEach { tab ->
             Text(
                 modifier = Modifier.clickable { onAction(GrowthAction.OnTabSelected(tab)) },
-                text = if (tab == GrowthTab.HABITS) "Привычки" else "Настроение",
+                text = if (tab == GrowthTab.HABITS) stringResource(Res.string.tab_habits) else stringResource(Res.string.tab_mood),
                 fontSize = 16.sp,
                 fontWeight = if (tab == selected) FontWeight.Bold else FontWeight.Normal,
                 color = if (tab == selected) Primary else MaterialTheme.colorScheme.onSurfaceVariant
@@ -104,22 +142,22 @@ private fun TabRow(selected: GrowthTab, onAction: (GrowthAction) -> Unit) {
 @Composable
 private fun HabitsTab(state: GrowthState.Content, onAction: (GrowthAction) -> Unit) {
     Column(modifier = Modifier.fillMaxSize()) {
-        InsightCard(text = "Число дня ${state.personalDayToday}: ${state.habitSuggestion}", accent = Primary)
+        InsightCard(text = stringResource(Res.string.habit_today_insight, state.personalDayToday, state.habitSuggestion), accent = Primary)
         Spacer(modifier = Modifier.height(12.dp))
         Row(verticalAlignment = Alignment.CenterVertically) {
             OutlinedTextField(
                 modifier = Modifier.weight(1f),
                 value = state.newHabitTitle,
                 onValueChange = { onAction(GrowthAction.OnNewHabitTitleChanged(it)) },
-                placeholder = { Text("Новая привычка") }
+                placeholder = { Text(stringResource(Res.string.new_habit_placeholder)) }
             )
         }
         Spacer(modifier = Modifier.height(8.dp))
-        DefaultNumeraButton(text = "Добавить", onClick = { onAction(GrowthAction.OnAddHabit) })
+        DefaultNumeraButton(text = stringResource(Res.string.add_button), onClick = { onAction(GrowthAction.OnAddHabit) })
         Spacer(modifier = Modifier.height(16.dp))
         if (state.habits.isNotEmpty()) {
             Text(
-                text = "Смахните карточку влево, чтобы удалить",
+                text = stringResource(Res.string.swipe_hint_habits),
                 fontSize = 11.sp,
                 color = Muted,
                 modifier = Modifier.padding(bottom = 8.dp)
@@ -129,15 +167,15 @@ private fun HabitsTab(state: GrowthState.Content, onAction: (GrowthAction) -> Un
             items(state.habits, key = { it.id }) { habit ->
                 SwipeToDeleteRow(
                     onDelete = { onAction(GrowthAction.OnDeleteHabit(habit.id)) },
-                    confirmTitle = "Удалить привычку?",
-                    confirmText = "«${habit.title}» будет удалена вместе с историей выполнения."
+                    confirmTitle = stringResource(Res.string.delete_habit_title),
+                    confirmText = stringResource(Res.string.delete_habit_text, habit.title)
                 ) {
                     Checkbox(checked = habit.doneToday, onCheckedChange = { onAction(GrowthAction.OnToggleHabit(habit.id)) })
                     Column(modifier = Modifier.weight(1f)) {
                         Text(text = habit.title, color = MaterialTheme.colorScheme.onBackground)
                         if (habit.streak > 0) {
                             Text(
-                                text = "${habit.streak} ${dayWord(habit.streak)} подряд",
+                                text = pluralStringResource(Res.plurals.streak_days, habit.streak, habit.streak),
                                 fontSize = 12.sp,
                                 color = Primary
                             )
@@ -146,17 +184,6 @@ private fun HabitsTab(state: GrowthState.Content, onAction: (GrowthAction) -> Un
                 }
             }
         }
-    }
-}
-
-private fun dayWord(count: Int): String {
-    val mod100 = count % 100
-    val mod10 = count % 10
-    return when {
-        mod100 in 11..14 -> "дней"
-        mod10 == 1 -> "день"
-        mod10 in 2..4 -> "дня"
-        else -> "дней"
     }
 }
 
@@ -180,7 +207,7 @@ private fun MoodTab(state: GrowthState.Content, onAction: (GrowthAction) -> Unit
                 }
                 if (editing) {
                     Text(
-                        text = "Редактирование записи",
+                        text = stringResource(Res.string.editing_mood_entry),
                         fontSize = 12.sp,
                         fontWeight = FontWeight.Bold,
                         color = Primary,
@@ -210,19 +237,19 @@ private fun MoodTab(state: GrowthState.Content, onAction: (GrowthAction) -> Unit
                     modifier = Modifier.fillMaxWidth(),
                     value = state.newMoodNote,
                     onValueChange = { onAction(GrowthAction.OnMoodNoteChanged(it)) },
-                    placeholder = { Text("Что сегодня повлияло на настроение?") }
+                    placeholder = { Text(stringResource(Res.string.mood_note_placeholder)) }
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                     DefaultNumeraButton(
                         modifier = Modifier.weight(1f),
-                        text = if (editing) "Обновить" else "Сохранить",
+                        text = if (editing) stringResource(Res.string.update_button) else stringResource(Res.string.save_button),
                         onClick = { onAction(GrowthAction.OnSaveMood) }
                     )
                     if (editing) {
                         DefaultNumeraOutlinedButton(
                             modifier = Modifier.weight(1f),
-                            text = "Отмена",
+                            text = stringResource(Res.string.cancel_button),
                             onClick = { onAction(GrowthAction.OnCancelMoodEdit) }
                         )
                     }
@@ -230,7 +257,7 @@ private fun MoodTab(state: GrowthState.Content, onAction: (GrowthAction) -> Unit
                 Spacer(modifier = Modifier.height(16.dp))
                 if (state.moods.isNotEmpty()) {
                     Text(
-                        text = "Нажмите на запись, чтобы изменить — смахните влево, чтобы удалить",
+                        text = stringResource(Res.string.swipe_hint_mood),
                         fontSize = 11.sp,
                         color = Muted,
                         modifier = Modifier.padding(bottom = 4.dp)
@@ -242,8 +269,8 @@ private fun MoodTab(state: GrowthState.Content, onAction: (GrowthAction) -> Unit
             SwipeToDeleteRow(
                 onDelete = { onAction(GrowthAction.OnDeleteMood(entry.id)) },
                 onClick = { onAction(GrowthAction.OnMoodEntryClick(entry.id)) },
-                confirmTitle = "Удалить запись?",
-                confirmText = "Запись настроения будет удалена без возможности восстановления."
+                confirmTitle = stringResource(Res.string.delete_mood_title),
+                confirmText = stringResource(Res.string.delete_mood_text)
             ) {
                 Text(text = entry.mood, fontSize = 20.sp)
                 Spacer(modifier = Modifier.width(10.dp))
@@ -252,10 +279,15 @@ private fun MoodTab(state: GrowthState.Content, onAction: (GrowthAction) -> Unit
                         Text(text = entry.note, color = MaterialTheme.colorScheme.onSurfaceVariant, fontSize = 13.sp)
                     }
                     if (entry.tags.isNotEmpty()) {
-                        Text(text = entry.tags.joinToString(" · "), color = Primary, fontSize = 11.sp)
+                        val tagLabels = entry.tags.map { stringResource(MoodTags.labelFor(it)) }
+                        Text(
+                            text = tagLabels.joinToString(" · "),
+                            color = Primary,
+                            fontSize = 11.sp
+                        )
                     }
                 }
-                Text(text = "${entry.day} ${SHORT_MONTHS[entry.month - 1]}", fontSize = 11.sp, color = Muted)
+                Text(text = "${entry.day} ${stringResource(SHORT_MONTH_RES[entry.month - 1])}", fontSize = 11.sp, color = Muted)
             }
         }
     }
@@ -268,17 +300,17 @@ private fun TagsRow(selected: Set<String>, onToggle: (String) -> Unit) {
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         MoodTags.ALL.forEach { tag ->
-            val isSelected = tag in selected
+            val isSelected = tag.id in selected
             Box(
                 modifier = Modifier
                     .clip(RoundedCornerShape(50))
                     .background(if (isSelected) Primary else Surface)
                     .border(1.dp, if (isSelected) Primary else Outline, RoundedCornerShape(50))
-                    .clickable { onToggle(tag) }
+                    .clickable { onToggle(tag.id) }
                     .padding(horizontal = 14.dp, vertical = 8.dp)
             ) {
                 Text(
-                    text = tag,
+                    text = stringResource(tag.labelRes),
                     fontSize = 12.sp,
                     color = if (isSelected) MaterialTheme.colorScheme.background else MaterialTheme.colorScheme.onSurfaceVariant
                 )
@@ -293,7 +325,7 @@ private fun TagsRow(selected: Set<String>, onToggle: (String) -> Unit) {
 private fun MoodTrendChart(trend: List<Double?>) {
     Column(modifier = Modifier.fillMaxWidth()) {
         Text(
-            text = "Настроение за 14 дней",
+            text = stringResource(Res.string.mood_trend_title),
             fontSize = 11.sp,
             color = Muted,
             modifier = Modifier.padding(bottom = 6.dp)
@@ -370,7 +402,7 @@ private fun SwipeToDeleteRow(
             horizontalArrangement = Arrangement.End,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(text = "Удалить", color = OnBackground, fontSize = 13.sp, modifier = Modifier.padding(end = 20.dp))
+            Text(text = stringResource(Res.string.delete_action), color = OnBackground, fontSize = 13.sp, modifier = Modifier.padding(end = 20.dp))
         }
         Row(
             modifier = Modifier
@@ -418,7 +450,7 @@ private fun SwipeToDeleteRow(
                         showConfirm = false
                         onDelete()
                     }.padding(8.dp),
-                    text = "Удалить",
+                    text = stringResource(Res.string.delete_action),
                     color = Error
                 )
             },
@@ -428,7 +460,7 @@ private fun SwipeToDeleteRow(
                         showConfirm = false
                         resetOffset()
                     }.padding(8.dp),
-                    text = "Отмена"
+                    text = stringResource(Res.string.cancel_button)
                 )
             },
             title = { Text(confirmTitle) },

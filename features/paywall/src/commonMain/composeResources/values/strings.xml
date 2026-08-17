@@ -1,0 +1,22 @@
+<resources>
+    <string name="paywall_headline">Это ваша карта. Мы раскрыли два числа из девяти.</string>
+    <string name="paywall_value_1">Число души, личности и ещё 6 расчётов</string>
+    <string name="paywall_value_2">Новый персональный разбор каждый день</string>
+    <string name="paywall_value_3">Совместимость с близкими</string>
+    <string name="paywall_value_4">Личный календарь энергии на каждый день</string>
+    <string name="plan_weekly_title">Неделя</string>
+    <string name="plan_weekly_price">699 ₽</string>
+    <string name="plan_weekly_period">в неделю</string>
+    <string name="plan_monthly_title">Месяц</string>
+    <string name="plan_monthly_price">1 190 ₽</string>
+    <string name="plan_monthly_period">в месяц</string>
+    <string name="plan_yearly_title">Год</string>
+    <string name="plan_yearly_price">4 990 ₽</string>
+    <string name="plan_yearly_period">в год</string>
+    <string name="plan_yearly_badge">Выгоднее всего</string>
+    <string name="plan_yearly_per_day">≈ 14 ₽ в день</string>
+    <string name="restore_purchases">Восстановить покупки</string>
+    <string name="continue_free">Продолжить бесплатно</string>
+    <string name="paywall_cta_reveal">Открыть остальные 8 чисел</string>
+    <string name="paywall_continue">Продолжить</string>
+</resources>

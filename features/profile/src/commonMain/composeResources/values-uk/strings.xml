@@ -1,0 +1,8 @@
+<resources>
+    <string name="subscription_active">Підписка активна</string>
+    <string name="free_version">Безкоштовна версія</string>
+    <string name="subscribe_button">Оформити підписку</string>
+    <string name="restore_purchases">Відновити покупки</string>
+    <string name="notifications_label">Сповіщення</string>
+    <string name="purchases_restored">Покупки відновлено</string>
+</resources>

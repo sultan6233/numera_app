@@ -1,0 +1,58 @@
+<resources>
+    <string name="weekday_mon">SEG</string>
+    <string name="weekday_tue">TER</string>
+    <string name="weekday_wed">QUA</string>
+    <string name="weekday_thu">QUI</string>
+    <string name="weekday_fri">SEX</string>
+    <string name="weekday_sat">SAB</string>
+    <string name="weekday_sun">DOM</string>
+
+    <string name="month_january">Janeiro</string>
+    <string name="month_february">Fevereiro</string>
+    <string name="month_march">Março</string>
+    <string name="month_april">Abril</string>
+    <string name="month_may">Maio</string>
+    <string name="month_june">Junho</string>
+    <string name="month_july">Julho</string>
+    <string name="month_august">Agosto</string>
+    <string name="month_september">Setembro</string>
+    <string name="month_october">Outubro</string>
+    <string name="month_november">Novembro</string>
+    <string name="month_december">Dezembro</string>
+
+    <string name="legend_action">Ação</string>
+    <string name="legend_pause">Pausa</string>
+    <string name="legend_stability">Estabilidade</string>
+    <string name="legend_special">Especial</string>
+
+    <string name="close_button">Fechar</string>
+    <string name="day_detail_title">Dia %1$d — número %2$d</string>
+    <string name="calendar_locked_title">Calendário de energia — exclusivo para assinantes</string>
+    <string name="calendar_locked_description">Desbloqueie seu número pessoal e a leitura de cada dia do mês</string>
+    <string name="subscribe_button">Assinar</string>
+
+    <string name="day_energy_1_title">Um dia de começos</string>
+    <string name="day_energy_1_text">Um bom dia para dar o primeiro passo: escrever, propor, começar algo. Hoje a iniciativa funciona mais a seu favor do que esperar o momento ideal.</string>
+    <string name="day_energy_2_title">Um dia de parceria</string>
+    <string name="day_energy_2_text">Um dia para diálogo e decisões conjuntas. Um impulso solo hoje é menos produtivo do que uma conversa com quem está por perto.</string>
+    <string name="day_energy_3_title">Um dia de expressão</string>
+    <string name="day_energy_3_text">Palavras, encontros e ideias criativas vêm mais fácil que o normal hoje. Bom dia para dizer o que você vem adiando.</string>
+    <string name="day_energy_4_title">Um dia de ordem</string>
+    <string name="day_energy_4_text">Um dia para a rotina que normalmente incomoda: organizar, finalizar, sistematizar. Não promete vitórias rápidas, mas sustenta a base.</string>
+    <string name="day_energy_5_title">Um dia de mudanças</string>
+    <string name="day_energy_5_text">Os planos de hoje podem mudar inesperadamente — e isso é mais uma oportunidade do que um obstáculo. Flexibilidade vale mais que uma agenda rígida.</string>
+    <string name="day_energy_6_title">Um dia de cuidado</string>
+    <string name="day_energy_6_text">O foco está nas pessoas queridas e no lar. Bom dia para aquela conversa que já deveria ter acontecido em família ou no relacionamento.</string>
+    <string name="day_energy_7_title">Um dia de pausa</string>
+    <string name="day_energy_7_text">Um dia para silêncio e análise, não para novos compromissos. A resposta que você busca tende a vir mais pela pausa do que pela pressa.</string>
+    <string name="day_energy_8_title">Um dia de resultados</string>
+    <string name="day_energy_8_text">Bom dia para assuntos de dinheiro e status — negociações, decisões sobre coisas importantes que você vem adiando.</string>
+    <string name="day_energy_9_title">Um dia de encerramento</string>
+    <string name="day_energy_9_text">Um dia para fechar um assunto, não para abrir um novo. Soltar o que já cumpriu seu papel fica mais fácil que o normal hoje.</string>
+    <string name="day_energy_11_title">Um dia de intuição</string>
+    <string name="day_energy_11_text">Sensibilidade aguçada a detalhes e clima — confie na sua primeira impressão, mas reserve também um tempo de silêncio.</string>
+    <string name="day_energy_22_title">Um dia de grande escala</string>
+    <string name="day_energy_22_text">Um dia raro em que uma grande ideia encontra um passo prático. Bom momento para uma decisão que impacta os próximos anos.</string>
+    <string name="day_energy_33_title">Um dia de serviço</string>
+    <string name="day_energy_33_text">Um dia em que cuidar dos outros vem especialmente natural — mas não se esqueça de guardar um pouco de energia para você também.</string>
+</resources>

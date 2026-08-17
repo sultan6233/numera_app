@@ -1,6 +1,33 @@
 package com.numera.app.features.calendar.domain
 
-data class DayEnergy(val title: String, val text: String)
+import org.jetbrains.compose.resources.StringResource
+import numera.features.calendar.generated.resources.Res
+import numera.features.calendar.generated.resources.day_energy_1_title
+import numera.features.calendar.generated.resources.day_energy_1_text
+import numera.features.calendar.generated.resources.day_energy_2_title
+import numera.features.calendar.generated.resources.day_energy_2_text
+import numera.features.calendar.generated.resources.day_energy_3_title
+import numera.features.calendar.generated.resources.day_energy_3_text
+import numera.features.calendar.generated.resources.day_energy_4_title
+import numera.features.calendar.generated.resources.day_energy_4_text
+import numera.features.calendar.generated.resources.day_energy_5_title
+import numera.features.calendar.generated.resources.day_energy_5_text
+import numera.features.calendar.generated.resources.day_energy_6_title
+import numera.features.calendar.generated.resources.day_energy_6_text
+import numera.features.calendar.generated.resources.day_energy_7_title
+import numera.features.calendar.generated.resources.day_energy_7_text
+import numera.features.calendar.generated.resources.day_energy_8_title
+import numera.features.calendar.generated.resources.day_energy_8_text
+import numera.features.calendar.generated.resources.day_energy_9_title
+import numera.features.calendar.generated.resources.day_energy_9_text
+import numera.features.calendar.generated.resources.day_energy_11_title
+import numera.features.calendar.generated.resources.day_energy_11_text
+import numera.features.calendar.generated.resources.day_energy_22_title
+import numera.features.calendar.generated.resources.day_energy_22_text
+import numera.features.calendar.generated.resources.day_energy_33_title
+import numera.features.calendar.generated.resources.day_energy_33_text
+
+data class DayEnergy(val title: StringResource, val text: StringResource)
 
 /**
  * Short, day-scoped flavor text for the personal day number - distinct from the identity-level
@@ -8,18 +35,18 @@ data class DayEnergy(val title: String, val text: String)
  */
 object DayEnergyMeanings {
     private val meanings = mapOf(
-        1 to DayEnergy("День начала", "Хороший день, чтобы сделать первый шаг: написать, предложить, начать. Инициатива сегодня работает на вас сильнее, чем ожидание удобного момента."),
-        2 to DayEnergy("День партнёрства", "День для диалога и совместных решений. Сольный рывок сегодня менее продуктивен, чем разговор с тем, кто рядом."),
-        3 to DayEnergy("День выражения", "Слова, встречи и творческие идеи сегодня даются легче обычного. Хороший день, чтобы сказать то, что откладывали."),
-        4 to DayEnergy("День порядка", "День для рутины, которая обычно раздражает: разобрать, доделать, систематизировать. Быстрых побед не обещает, зато держит фундамент."),
-        5 to DayEnergy("День перемен", "Планы сегодня могут неожиданно измениться — и это скорее возможность, чем помеха. Гибкость выгоднее жёсткого расписания."),
-        6 to DayEnergy("День заботы", "В фокусе — близкие и дом. Хороший день для разговора, который давно назрел в семье или паре."),
-        7 to DayEnergy("День паузы", "День для тишины и анализа, а не для новых обязательств. Ответ, который ищете, скорее придёт через паузу, чем через спешку."),
-        8 to DayEnergy("День результата", "Хороший день для денежных и статусных вопросов — переговоров, решений, которые давно откладывали по значимым делам."),
-        9 to DayEnergy("День завершения", "День, чтобы закрыть тему, а не открыть новую. Отпустить то, что уже сыграло свою роль, сегодня легче обычного."),
-        11 to DayEnergy("День интуиции", "Обострённая чувствительность к деталям и настроению — доверьтесь первому впечатлению, но найдите время для тишины."),
-        22 to DayEnergy("День масштаба", "Редкий день, когда большая идея и практический шаг встречаются. Хорошее время для решения, которое влияет на годы вперёд."),
-        33 to DayEnergy("День служения", "День, когда забота о других даётся особенно органично — но не забудьте оставить ресурс и для себя.")
+        1 to DayEnergy(Res.string.day_energy_1_title, Res.string.day_energy_1_text),
+        2 to DayEnergy(Res.string.day_energy_2_title, Res.string.day_energy_2_text),
+        3 to DayEnergy(Res.string.day_energy_3_title, Res.string.day_energy_3_text),
+        4 to DayEnergy(Res.string.day_energy_4_title, Res.string.day_energy_4_text),
+        5 to DayEnergy(Res.string.day_energy_5_title, Res.string.day_energy_5_text),
+        6 to DayEnergy(Res.string.day_energy_6_title, Res.string.day_energy_6_text),
+        7 to DayEnergy(Res.string.day_energy_7_title, Res.string.day_energy_7_text),
+        8 to DayEnergy(Res.string.day_energy_8_title, Res.string.day_energy_8_text),
+        9 to DayEnergy(Res.string.day_energy_9_title, Res.string.day_energy_9_text),
+        11 to DayEnergy(Res.string.day_energy_11_title, Res.string.day_energy_11_text),
+        22 to DayEnergy(Res.string.day_energy_22_title, Res.string.day_energy_22_text),
+        33 to DayEnergy(Res.string.day_energy_33_title, Res.string.day_energy_33_text)
     )
 
     fun meaningFor(personalDay: Int): DayEnergy = meanings[personalDay] ?: meanings.getValue(9)

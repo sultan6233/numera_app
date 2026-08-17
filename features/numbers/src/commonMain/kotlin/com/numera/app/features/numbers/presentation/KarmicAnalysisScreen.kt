@@ -34,6 +34,14 @@ import com.numera.app.core.commonMain.Success
 import com.numera.app.core.commonMain.Surface
 import com.numera.app.core.commonMain.components.BackButton
 import com.numera.app.core.commonMain.displayFontFamily
+import org.jetbrains.compose.resources.stringResource
+import numera.features.numbers.generated.resources.Res
+import numera.features.numbers.generated.resources.karmic_analysis_title
+import numera.features.numbers.generated.resources.karmic_debts_label
+import numera.features.numbers.generated.resources.no_karmic_debts
+import numera.features.numbers.generated.resources.karmic_lessons_label
+import numera.features.numbers.generated.resources.karmic_lessons_description
+import numera.features.numbers.generated.resources.no_karmic_lessons
 
 @Composable
 fun KarmicAnalysisScreen(state: KarmicAnalysisState, onBack: () -> Unit) {
@@ -52,7 +60,7 @@ fun KarmicAnalysisScreen(state: KarmicAnalysisState, onBack: () -> Unit) {
                 ) {
                     item {
                         Text(
-                            text = "Кармический анализ",
+                            text = stringResource(Res.string.karmic_analysis_title),
                             fontFamily = displayFontFamily(),
                             fontSize = 24.sp,
                             fontWeight = FontWeight.Bold,
@@ -60,17 +68,17 @@ fun KarmicAnalysisScreen(state: KarmicAnalysisState, onBack: () -> Unit) {
                         )
                     }
                     item { Spacer(modifier = Modifier.height(20.dp)) }
-                    item { SectionLabel("Кармические долги") }
+                    item { SectionLabel(stringResource(Res.string.karmic_debts_label)) }
                     if (state.debts.isEmpty()) {
-                        item { EmptyNote("Активных кармических долгов не найдено — ваш путь в этой сфере складывался без резких проверок.") }
+                        item { EmptyNote(stringResource(Res.string.no_karmic_debts)) }
                     } else {
                         items(state.debts) { KarmicRow(it.number.toString(), it.text) }
                     }
                     item { Spacer(modifier = Modifier.height(24.dp)) }
-                    item { SectionLabel("Кармические уроки") }
+                    item { SectionLabel(stringResource(Res.string.karmic_lessons_label)) }
                     item {
                         Text(
-                            text = "Числа, которых нет среди букв вашего имени — качества, которые не даны по умолчанию и требуют осознанной практики.",
+                            text = stringResource(Res.string.karmic_lessons_description),
                             fontSize = 13.sp,
                             lineHeight = 19.sp,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -78,7 +86,7 @@ fun KarmicAnalysisScreen(state: KarmicAnalysisState, onBack: () -> Unit) {
                         )
                     }
                     if (state.lessons.isEmpty()) {
-                        item { EmptyNote("В вашем имени представлены все числа от 1 до 9 — редкий и сбалансированный набор.") }
+                        item { EmptyNote(stringResource(Res.string.no_karmic_lessons)) }
                     } else {
                         items(state.lessons) { KarmicRow(it.number.toString(), it.text) }
                     }

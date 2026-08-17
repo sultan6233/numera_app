@@ -1,0 +1,62 @@
+﻿<resources>
+    <string name="tab_habits">Habitudes</string>
+    <string name="tab_mood">Humeur</string>
+    <string name="habit_today_insight">Nombre du jour %1$d : %2$s</string>
+    <string name="new_habit_placeholder">Nouvelle habitude</string>
+    <string name="add_button">Ajouter</string>
+    <string name="swipe_hint_habits">Balayez une carte vers la gauche pour la supprimer</string>
+    <string name="delete_habit_title">Supprimer l'habitude ?</string>
+    <string name="delete_habit_text">« %1$s » sera supprimée avec son historique d'accomplissement.</string>
+    <string name="editing_mood_entry">Modification de l'entrée</string>
+    <string name="mood_note_placeholder">Qu'est-ce qui a influencé votre humeur aujourd'hui ?</string>
+    <string name="update_button">Mettre à jour</string>
+    <string name="save_button">Enregistrer</string>
+    <string name="cancel_button">Annuler</string>
+    <string name="swipe_hint_mood">Touchez une entrée pour la modifier — balayez vers la gauche pour la supprimer</string>
+    <string name="delete_mood_title">Supprimer l'entrée ?</string>
+    <string name="delete_mood_text">Cette entrée d'humeur sera supprimée définitivement.</string>
+    <string name="mood_trend_title">Humeur des 14 derniers jours</string>
+    <string name="delete_action">Supprimer</string>
+    <string name="weekly_summary">Au cours des 7 derniers jours : en moyenne %1$s — %2$s (%3$s).</string>
+    <string name="mood_insight">Il semble que les jours avec le nombre personnel %1$d se passent souvent mieux pour vous — vous enregistrez une bonne humeur nettement plus souvent que d'habitude.</string>
+    <string name="score_label_1">difficile</string>
+    <string name="score_label_2">moyen</string>
+    <string name="score_label_3">correct</string>
+    <string name="score_label_4">bien</string>
+    <string name="score_label_5">excellent</string>
+
+    <string name="tag_work">Travail</string>
+    <string name="tag_relationships">Relations</string>
+    <string name="tag_health">Santé</string>
+    <string name="tag_sleep">Sommeil</string>
+    <string name="tag_money">Argent</string>
+    <string name="tag_weather">Météo</string>
+    <string name="tag_sport">Sport</string>
+    <string name="tag_rest">Repos</string>
+
+    <string name="habit_suggestion_1">Un bon jour pour commencer une nouvelle habitude — rien ne garantit qu'elle durera, mais le premier pas vient plus facilement aujourd'hui.</string>
+    <string name="habit_suggestion_2">Un jour pour les habitudes que vous partagez avec quelqu'un — le partenariat fonctionne mieux qu'un effort en solo.</string>
+    <string name="habit_suggestion_3">Un bon moment pour les habitudes liées à l'expression de soi — journal, créativité, conversation.</string>
+    <string name="habit_suggestion_4">Un jour de discipline — parfait pour boucler les habitudes que vous remettez habituellement à plus tard.</string>
+    <string name="habit_suggestion_5">La routine semble particulièrement lourde aujourd'hui — ne vous en voulez pas si vous flanchez, revenez simplement demain.</string>
+    <string name="habit_suggestion_6">Un bon jour pour les habitudes liées au soin du foyer ou de vos proches.</string>
+    <string name="habit_suggestion_7">Aujourd'hui convient plus à la réflexion qu'à de nouveaux engagements — ne soyez pas trop dur avec vous-même si vous ne finissez pas tout.</string>
+    <string name="habit_suggestion_8">Un bon jour pour les habitudes liées à l'argent et à la mise en ordre de vos affaires.</string>
+    <string name="habit_suggestion_9">Un jour pour terminer ou reconsidérer une habitude qui ne sert plus son objectif.</string>
+    <string name="habit_suggestion_11">Sensibilité accrue aujourd'hui — un bon moment pour des pratiques d'ancrage.</string>
+    <string name="habit_suggestion_22">Un jour rare pour les habitudes que vous construisez pour les années à venir — ne le gaspillez pas sur des broutilles.</string>
+    <string name="habit_suggestion_33">Un jour où prendre soin des autres vient particulièrement naturellement — mais il y a aussi de la place pour l'habitude de prendre soin de vous-même.</string>
+
+    <string name="month_short_1">janv.</string>
+    <string name="month_short_2">févr.</string>
+    <string name="month_short_3">mars</string>
+    <string name="month_short_4">avr.</string>
+    <string name="month_short_5">mai</string>
+    <string name="month_short_6">juin</string>
+    <string name="month_short_7">juil.</string>
+    <string name="month_short_8">août</string>
+    <string name="month_short_9">sept.</string>
+    <string name="month_short_10">oct.</string>
+    <string name="month_short_11">nov.</string>
+    <string name="month_short_12">déc.</string>
+</resources>

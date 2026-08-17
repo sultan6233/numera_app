@@ -40,6 +40,13 @@ import com.numera.app.core.commonMain.components.NumeraIcon
 import com.numera.app.core.commonMain.displayFontFamily
 import com.numera.app.features.paywall.presentation.model.PlanUi
 import com.numera.app.features.paywall.presentation.model.ValueItemUi
+import org.jetbrains.compose.resources.stringResource
+import numera.features.paywall.generated.resources.Res
+import numera.features.paywall.generated.resources.paywall_headline
+import numera.features.paywall.generated.resources.restore_purchases
+import numera.features.paywall.generated.resources.continue_free
+import numera.features.paywall.generated.resources.paywall_cta_reveal
+import numera.features.paywall.generated.resources.paywall_continue
 
 @Composable
 fun PaywallScreen(state: PaywallState, onAction: (PaywallAction) -> Unit, snackbarHostState: SnackbarHostState) {
@@ -57,7 +64,7 @@ private fun PaywallContent(modifier: Modifier, state: PaywallState.Content, onAc
         NumberHero(state.lifePathNumber, state.expressionNumber)
         Spacer(modifier = Modifier.height(10.dp))
         Text(
-            text = "Это ваша карта. Мы раскрыли два числа из девяти.",
+            text = stringResource(Res.string.paywall_headline),
             fontFamily = displayFontFamily(),
             fontSize = 19.sp,
             fontWeight = FontWeight.Bold,
@@ -93,13 +100,13 @@ private fun PaywallContent(modifier: Modifier, state: PaywallState.Content, onAc
         ) {
             Text(
                 modifier = Modifier.clickable { onAction(PaywallAction.OnRestoreClick) },
-                text = "Восстановить покупки",
+                text = stringResource(Res.string.restore_purchases),
                 fontSize = 12.sp,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
             Text(
                 modifier = Modifier.clickable { onAction(PaywallAction.OnSkipClick) },
-                text = "Продолжить бесплатно",
+                text = stringResource(Res.string.continue_free),
                 fontSize = 12.sp,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
@@ -108,8 +115,9 @@ private fun PaywallContent(modifier: Modifier, state: PaywallState.Content, onAc
     }
 }
 
+@Composable
 private fun ctaText(lifePath: Int?): String =
-    if (lifePath != null) "Открыть остальные 8 чисел" else "Продолжить"
+    if (lifePath != null) stringResource(Res.string.paywall_cta_reveal) else stringResource(Res.string.paywall_continue)
 
 @Composable
 private fun NumberHero(lifePath: Int?, expression: Int?) {
@@ -143,7 +151,7 @@ private fun ValueList(items: List<ValueItemUi>) {
                 }
                 Spacer(modifier = Modifier.width(12.dp))
                 Text(
-                    text = item.label,
+                    text = stringResource(item.labelRes),
                     fontSize = 14.sp,
                     color = MaterialTheme.colorScheme.onBackground
                 )
@@ -168,24 +176,24 @@ private fun PlanRow(plan: PlanUi, selected: Boolean, onClick: () -> Unit) {
         verticalAlignment = Alignment.CenterVertically
     ) {
         Column {
-            Text(text = plan.title, fontSize = 16.sp, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onBackground)
-            plan.badge?.let {
+            Text(text = stringResource(plan.titleRes), fontSize = 16.sp, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onBackground)
+            plan.badgeRes?.let {
                 Spacer(modifier = Modifier.height(2.dp))
-                Text(text = it, fontSize = 11.sp, color = Primary, fontWeight = FontWeight.Bold)
+                Text(text = stringResource(it), fontSize = 11.sp, color = Primary, fontWeight = FontWeight.Bold)
             }
         }
         Column(horizontalAlignment = Alignment.End) {
             Text(
-                text = plan.price,
+                text = stringResource(plan.priceRes),
                 fontFamily = displayFontFamily(),
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.onBackground
             )
             Text(
-                text = plan.perDayNote ?: plan.period,
+                text = stringResource(plan.perDayNoteRes ?: plan.periodRes),
                 fontSize = 12.sp,
-                color = if (plan.perDayNote != null) Primary else MaterialTheme.colorScheme.onSurfaceVariant
+                color = if (plan.perDayNoteRes != null) Primary else MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
     }

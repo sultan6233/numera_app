@@ -1,0 +1,22 @@
+﻿<resources>
+    <string name="paywall_headline">Voici votre carte. Nous avons révélé deux de vos neuf nombres.</string>
+    <string name="paywall_value_1">Nombres de l'âme et de la personnalité, et 6 calculs de plus</string>
+    <string name="paywall_value_2">Une nouvelle lecture personnelle chaque jour</string>
+    <string name="paywall_value_3">Compatibilité avec vos proches</string>
+    <string name="paywall_value_4">Un calendrier d'énergie personnel pour chaque jour</string>
+    <string name="plan_weekly_title">Semaine</string>
+    <string name="plan_weekly_price">4,99 €</string>
+    <string name="plan_weekly_period">par semaine</string>
+    <string name="plan_monthly_title">Mois</string>
+    <string name="plan_monthly_price">12,99 €</string>
+    <string name="plan_monthly_period">par mois</string>
+    <string name="plan_yearly_title">Année</string>
+    <string name="plan_yearly_price">39,99 €</string>
+    <string name="plan_yearly_period">par an</string>
+    <string name="plan_yearly_badge">Meilleure offre</string>
+    <string name="plan_yearly_per_day">≈ 0,11 €/jour</string>
+    <string name="restore_purchases">Restaurer les achats</string>
+    <string name="continue_free">Continuer gratuitement</string>
+    <string name="paywall_cta_reveal">Débloquer les 8 autres nombres</string>
+    <string name="paywall_continue">Continuer</string>
+</resources>

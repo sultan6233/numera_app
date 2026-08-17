@@ -1,0 +1,22 @@
+<resources>
+    <string name="paywall_headline">Bu senin haritan. Dokuz sayından ikisini açığa çıkardık.</string>
+    <string name="paywall_value_1">Ruh ve kişilik sayıları, üstüne 6 hesaplama daha</string>
+    <string name="paywall_value_2">Her gün yeni bir kişisel analiz</string>
+    <string name="paywall_value_3">Sevdiklerinizle uyum</string>
+    <string name="paywall_value_4">Her gün için kişisel enerji takvimi</string>
+    <string name="plan_weekly_title">Hafta</string>
+    <string name="plan_weekly_price">₺149</string>
+    <string name="plan_weekly_period">haftalık</string>
+    <string name="plan_monthly_title">Ay</string>
+    <string name="plan_monthly_price">₺249</string>
+    <string name="plan_monthly_period">aylık</string>
+    <string name="plan_yearly_title">Yıl</string>
+    <string name="plan_yearly_price">₺899</string>
+    <string name="plan_yearly_period">yıllık</string>
+    <string name="plan_yearly_badge">En avantajlı</string>
+    <string name="plan_yearly_per_day">≈ günde ₺2,46</string>
+    <string name="restore_purchases">Satın alımları geri yükle</string>
+    <string name="continue_free">Ücretsiz devam et</string>
+    <string name="paywall_cta_reveal">Diğer 8 sayının kilidini aç</string>
+    <string name="paywall_continue">Devam et</string>
+</resources>

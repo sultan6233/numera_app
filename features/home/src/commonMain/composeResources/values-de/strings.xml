@@ -1,0 +1,10 @@
+<resources>
+    <string name="personal_day_label">persönlicher Tag</string>
+    <string name="streak_days">%1$d Tage in Folge</string>
+    <string name="good_morning_greeting">Guten Morgen</string>
+    <string name="your_day_fallback">Dein Tag</string>
+    <string name="fallback_headline">Persönlicher Tag: %1$d</string>
+    <string name="fallback_body_1">Heute ist dein persönlicher Tag %1$d. Höre auf dein Gefühl und triff keine überstürzten großen Entscheidungen.</string>
+    <string name="fallback_body_2">Ein guter Tag, um Dinge in Ordnung zu bringen und etwas Zeit für dich selbst zu nehmen.</string>
+    <string name="fallback_affirmation">Ich vertraue meinem Weg und gehe ihn in meinem eigenen Tempo.</string>
+</resources>

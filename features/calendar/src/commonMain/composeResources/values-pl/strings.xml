@@ -1,0 +1,58 @@
+<resources>
+    <string name="weekday_mon">PON</string>
+    <string name="weekday_tue">WT</string>
+    <string name="weekday_wed">ŚR</string>
+    <string name="weekday_thu">CZW</string>
+    <string name="weekday_fri">PT</string>
+    <string name="weekday_sat">SOB</string>
+    <string name="weekday_sun">NDZ</string>
+
+    <string name="month_january">Styczeń</string>
+    <string name="month_february">Luty</string>
+    <string name="month_march">Marzec</string>
+    <string name="month_april">Kwiecień</string>
+    <string name="month_may">Maj</string>
+    <string name="month_june">Czerwiec</string>
+    <string name="month_july">Lipiec</string>
+    <string name="month_august">Sierpień</string>
+    <string name="month_september">Wrzesień</string>
+    <string name="month_october">Październik</string>
+    <string name="month_november">Listopad</string>
+    <string name="month_december">Grudzień</string>
+
+    <string name="legend_action">Działanie</string>
+    <string name="legend_pause">Pauza</string>
+    <string name="legend_stability">Stabilność</string>
+    <string name="legend_special">Wyjątkowy</string>
+
+    <string name="close_button">Zamknij</string>
+    <string name="day_detail_title">Dzień %1$d — liczba %2$d</string>
+    <string name="calendar_locked_title">Kalendarz energii — tylko dla subskrybentów</string>
+    <string name="calendar_locked_description">Odblokuj swoją osobistą liczbę i analizę na każdy dzień miesiąca</string>
+    <string name="subscribe_button">Subskrybuj</string>
+
+    <string name="day_energy_1_title">Dzień początków</string>
+    <string name="day_energy_1_text">Dobry dzień, żeby zrobić pierwszy krok: napisać, zaproponować, zacząć. Dziś inicjatywa działa na twoją korzyść bardziej niż czekanie na dogodny moment.</string>
+    <string name="day_energy_2_title">Dzień partnerstwa</string>
+    <string name="day_energy_2_text">Dzień na dialog i wspólne decyzje. Solowy zryw jest dziś mniej produktywny niż rozmowa z kimś, kto jest obok.</string>
+    <string name="day_energy_3_title">Dzień ekspresji</string>
+    <string name="day_energy_3_text">Słowa, spotkania i twórcze pomysły przychodzą dziś łatwiej niż zwykle. Dobry dzień, by powiedzieć to, co odkładałeś.</string>
+    <string name="day_energy_4_title">Dzień porządku</string>
+    <string name="day_energy_4_text">Dzień na rutynę, która zwykle irytuje: uporządkować, dokończyć, usystematyzować. Nie obiecuje szybkich zwycięstw, ale trzyma fundament.</string>
+    <string name="day_energy_5_title">Dzień zmian</string>
+    <string name="day_energy_5_text">Plany mogą dziś nieoczekiwanie się zmienić — i to raczej okazja niż przeszkoda. Elastyczność jest korzystniejsza niż sztywny harmonogram.</string>
+    <string name="day_energy_6_title">Dzień troski</string>
+    <string name="day_energy_6_text">W centrum uwagi bliscy i dom. Dobry dzień na rozmowę, która od dawna dojrzewała w rodzinie lub związku.</string>
+    <string name="day_energy_7_title">Dzień pauzy</string>
+    <string name="day_energy_7_text">Dzień na ciszę i analizę, a nie na nowe zobowiązania. Odpowiedź, której szukasz, prędzej przyjdzie przez pauzę niż przez pośpiech.</string>
+    <string name="day_energy_8_title">Dzień rezultatu</string>
+    <string name="day_energy_8_text">Dobry dzień na sprawy pieniężne i statusowe — negocjacje, decyzje w ważnych sprawach, które długo odkładałeś.</string>
+    <string name="day_energy_9_title">Dzień zakończenia</string>
+    <string name="day_energy_9_text">Dzień, by zamknąć temat, a nie otworzyć nowy. Puszczenie tego, co już odegrało swoją rolę, jest dziś łatwiejsze niż zwykle.</string>
+    <string name="day_energy_11_title">Dzień intuicji</string>
+    <string name="day_energy_11_text">Wyostrzona wrażliwość na szczegóły i nastrój — zaufaj pierwszemu wrażeniu, ale znajdź też czas na ciszę.</string>
+    <string name="day_energy_22_title">Dzień wielkiej skali</string>
+    <string name="day_energy_22_text">Rzadki dzień, gdy wielki pomysł spotyka się z praktycznym krokiem. Dobry czas na decyzję, która wpłynie na kolejne lata.</string>
+    <string name="day_energy_33_title">Dzień służby</string>
+    <string name="day_energy_33_text">Dzień, gdy troska o innych przychodzi wyjątkowo naturalnie — ale nie zapomnij zostawić trochę zasobów też dla siebie.</string>
+</resources>

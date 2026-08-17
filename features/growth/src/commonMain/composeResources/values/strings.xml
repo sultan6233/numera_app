@@ -1,0 +1,62 @@
+<resources>
+    <string name="tab_habits">Привычки</string>
+    <string name="tab_mood">Настроение</string>
+    <string name="habit_today_insight">Число дня %1$d: %2$s</string>
+    <string name="new_habit_placeholder">Новая привычка</string>
+    <string name="add_button">Добавить</string>
+    <string name="swipe_hint_habits">Смахните карточку влево, чтобы удалить</string>
+    <string name="delete_habit_title">Удалить привычку?</string>
+    <string name="delete_habit_text">«%1$s» будет удалена вместе с историей выполнения.</string>
+    <string name="editing_mood_entry">Редактирование записи</string>
+    <string name="mood_note_placeholder">Что сегодня повлияло на настроение?</string>
+    <string name="update_button">Обновить</string>
+    <string name="save_button">Сохранить</string>
+    <string name="cancel_button">Отмена</string>
+    <string name="swipe_hint_mood">Нажмите на запись, чтобы изменить — смахните влево, чтобы удалить</string>
+    <string name="delete_mood_title">Удалить запись?</string>
+    <string name="delete_mood_text">Запись настроения будет удалена без возможности восстановления.</string>
+    <string name="mood_trend_title">Настроение за 14 дней</string>
+    <string name="delete_action">Удалить</string>
+    <string name="weekly_summary">За последние 7 дней: в среднем %1$s — %2$s (%3$s).</string>
+    <string name="mood_insight">Похоже, дни с личным числом %1$d у вас чаще проходят лучше — вы отмечаете хорошее настроение заметно чаще обычного.</string>
+    <string name="score_label_1">тяжело</string>
+    <string name="score_label_2">так себе</string>
+    <string name="score_label_3">нормально</string>
+    <string name="score_label_4">хорошо</string>
+    <string name="score_label_5">отлично</string>
+
+    <string name="tag_work">Работа</string>
+    <string name="tag_relationships">Отношения</string>
+    <string name="tag_health">Здоровье</string>
+    <string name="tag_sleep">Сон</string>
+    <string name="tag_money">Деньги</string>
+    <string name="tag_weather">Погода</string>
+    <string name="tag_sport">Спорт</string>
+    <string name="tag_rest">Отдых</string>
+
+    <string name="habit_suggestion_1">Хороший день начать новую привычку — не факт что задержится, но первый шаг сегодня даётся легче.</string>
+    <string name="habit_suggestion_2">День для привычек, которые вы делаете вместе с кем-то — партнёрство работает лучше сольного усилия.</string>
+    <string name="habit_suggestion_3">Хорошее время для привычек, связанных с самовыражением — дневник, творчество, разговор.</string>
+    <string name="habit_suggestion_4">День дисциплины — идеально закрыть привычки, которые обычно откладываете.</string>
+    <string name="habit_suggestion_5">Рутина сегодня ощущается особенно тяжело — не вините себя, если сорвётесь, просто вернитесь завтра.</string>
+    <string name="habit_suggestion_6">Хороший день для привычек, связанных с заботой о доме или близких.</string>
+    <string name="habit_suggestion_7">День больше подходит для размышления, чем для новых обязательств — не расстраивайтесь, если не выполните всё.</string>
+    <string name="habit_suggestion_8">Хороший день для привычек, связанных с деньгами и порядком в делах.</string>
+    <string name="habit_suggestion_9">День, чтобы завершить или пересмотреть привычку, которая уже не служит цели.</string>
+    <string name="habit_suggestion_11">Обострённая чувствительность сегодня — хорошее время для практик на заземление.</string>
+    <string name="habit_suggestion_22">Редкий день для привычек, которые вы строите на годы вперёд — не размениваться на мелочи.</string>
+    <string name="habit_suggestion_33">День, когда забота о других особенно органична — но привычка позаботиться о себе тоже на месте.</string>
+
+    <string name="month_short_1">янв</string>
+    <string name="month_short_2">фев</string>
+    <string name="month_short_3">мар</string>
+    <string name="month_short_4">апр</string>
+    <string name="month_short_5">май</string>
+    <string name="month_short_6">июн</string>
+    <string name="month_short_7">июл</string>
+    <string name="month_short_8">авг</string>
+    <string name="month_short_9">сен</string>
+    <string name="month_short_10">окт</string>
+    <string name="month_short_11">ноя</string>
+    <string name="month_short_12">дек</string>
+</resources>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="onboarding_name_question">Adınız nedir?</string>
+    <string name="onboarding_full_name">Ad Soyad</string>
+    <string name="next">İleri</string>
+    <string name="onboarding_birth_date_title">Doğum tarihi</string>
+    <string name="day_placeholder">GG</string>
+    <string name="month_placeholder">AA</string>
+    <string name="year_placeholder">YYYY</string>
+    <string name="calculate">Hesapla</string>
+    <string name="calculating_profile">Profiliniz hesaplanıyor…</string>
+    <string name="life_path_number_label">Yaşam Yolu numaranız</string>
+    <string name="see_full_picture">Tüm resmi gör</string>
+</resources>

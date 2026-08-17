@@ -1,0 +1,10 @@
+<resources>
+    <string name="personal_day_label">personal day</string>
+    <string name="streak_days">%1$d day streak</string>
+    <string name="good_morning_greeting">Good morning</string>
+    <string name="your_day_fallback">Your day</string>
+    <string name="fallback_headline">Personal Day: %1$d</string>
+    <string name="fallback_body_1">Today is your Personal Day %1$d. Listen to how you feel and avoid rushing into big decisions.</string>
+    <string name="fallback_body_2">A good day to tidy up loose ends and spend a little time on yourself.</string>
+    <string name="fallback_affirmation">I trust my path and move at my own pace.</string>
+</resources>

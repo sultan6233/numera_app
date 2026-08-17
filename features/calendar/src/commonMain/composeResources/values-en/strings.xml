@@ -1,0 +1,58 @@
+﻿<resources>
+    <string name="weekday_mon">MO</string>
+    <string name="weekday_tue">TU</string>
+    <string name="weekday_wed">WE</string>
+    <string name="weekday_thu">TH</string>
+    <string name="weekday_fri">FR</string>
+    <string name="weekday_sat">SA</string>
+    <string name="weekday_sun">SU</string>
+
+    <string name="month_january">January</string>
+    <string name="month_february">February</string>
+    <string name="month_march">March</string>
+    <string name="month_april">April</string>
+    <string name="month_may">May</string>
+    <string name="month_june">June</string>
+    <string name="month_july">July</string>
+    <string name="month_august">August</string>
+    <string name="month_september">September</string>
+    <string name="month_october">October</string>
+    <string name="month_november">November</string>
+    <string name="month_december">December</string>
+
+    <string name="legend_action">Action</string>
+    <string name="legend_pause">Pause</string>
+    <string name="legend_stability">Stability</string>
+    <string name="legend_special">Special</string>
+
+    <string name="close_button">Close</string>
+    <string name="day_detail_title">Day %1$d — number %2$d</string>
+    <string name="calendar_locked_title">Energy Calendar — subscriber only</string>
+    <string name="calendar_locked_description">Unlock your personal number and reading for every day of the month</string>
+    <string name="subscribe_button">Subscribe</string>
+
+    <string name="day_energy_1_title">A Day of Beginnings</string>
+    <string name="day_energy_1_text">A good day to take the first step: write, propose, start something. Initiative works harder for you today than waiting for a better moment.</string>
+    <string name="day_energy_2_title">A Day of Partnership</string>
+    <string name="day_energy_2_text">A day for dialogue and joint decisions. A solo push is less productive today than a conversation with the person next to you.</string>
+    <string name="day_energy_3_title">A Day of Expression</string>
+    <string name="day_energy_3_text">Words, meetings, and creative ideas come more easily than usual today. A good day to say what you've been putting off.</string>
+    <string name="day_energy_4_title">A Day of Order</string>
+    <string name="day_energy_4_text">A day for the routine that usually irritates you: sort things out, finish up, systematize. It won't promise quick wins, but it holds the foundation.</string>
+    <string name="day_energy_5_title">A Day of Change</string>
+    <string name="day_energy_5_text">Plans might change unexpectedly today — and that's more of an opportunity than a hindrance. Flexibility beats a rigid schedule.</string>
+    <string name="day_energy_6_title">A Day of Care</string>
+    <string name="day_energy_6_text">The focus is on loved ones and home. A good day for a conversation that's been overdue with family or a partner.</string>
+    <string name="day_energy_7_title">A Day of Pause</string>
+    <string name="day_energy_7_text">A day for quiet and analysis, not new commitments. The answer you're looking for is more likely to come through a pause than through rushing.</string>
+    <string name="day_energy_8_title">A Day of Results</string>
+    <string name="day_energy_8_text">A good day for money and status matters — negotiations, decisions on significant things you've been putting off.</string>
+    <string name="day_energy_9_title">A Day of Closure</string>
+    <string name="day_energy_9_text">A day to close a chapter, not open a new one. Letting go of what's already played its role is easier than usual today.</string>
+    <string name="day_energy_11_title">A Day of Intuition</string>
+    <string name="day_energy_11_text">Heightened sensitivity to details and mood — trust your first impression, but make time for quiet too.</string>
+    <string name="day_energy_22_title">A Day of Scale</string>
+    <string name="day_energy_22_text">A rare day when a big idea and a practical step meet. A good time for a decision that shapes years ahead.</string>
+    <string name="day_energy_33_title">A Day of Service</string>
+    <string name="day_energy_33_text">A day when caring for others comes especially naturally — but don't forget to save some resources for yourself too.</string>
+</resources>

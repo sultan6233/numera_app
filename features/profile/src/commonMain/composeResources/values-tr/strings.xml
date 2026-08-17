@@ -1,0 +1,8 @@
+<resources>
+    <string name="subscription_active">Abonelik aktif</string>
+    <string name="free_version">Ücretsiz sürüm</string>
+    <string name="subscribe_button">Abone ol</string>
+    <string name="restore_purchases">Satın alımları geri yükle</string>
+    <string name="notifications_label">Bildirimler</string>
+    <string name="purchases_restored">Satın alımlar geri yüklendi</string>
+</resources>

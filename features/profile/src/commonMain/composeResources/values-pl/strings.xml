@@ -1,0 +1,8 @@
+<resources>
+    <string name="subscription_active">Subskrypcja aktywna</string>
+    <string name="free_version">Wersja bezpłatna</string>
+    <string name="subscribe_button">Subskrybuj</string>
+    <string name="restore_purchases">Przywróć zakupy</string>
+    <string name="notifications_label">Powiadomienia</string>
+    <string name="purchases_restored">Zakupy przywrócone</string>
+</resources>

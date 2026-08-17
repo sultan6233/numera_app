@@ -1,23 +1,39 @@
 package com.numera.app.features.growth.domain
 
+import org.jetbrains.compose.resources.getString
+import numera.features.growth.generated.resources.Res
+import numera.features.growth.generated.resources.habit_suggestion_1
+import numera.features.growth.generated.resources.habit_suggestion_2
+import numera.features.growth.generated.resources.habit_suggestion_3
+import numera.features.growth.generated.resources.habit_suggestion_4
+import numera.features.growth.generated.resources.habit_suggestion_5
+import numera.features.growth.generated.resources.habit_suggestion_6
+import numera.features.growth.generated.resources.habit_suggestion_7
+import numera.features.growth.generated.resources.habit_suggestion_8
+import numera.features.growth.generated.resources.habit_suggestion_9
+import numera.features.growth.generated.resources.habit_suggestion_11
+import numera.features.growth.generated.resources.habit_suggestion_22
+import numera.features.growth.generated.resources.habit_suggestion_33
+
 /** Short, habit-formation-framed suggestion keyed by today's personal day number - distinct
  *  from the calendar's day-energy text and the Numbers tab's identity meanings, since this one
  *  is written specifically around starting/keeping/skipping a habit today. */
 object HabitSuggestions {
     private val suggestions = mapOf(
-        1 to "Хороший день начать новую привычку — не факт что задержится, но первый шаг сегодня даётся легче.",
-        2 to "День для привычек, которые вы делаете вместе с кем-то — партнёрство работает лучше сольного усилия.",
-        3 to "Хорошее время для привычек, связанных с самовыражением — дневник, творчество, разговор.",
-        4 to "День дисциплины — идеально закрыть привычки, которые обычно откладываете.",
-        5 to "Рутина сегодня ощущается особенно тяжело — не вините себя, если сорвётесь, просто вернитесь завтра.",
-        6 to "Хороший день для привычек, связанных с заботой о доме или близких.",
-        7 to "День больше подходит для размышления, чем для новых обязательств — не расстраивайтесь, если не выполните всё.",
-        8 to "Хороший день для привычек, связанных с деньгами и порядком в делах.",
-        9 to "День, чтобы завершить или пересмотреть привычку, которая уже не служит цели.",
-        11 to "Обострённая чувствительность сегодня — хорошее время для практик на заземление.",
-        22 to "Редкий день для привычек, которые вы строите на годы вперёд — не размениваться на мелочи.",
-        33 to "День, когда забота о других особенно органична — но привычка позаботиться о себе тоже на месте."
+        1 to Res.string.habit_suggestion_1,
+        2 to Res.string.habit_suggestion_2,
+        3 to Res.string.habit_suggestion_3,
+        4 to Res.string.habit_suggestion_4,
+        5 to Res.string.habit_suggestion_5,
+        6 to Res.string.habit_suggestion_6,
+        7 to Res.string.habit_suggestion_7,
+        8 to Res.string.habit_suggestion_8,
+        9 to Res.string.habit_suggestion_9,
+        11 to Res.string.habit_suggestion_11,
+        22 to Res.string.habit_suggestion_22,
+        33 to Res.string.habit_suggestion_33
     )
 
-    fun forPersonalDay(personalDay: Int): String = suggestions[personalDay] ?: suggestions.getValue(9)
+    suspend fun forPersonalDay(personalDay: Int): String =
+        getString(suggestions[personalDay] ?: suggestions.getValue(9))
 }

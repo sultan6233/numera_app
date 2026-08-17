@@ -33,6 +33,15 @@ import com.numera.app.core.commonMain.components.BackButton
 import com.numera.app.core.commonMain.components.DefaultNumeraButton
 import com.numera.app.core.commonMain.displayFontFamily
 import com.numera.app.features.numbers.domain.NumberMeanings
+import org.jetbrains.compose.resources.stringResource
+import numera.features.numbers.generated.resources.Res
+import numera.features.numbers.generated.resources.numerology_tools_title
+import numera.features.numbers.generated.resources.numerology_tools_description
+import numera.features.numbers.generated.resources.mode_name_business
+import numera.features.numbers.generated.resources.mode_phone_address
+import numera.features.numbers.generated.resources.name_example_placeholder
+import numera.features.numbers.generated.resources.phone_example_placeholder
+import numera.features.numbers.generated.resources.calculate
 
 @Composable
 fun NumerologyToolsScreen(state: NumerologyToolsState, onAction: (NumerologyToolsAction) -> Unit, onBack: () -> Unit) {
@@ -41,7 +50,7 @@ fun NumerologyToolsScreen(state: NumerologyToolsState, onAction: (NumerologyTool
             BackButton(onClick = onBack)
             Spacer(modifier = Modifier.height(4.dp))
             Text(
-                text = "Инструменты нумерологии",
+                text = stringResource(Res.string.numerology_tools_title),
                 fontFamily = displayFontFamily(),
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
@@ -49,7 +58,7 @@ fun NumerologyToolsScreen(state: NumerologyToolsState, onAction: (NumerologyTool
             )
             Spacer(modifier = Modifier.height(6.dp))
             Text(
-                text = "Рассчитайте число для названия бизнеса, адреса или телефона — по тем же таблицам, что и для личного имени.",
+                text = stringResource(Res.string.numerology_tools_description),
                 fontSize = 13.sp,
                 lineHeight = 19.sp,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -57,13 +66,13 @@ fun NumerologyToolsScreen(state: NumerologyToolsState, onAction: (NumerologyTool
             Spacer(modifier = Modifier.height(20.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                 ModeChip(
-                    text = "Имя / бизнес",
+                    text = stringResource(Res.string.mode_name_business),
                     selected = state.mode == ToolMode.NAME,
                     onClick = { onAction(NumerologyToolsAction.OnModeChanged(ToolMode.NAME)) },
                     modifier = Modifier.weight(1f)
                 )
                 ModeChip(
-                    text = "Телефон / адрес",
+                    text = stringResource(Res.string.mode_phone_address),
                     selected = state.mode == ToolMode.DIGITS,
                     onClick = { onAction(NumerologyToolsAction.OnModeChanged(ToolMode.DIGITS)) },
                     modifier = Modifier.weight(1f)
@@ -75,12 +84,12 @@ fun NumerologyToolsScreen(state: NumerologyToolsState, onAction: (NumerologyTool
                 value = state.input,
                 onValueChange = { onAction(NumerologyToolsAction.OnInputChanged(it)) },
                 placeholder = {
-                    Text(if (state.mode == ToolMode.NAME) "Например, Ромашка" else "Например, +7 900 123-45-67")
+                    Text(if (state.mode == ToolMode.NAME) stringResource(Res.string.name_example_placeholder) else stringResource(Res.string.phone_example_placeholder))
                 }
             )
             Spacer(modifier = Modifier.height(16.dp))
             DefaultNumeraButton(
-                text = "Рассчитать",
+                text = stringResource(Res.string.calculate),
                 onClick = { onAction(NumerologyToolsAction.OnCalculateClick) },
                 enabled = state.input.isNotBlank()
             )
@@ -132,9 +141,9 @@ private fun ResultCard(value: Int) {
             ) {
                 Text(text = value.toString(), fontFamily = displayFontFamily(), fontSize = 20.sp, fontWeight = FontWeight.Bold, color = Primary)
             }
-            Text(text = meaning.title, fontFamily = displayFontFamily(), fontSize = 18.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onBackground)
+            Text(text = stringResource(meaning.title), fontFamily = displayFontFamily(), fontSize = 18.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onBackground)
         }
         Spacer(modifier = Modifier.height(12.dp))
-        Text(text = meaning.essence, fontSize = 13.sp, lineHeight = 19.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(text = stringResource(meaning.essence), fontSize = 13.sp, lineHeight = 19.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
 }

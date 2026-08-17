@@ -1,0 +1,10 @@
+﻿<resources>
+    <plurals name="streak_days">
+        <item quantity="one">%1$d day in a row</item>
+        <item quantity="other">%1$d days in a row</item>
+    </plurals>
+    <plurals name="mood_entries">
+        <item quantity="one">%1$d entry</item>
+        <item quantity="other">%1$d entries</item>
+    </plurals>
+</resources>

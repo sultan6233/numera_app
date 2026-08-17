@@ -1,0 +1,13 @@
+<resources>
+    <string name="onboarding_name_question">Как вас зовут?</string>
+    <string name="onboarding_full_name">Полное имя</string>
+    <string name="next">Далее</string>
+    <string name="onboarding_birth_date_title">Дата рождения</string>
+    <string name="day_placeholder">ДД</string>
+    <string name="month_placeholder">ММ</string>
+    <string name="year_placeholder">ГГГГ</string>
+    <string name="calculate">Рассчитать</string>
+    <string name="calculating_profile">Рассчитываем ваш профиль…</string>
+    <string name="life_path_number_label">Ваше число жизненного пути</string>
+    <string name="see_full_picture">Узнать полную картину</string>
+</resources>

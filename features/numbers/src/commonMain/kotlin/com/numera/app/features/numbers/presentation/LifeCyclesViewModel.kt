@@ -11,6 +11,10 @@ import dev.zacsweers.metro.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.getString
+import numera.features.numbers.generated.resources.Res
+import numera.features.numbers.generated.resources.age_and_older
+import numera.features.numbers.generated.resources.age_range
 
 @Inject
 class LifeCyclesViewModel(private val sessionStorage: SessionStorage) : ViewModel() {
@@ -36,8 +40,8 @@ class LifeCyclesViewModel(private val sessionStorage: SessionStorage) : ViewMode
         _state.value = LifeCyclesState.Content(stages)
     }
 
-    private fun ageRangeLabel(start: Int, end: Int?): String =
-        if (end == null) "$start лет и старше" else "$start–$end лет"
+    private suspend fun ageRangeLabel(start: Int, end: Int?): String =
+        if (end == null) getString(Res.string.age_and_older, start) else getString(Res.string.age_range, start, end)
 
     init { load() }
 }

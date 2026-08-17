@@ -25,14 +25,14 @@ object CompatibilityCalculator {
 
         return CompatibilityResult(
             score = overall,
-            label = labelFor(overall),
+            labelKey = labelKeyFor(overall),
             lifePathA = lifePathA,
             lifePathB = lifePathB,
             breakdown = listOf(
-                CompatibilityBreakdownItem("Жизненный путь", lifePathScore),
-                CompatibilityBreakdownItem("Судьба", expressionScore),
-                CompatibilityBreakdownItem("Душа", soulUrgeScore),
-                CompatibilityBreakdownItem("Личность", personalityScore)
+                CompatibilityBreakdownItem("life_path", lifePathScore),
+                CompatibilityBreakdownItem("expression", expressionScore),
+                CompatibilityBreakdownItem("soul_urge", soulUrgeScore),
+                CompatibilityBreakdownItem("personality", personalityScore)
             )
         )
     }
@@ -40,10 +40,10 @@ object CompatibilityCalculator {
     private fun pairScore(x: Int, y: Int): Int =
         (100 - circularDistance(wheelDigit(x), wheelDigit(y)) * 8).coerceIn(10, 100)
 
-    private fun labelFor(score: Int): String = when {
-        score >= 80 -> "Сильная совместимость"
-        score >= 55 -> "Хорошая совместимость"
-        else -> "Требует работы над отношениями"
+    private fun labelKeyFor(score: Int): String = when {
+        score >= 80 -> "strong"
+        score >= 55 -> "good"
+        else -> "needs_work"
     }
 
     /** Master numbers don't sit on the 1-9 compatibility wheel - collapse them to their base

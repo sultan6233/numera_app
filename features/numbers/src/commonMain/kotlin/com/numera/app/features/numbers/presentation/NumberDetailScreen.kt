@@ -38,6 +38,11 @@ import com.numera.app.core.commonMain.Surface
 import com.numera.app.core.commonMain.components.BackButton
 import com.numera.app.core.commonMain.displayFontFamily
 import com.numera.app.features.numbers.domain.NumberMeaning
+import org.jetbrains.compose.resources.stringResource
+import numera.features.numbers.generated.resources.Res
+import numera.features.numbers.generated.resources.strengths_label
+import numera.features.numbers.generated.resources.growth_points_label
+import numera.features.numbers.generated.resources.how_to_use_label
 
 @Composable
 fun NumberDetailScreen(state: NumberDetailState, onBack: () -> Unit) {
@@ -60,13 +65,13 @@ fun NumberDetailScreen(state: NumberDetailState, onBack: () -> Unit) {
                     item { Spacer(modifier = Modifier.height(24.dp)) }
                     item { EssenceBlock(state.meaning) }
                     item { Spacer(modifier = Modifier.height(20.dp)) }
-                    item { SectionLabel("Сильные стороны") }
-                    items(state.meaning.strengths) { TraitRow(it, Success) }
+                    item { SectionLabel(stringResource(Res.string.strengths_label)) }
+                    items(state.meaning.strengths) { TraitRow(stringResource(it), Success) }
                     item { Spacer(modifier = Modifier.height(20.dp)) }
-                    item { SectionLabel("Точки роста") }
-                    items(state.meaning.challenges) { TraitRow(it, Ember) }
+                    item { SectionLabel(stringResource(Res.string.growth_points_label)) }
+                    items(state.meaning.challenges) { TraitRow(stringResource(it), Ember) }
                     item { Spacer(modifier = Modifier.height(20.dp)) }
-                    item { AdviceBlock(state.meaning.advice) }
+                    item { AdviceBlock(stringResource(state.meaning.advice)) }
                 }
             }
         }
@@ -95,7 +100,7 @@ private fun Header(state: NumberDetailState.Content) {
         Column {
             Text(text = state.categoryLabel, fontSize = 13.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
             Text(
-                text = state.meaning.title,
+                text = stringResource(state.meaning.title),
                 fontFamily = displayFontFamily(),
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
@@ -108,7 +113,7 @@ private fun Header(state: NumberDetailState.Content) {
 @Composable
 private fun EssenceBlock(meaning: NumberMeaning) {
     Text(
-        text = meaning.essence,
+        text = stringResource(meaning.essence),
         fontSize = 15.sp,
         lineHeight = 23.sp,
         color = MaterialTheme.colorScheme.onBackground
@@ -160,7 +165,7 @@ private fun AdviceBlock(advice: String) {
     ) {
         Column {
             Text(
-                text = "Как это использовать",
+                text = stringResource(Res.string.how_to_use_label),
                 fontFamily = displayFontFamily(),
                 fontSize = 15.sp,
                 fontWeight = FontWeight.Bold,

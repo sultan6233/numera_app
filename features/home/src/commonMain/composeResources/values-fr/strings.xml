@@ -1,0 +1,10 @@
+﻿<resources>
+    <string name="personal_day_label">jour personnel</string>
+    <string name="streak_days">%1$d jours d'affilée</string>
+    <string name="good_morning_greeting">Bonjour</string>
+    <string name="your_day_fallback">Votre journée</string>
+    <string name="fallback_headline">Jour personnel : %1$d</string>
+    <string name="fallback_body_1">Aujourd'hui est votre jour personnel %1$d. Écoutez ce que vous ressentez et évitez de vous précipiter dans de grandes décisions.</string>
+    <string name="fallback_body_2">Une bonne journée pour mettre de l'ordre dans vos affaires et prendre un peu de temps pour vous.</string>
+    <string name="fallback_affirmation">Je fais confiance à mon chemin et j'avance à mon propre rythme.</string>
+</resources>

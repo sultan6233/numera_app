@@ -1,0 +1,62 @@
+﻿<resources>
+    <string name="tab_habits">Nawyki</string>
+    <string name="tab_mood">Nastrój</string>
+    <string name="habit_today_insight">Liczba dnia %1$d: %2$s</string>
+    <string name="new_habit_placeholder">Nowy nawyk</string>
+    <string name="add_button">Dodaj</string>
+    <string name="swipe_hint_habits">Przesuń kartę w lewo, aby usunąć</string>
+    <string name="delete_habit_title">Usunąć nawyk?</string>
+    <string name="delete_habit_text">„%1$s" zostanie usunięty razem z historią wykonania.</string>
+    <string name="editing_mood_entry">Edycja wpisu</string>
+    <string name="mood_note_placeholder">Co dziś wpłynęło na Twój nastrój?</string>
+    <string name="update_button">Zaktualizuj</string>
+    <string name="save_button">Zapisz</string>
+    <string name="cancel_button">Anuluj</string>
+    <string name="swipe_hint_mood">Dotknij wpisu, aby edytować — przesuń w lewo, aby usunąć</string>
+    <string name="delete_mood_title">Usunąć wpis?</string>
+    <string name="delete_mood_text">Ten wpis nastroju zostanie usunięty na stałe.</string>
+    <string name="mood_trend_title">Nastrój z ostatnich 14 dni</string>
+    <string name="delete_action">Usuń</string>
+    <string name="weekly_summary">W ciągu ostatnich 7 dni: średnio %1$s — %2$s (%3$s).</string>
+    <string name="mood_insight">Wygląda na to, że dni z liczbą osobistą %1$d zwykle wypadają u Ciebie lepiej — zauważalnie częściej niż zwykle odnotowujesz dobry nastrój.</string>
+    <string name="score_label_1">ciężko</string>
+    <string name="score_label_2">średnio</string>
+    <string name="score_label_3">normalnie</string>
+    <string name="score_label_4">dobrze</string>
+    <string name="score_label_5">świetnie</string>
+
+    <string name="tag_work">Praca</string>
+    <string name="tag_relationships">Relacje</string>
+    <string name="tag_health">Zdrowie</string>
+    <string name="tag_sleep">Sen</string>
+    <string name="tag_money">Pieniądze</string>
+    <string name="tag_weather">Pogoda</string>
+    <string name="tag_sport">Sport</string>
+    <string name="tag_rest">Odpoczynek</string>
+
+    <string name="habit_suggestion_1">Dobry dzień, by zacząć nowy nawyk — nie ma gwarancji, że się utrzyma, ale dziś pierwszy krok przychodzi łatwiej.</string>
+    <string name="habit_suggestion_2">Dzień na nawyki, które robisz razem z kimś — partnerstwo działa lepiej niż solowy wysiłek.</string>
+    <string name="habit_suggestion_3">Dobry czas na nawyki związane z ekspresją siebie — dziennik, twórczość, rozmowa.</string>
+    <string name="habit_suggestion_4">Dzień dyscypliny — idealny, by domknąć nawyki, które zwykle odkładasz.</string>
+    <string name="habit_suggestion_5">Rutyna dziś wydaje się szczególnie ciężka — nie obwiniaj się, jeśli się potkniesz, po prostu wróć jutro.</string>
+    <string name="habit_suggestion_6">Dobry dzień na nawyki związane z troską o dom lub bliskich.</string>
+    <string name="habit_suggestion_7">Dziś bardziej sprzyja refleksji niż nowym zobowiązaniom — nie bądź dla siebie surowy, jeśli nie zrobisz wszystkiego.</string>
+    <string name="habit_suggestion_8">Dobry dzień na nawyki związane z pieniędzmi i porządkowaniem spraw.</string>
+    <string name="habit_suggestion_9">Dzień, by zakończyć lub przemyśleć na nowo nawyk, który już nie służy swojemu celowi.</string>
+    <string name="habit_suggestion_11">Dziś wyostrzona wrażliwość — dobry czas na praktyki uziemiające.</string>
+    <string name="habit_suggestion_22">Rzadki dzień na nawyki, które budujesz na lata naprzód — nie trać go na drobiazgi.</string>
+    <string name="habit_suggestion_33">Dzień, gdy troska o innych przychodzi wyjątkowo naturalnie — ale jest też miejsce na nawyk dbania o siebie.</string>
+
+    <string name="month_short_1">sty</string>
+    <string name="month_short_2">lut</string>
+    <string name="month_short_3">mar</string>
+    <string name="month_short_4">kwi</string>
+    <string name="month_short_5">maj</string>
+    <string name="month_short_6">cze</string>
+    <string name="month_short_7">lip</string>
+    <string name="month_short_8">sie</string>
+    <string name="month_short_9">wrz</string>
+    <string name="month_short_10">paź</string>
+    <string name="month_short_11">lis</string>
+    <string name="month_short_12">gru</string>
+</resources>

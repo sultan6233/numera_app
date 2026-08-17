@@ -1,0 +1,22 @@
+<resources>
+    <string name="paywall_headline">To Twoja mapa. Odkryliśmy dwie z Twoich dziewięciu liczb.</string>
+    <string name="paywall_value_1">Liczba duszy i osobowości oraz 6 kolejnych obliczeń</string>
+    <string name="paywall_value_2">Nowa osobista analiza każdego dnia</string>
+    <string name="paywall_value_3">Kompatybilność z bliskimi</string>
+    <string name="paywall_value_4">Osobisty kalendarz energii na każdy dzień</string>
+    <string name="plan_weekly_title">Tydzień</string>
+    <string name="plan_weekly_price">19,99 zł</string>
+    <string name="plan_weekly_period">tygodniowo</string>
+    <string name="plan_monthly_title">Miesiąc</string>
+    <string name="plan_monthly_price">39,99 zł</string>
+    <string name="plan_monthly_period">miesięcznie</string>
+    <string name="plan_yearly_title">Rok</string>
+    <string name="plan_yearly_price">149,99 zł</string>
+    <string name="plan_yearly_period">rocznie</string>
+    <string name="plan_yearly_badge">Najlepsza oferta</string>
+    <string name="plan_yearly_per_day">≈ 0,41 zł/dzień</string>
+    <string name="restore_purchases">Przywróć zakupy</string>
+    <string name="continue_free">Kontynuuj za darmo</string>
+    <string name="paywall_cta_reveal">Odblokuj pozostałe 8 liczb</string>
+    <string name="paywall_continue">Kontynuuj</string>
+</resources>

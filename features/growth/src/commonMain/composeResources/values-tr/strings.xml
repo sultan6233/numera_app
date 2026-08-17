@@ -1,0 +1,62 @@
+﻿<resources>
+    <string name="tab_habits">Alışkanlıklar</string>
+    <string name="tab_mood">Ruh Hali</string>
+    <string name="habit_today_insight">Gün numarası %1$d: %2$s</string>
+    <string name="new_habit_placeholder">Yeni alışkanlık</string>
+    <string name="add_button">Ekle</string>
+    <string name="swipe_hint_habits">Silmek için kartı sola kaydırın</string>
+    <string name="delete_habit_title">Alışkanlık silinsin mi?</string>
+    <string name="delete_habit_text">"%1$s" tamamlama geçmişiyle birlikte silinecek.</string>
+    <string name="editing_mood_entry">Kayıt düzenleniyor</string>
+    <string name="mood_note_placeholder">Bugün ruh halinizi ne etkiledi?</string>
+    <string name="update_button">Güncelle</string>
+    <string name="save_button">Kaydet</string>
+    <string name="cancel_button">İptal</string>
+    <string name="swipe_hint_mood">Düzenlemek için kayda dokunun — silmek için sola kaydırın</string>
+    <string name="delete_mood_title">Kayıt silinsin mi?</string>
+    <string name="delete_mood_text">Bu ruh hali kaydı kalıcı olarak silinecek.</string>
+    <string name="mood_trend_title">Son 14 gündeki ruh hali</string>
+    <string name="delete_action">Sil</string>
+    <string name="weekly_summary">Son 7 günde: ortalama %1$s — %2$s (%3$s).</string>
+    <string name="mood_insight">Görünüşe göre Kişisel Gün %1$d olan günler sizin için daha iyi geçiyor — genellikle her zamankinden belirgin şekilde daha sık iyi ruh hali kaydediyorsunuz.</string>
+    <string name="score_label_1">zor</string>
+    <string name="score_label_2">idare eder</string>
+    <string name="score_label_3">normal</string>
+    <string name="score_label_4">iyi</string>
+    <string name="score_label_5">harika</string>
+
+    <string name="tag_work">İş</string>
+    <string name="tag_relationships">İlişkiler</string>
+    <string name="tag_health">Sağlık</string>
+    <string name="tag_sleep">Uyku</string>
+    <string name="tag_money">Para</string>
+    <string name="tag_weather">Hava Durumu</string>
+    <string name="tag_sport">Spor</string>
+    <string name="tag_rest">Dinlenme</string>
+
+    <string name="habit_suggestion_1">Yeni bir alışkanlığa başlamak için iyi bir gün — kalıcı olacağının garantisi yok, ama bugün ilk adım daha kolay geliyor.</string>
+    <string name="habit_suggestion_2">Birisiyle birlikte yaptığınız alışkanlıklar için bir gün — ortaklık, tek başına çabadan daha iyi işler.</string>
+    <string name="habit_suggestion_3">Kendini ifade etmeyle ilgili alışkanlıklar için iyi bir zaman — günlük tutmak, yaratıcılık, sohbet.</string>
+    <string name="habit_suggestion_4">Disiplin günü — genellikle erteledigğiniz alışkanlıkları tamamlamak için mükemmel.</string>
+    <string name="habit_suggestion_5">Bugün rutin özellikle ağır geliyor — sekteye uğrarsanız kendinizi suçlamayın, sadece yarın devam edin.</string>
+    <string name="habit_suggestion_6">Ev veya sevdiklerinize bakımla ilgili alışkanlıklar için iyi bir gün.</string>
+    <string name="habit_suggestion_7">Bugün yeni taahhütlerden çok düşünmeye daha uygun — her şeyi yapamazsanız kendinize sert davranmayın.</string>
+    <string name="habit_suggestion_8">Para ve işlerinizi düzene koymayla ilgili alışkanlıklar için iyi bir gün.</string>
+    <string name="habit_suggestion_9">Artık amacına hizmet etmeyen bir alışkanlığı bitirmek veya yeniden gözden geçirmek için bir gün.</string>
+    <string name="habit_suggestion_11">Bugün keskinleşmiş hassasiyet — topraklanma pratikleri için iyi bir zaman.</string>
+    <string name="habit_suggestion_22">Yıllarca sürdüreceğiniz alışkanlıklar için nadir bir gün — küçük şeylere harcamayın.</string>
+    <string name="habit_suggestion_33">Başkalarına bakmanın özellikle doğal geldiği bir gün — ama kendinize bakma alışkanlığına da yer var.</string>
+
+    <string name="month_short_1">Oca</string>
+    <string name="month_short_2">Şub</string>
+    <string name="month_short_3">Mar</string>
+    <string name="month_short_4">Nis</string>
+    <string name="month_short_5">May</string>
+    <string name="month_short_6">Haz</string>
+    <string name="month_short_7">Tem</string>
+    <string name="month_short_8">Ağu</string>
+    <string name="month_short_9">Eyl</string>
+    <string name="month_short_10">Eki</string>
+    <string name="month_short_11">Kas</string>
+    <string name="month_short_12">Ara</string>
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="personal_day_label">личный день</string>
+    <string name="streak_days">%1$d дн. подряд</string>
+    <string name="good_morning_greeting">Доброе утро</string>
+    <string name="your_day_fallback">Ваш день</string>
+    <string name="fallback_headline">Личный день: %1$d</string>
+    <string name="fallback_body_1">Сегодня ваш личный день — %1$d. Прислушайтесь к своим ощущениям и не спешите с крупными решениями.</string>
+    <string name="fallback_body_2">Хороший день, чтобы навести порядок в делах и уделить немного времени себе.</string>
+    <string name="fallback_affirmation">Я доверяю своему пути и двигаюсь в своём темпе.</string>
+</resources>

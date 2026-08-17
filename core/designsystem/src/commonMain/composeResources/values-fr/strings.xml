@@ -1,0 +1,8 @@
+﻿<resources>
+    <string name="back">Retour</string>
+    <string name="tab_today">Aujourd'hui</string>
+    <string name="tab_numbers">Nombres</string>
+    <string name="tab_calendar">Calendrier</string>
+    <string name="tab_growth">Évolution</string>
+    <string name="tab_profile">Profil</string>
+</resources>

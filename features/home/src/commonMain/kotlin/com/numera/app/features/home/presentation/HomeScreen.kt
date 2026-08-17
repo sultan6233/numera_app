@@ -37,6 +37,12 @@ import com.numera.app.core.commonMain.components.NumberWheel
 import com.numera.app.core.commonMain.components.shimmer
 import com.numera.app.core.commonMain.displayFontFamily
 import com.numera.app.features.home.presentation.model.DailyInsightUi
+import org.jetbrains.compose.resources.stringResource
+import numera.features.home.generated.resources.Res
+import numera.features.home.generated.resources.personal_day_label
+import numera.features.home.generated.resources.streak_days
+import numera.features.home.generated.resources.good_morning_greeting
+import numera.features.home.generated.resources.your_day_fallback
 
 @Composable
 fun HomeScreen(state: HomeState, onAction: (HomeAction) -> Unit, snackbarHostState: SnackbarHostState) {
@@ -75,7 +81,7 @@ private fun HomeContent(modifier: Modifier, state: HomeState.Content, onAction: 
                                 color = Primary
                             )
                             Text(
-                                text = "личный день",
+                                text = stringResource(Res.string.personal_day_label),
                                 fontSize = 11.sp,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
@@ -98,12 +104,12 @@ private fun HomeHeader(state: HomeState.Content) {
     ) {
         Column {
             Text(
-                text = state.insight?.greeting ?: "Доброе утро",
+                text = state.insight?.greeting ?: stringResource(Res.string.good_morning_greeting),
                 fontSize = 13.sp,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
             Text(
-                text = state.userName.ifBlank { "Ваш день" },
+                text = state.userName.ifBlank { stringResource(Res.string.your_day_fallback) },
                 fontFamily = displayFontFamily(),
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
@@ -131,7 +137,7 @@ private fun StreakBadge(streak: Int) {
                 .background(Ember)
         )
         Spacer(modifier = Modifier.width(8.dp))
-        Text(text = "$streak дн. подряд", fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(text = stringResource(Res.string.streak_days, streak), fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
 }
 

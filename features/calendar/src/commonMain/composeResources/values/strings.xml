@@ -1,0 +1,58 @@
+<resources>
+    <string name="weekday_mon">ПН</string>
+    <string name="weekday_tue">ВТ</string>
+    <string name="weekday_wed">СР</string>
+    <string name="weekday_thu">ЧТ</string>
+    <string name="weekday_fri">ПТ</string>
+    <string name="weekday_sat">СБ</string>
+    <string name="weekday_sun">ВС</string>
+
+    <string name="month_january">Январь</string>
+    <string name="month_february">Февраль</string>
+    <string name="month_march">Март</string>
+    <string name="month_april">Апрель</string>
+    <string name="month_may">Май</string>
+    <string name="month_june">Июнь</string>
+    <string name="month_july">Июль</string>
+    <string name="month_august">Август</string>
+    <string name="month_september">Сентябрь</string>
+    <string name="month_october">Октябрь</string>
+    <string name="month_november">Ноябрь</string>
+    <string name="month_december">Декабрь</string>
+
+    <string name="legend_action">Действие</string>
+    <string name="legend_pause">Пауза</string>
+    <string name="legend_stability">Стабильность</string>
+    <string name="legend_special">Особый</string>
+
+    <string name="close_button">Закрыть</string>
+    <string name="day_detail_title">День %1$d — число %2$d</string>
+    <string name="calendar_locked_title">Календарь энергии — в подписке</string>
+    <string name="calendar_locked_description">Открывайте личное число и разбор для каждого дня месяца</string>
+    <string name="subscribe_button">Оформить подписку</string>
+
+    <string name="day_energy_1_title">День начала</string>
+    <string name="day_energy_1_text">Хороший день, чтобы сделать первый шаг: написать, предложить, начать. Инициатива сегодня работает на вас сильнее, чем ожидание удобного момента.</string>
+    <string name="day_energy_2_title">День партнёрства</string>
+    <string name="day_energy_2_text">День для диалога и совместных решений. Сольный рывок сегодня менее продуктивен, чем разговор с тем, кто рядом.</string>
+    <string name="day_energy_3_title">День выражения</string>
+    <string name="day_energy_3_text">Слова, встречи и творческие идеи сегодня даются легче обычного. Хороший день, чтобы сказать то, что откладывали.</string>
+    <string name="day_energy_4_title">День порядка</string>
+    <string name="day_energy_4_text">День для рутины, которая обычно раздражает: разобрать, доделать, систематизировать. Быстрых побед не обещает, зато держит фундамент.</string>
+    <string name="day_energy_5_title">День перемен</string>
+    <string name="day_energy_5_text">Планы сегодня могут неожиданно измениться — и это скорее возможность, чем помеха. Гибкость выгоднее жёсткого расписания.</string>
+    <string name="day_energy_6_title">День заботы</string>
+    <string name="day_energy_6_text">В фокусе — близкие и дом. Хороший день для разговора, который давно назрел в семье или паре.</string>
+    <string name="day_energy_7_title">День паузы</string>
+    <string name="day_energy_7_text">День для тишины и анализа, а не для новых обязательств. Ответ, который ищете, скорее придёт через паузу, чем через спешку.</string>
+    <string name="day_energy_8_title">День результата</string>
+    <string name="day_energy_8_text">Хороший день для денежных и статусных вопросов — переговоров, решений, которые давно откладывали по значимым делам.</string>
+    <string name="day_energy_9_title">День завершения</string>
+    <string name="day_energy_9_text">День, чтобы закрыть тему, а не открыть новую. Отпустить то, что уже сыграло свою роль, сегодня легче обычного.</string>
+    <string name="day_energy_11_title">День интуиции</string>
+    <string name="day_energy_11_text">Обострённая чувствительность к деталям и настроению — доверьтесь первому впечатлению, но найдите время для тишины.</string>
+    <string name="day_energy_22_title">День масштаба</string>
+    <string name="day_energy_22_text">Редкий день, когда большая идея и практический шаг встречаются. Хорошее время для решения, которое влияет на годы вперёд.</string>
+    <string name="day_energy_33_title">День служения</string>
+    <string name="day_energy_33_text">День, когда забота о других даётся особенно органично — но не забудьте оставить ресурс и для себя.</string>
+</resources>

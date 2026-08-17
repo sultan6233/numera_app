@@ -1,0 +1,22 @@
+<resources>
+    <string name="paywall_headline">Este é o seu mapa. Revelamos dois dos seus nove números.</string>
+    <string name="paywall_value_1">Números da Alma e da Personalidade, e mais 6 cálculos</string>
+    <string name="paywall_value_2">Uma nova leitura pessoal todos os dias</string>
+    <string name="paywall_value_3">Compatibilidade com quem você ama</string>
+    <string name="paywall_value_4">Um calendário de energia pessoal todos os dias</string>
+    <string name="plan_weekly_title">Semana</string>
+    <string name="plan_weekly_price">R$ 24,90</string>
+    <string name="plan_weekly_period">por semana</string>
+    <string name="plan_monthly_title">Mês</string>
+    <string name="plan_monthly_price">R$ 44,90</string>
+    <string name="plan_monthly_period">por mês</string>
+    <string name="plan_yearly_title">Ano</string>
+    <string name="plan_yearly_price">R$ 149,90</string>
+    <string name="plan_yearly_period">por ano</string>
+    <string name="plan_yearly_badge">Melhor oferta</string>
+    <string name="plan_yearly_per_day">≈ R$ 0,41/dia</string>
+    <string name="restore_purchases">Restaurar compras</string>
+    <string name="continue_free">Continuar grátis</string>
+    <string name="paywall_cta_reveal">Desbloquear os outros 8 números</string>
+    <string name="paywall_continue">Continuar</string>
+</resources>

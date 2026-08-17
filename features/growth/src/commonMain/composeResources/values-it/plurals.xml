@@ -1,0 +1,10 @@
+﻿<resources>
+    <plurals name="streak_days">
+        <item quantity="one">%1$d giorno di fila</item>
+        <item quantity="other">%1$d giorni di fila</item>
+    </plurals>
+    <plurals name="mood_entries">
+        <item quantity="one">%1$d voce</item>
+        <item quantity="other">%1$d voci</item>
+    </plurals>
+</resources>

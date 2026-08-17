@@ -11,6 +11,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.material3.Text
 import com.numera.app.core.commonMain.Primary
+import org.jetbrains.compose.resources.stringResource
+import numera.core.designsystem.generated.resources.Res
+import numera.core.designsystem.generated.resources.back
 
 /** Every non-tab screen is reached by pushing a route onto the back stack, so it needs an
  *  explicit way back rather than relying on the system/gesture back button alone. */
@@ -24,6 +27,6 @@ fun BackButton(onClick: () -> Unit, modifier: Modifier = Modifier) {
         horizontalArrangement = Arrangement.spacedBy(6.dp)
     ) {
         Text(text = "←", fontSize = 18.sp, color = Primary)
-        Text(text = "Назад", fontSize = 14.sp, color = Primary)
+        Text(text = stringResource(Res.string.back), fontSize = 14.sp, color = Primary)
     }
 }

@@ -1,0 +1,8 @@
+<resources>
+    <string name="back">Back</string>
+    <string name="tab_today">Today</string>
+    <string name="tab_numbers">Numbers</string>
+    <string name="tab_calendar">Calendar</string>
+    <string name="tab_growth">Growth</string>
+    <string name="tab_profile">Profile</string>
+</resources>

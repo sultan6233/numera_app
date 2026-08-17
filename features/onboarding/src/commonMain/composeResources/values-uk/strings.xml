@@ -1,0 +1,13 @@
+﻿<resources>
+    <string name="onboarding_name_question">Як вас звати?</string>
+    <string name="onboarding_full_name">Повне ім'я</string>
+    <string name="next">Далі</string>
+    <string name="onboarding_birth_date_title">Дата народження</string>
+    <string name="day_placeholder">ДД</string>
+    <string name="month_placeholder">ММ</string>
+    <string name="year_placeholder">РРРР</string>
+    <string name="calculate">Розрахувати</string>
+    <string name="calculating_profile">Розраховуємо ваш профіль…</string>
+    <string name="life_path_number_label">Ваше число життєвого шляху</string>
+    <string name="see_full_picture">Дізнатися повну картину</string>
+</resources>

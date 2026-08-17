@@ -13,6 +13,19 @@ import dev.zacsweers.metro.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.getString
+import numera.features.numbers.generated.resources.Res
+import numera.features.numbers.generated.resources.number_life_path
+import numera.features.numbers.generated.resources.number_expression
+import numera.features.numbers.generated.resources.number_soul_urge
+import numera.features.numbers.generated.resources.number_personality
+import numera.features.numbers.generated.resources.number_health
+import numera.features.numbers.generated.resources.number_business
+import numera.features.numbers.generated.resources.number_maturity
+import numera.features.numbers.generated.resources.number_hidden_passion
+import numera.features.numbers.generated.resources.number_cornerstone
+import numera.features.numbers.generated.resources.number_capstone
+import numera.features.numbers.generated.resources.number_generic
 
 @Inject
 class NumberDetailViewModel(private val sessionStorage: SessionStorage) : ViewModel() {
@@ -27,17 +40,17 @@ class NumberDetailViewModel(private val sessionStorage: SessionStorage) : ViewMo
         )
         val numbers = PythagoreanCalculator.allNumbers(profile)
         val (categoryLabel, value) = when (numberType) {
-            NumberType.LIFE_PATH -> "Число жизненного пути" to numbers.lifePath
-            NumberType.EXPRESSION -> "Число судьбы" to numbers.expression
-            NumberType.SOUL_URGE -> "Число души" to numbers.soulUrge
-            NumberType.PERSONALITY -> "Число личности" to numbers.personality
-            NumberType.HEALTH -> "Код здоровья" to numbers.healthCode
-            NumberType.BUSINESS -> "Код бизнеса" to numbers.businessCode
-            NumberType.MATURITY -> "Число зрелости" to AdvancedNumerology.maturityNumber(profile)
-            NumberType.HIDDEN_PASSION -> "Скрытая страсть" to AdvancedNumerology.hiddenPassionNumber(profile.fullName)
-            NumberType.CORNERSTONE -> "Краеугольный камень" to AdvancedNumerology.cornerstoneNumber(profile.fullName)
-            NumberType.CAPSTONE -> "Завершающий камень" to AdvancedNumerology.capstoneNumber(profile.fullName)
-            else -> "Число" to numbers.lifePath
+            NumberType.LIFE_PATH -> getString(Res.string.number_life_path) to numbers.lifePath
+            NumberType.EXPRESSION -> getString(Res.string.number_expression) to numbers.expression
+            NumberType.SOUL_URGE -> getString(Res.string.number_soul_urge) to numbers.soulUrge
+            NumberType.PERSONALITY -> getString(Res.string.number_personality) to numbers.personality
+            NumberType.HEALTH -> getString(Res.string.number_health) to numbers.healthCode
+            NumberType.BUSINESS -> getString(Res.string.number_business) to numbers.businessCode
+            NumberType.MATURITY -> getString(Res.string.number_maturity) to AdvancedNumerology.maturityNumber(profile)
+            NumberType.HIDDEN_PASSION -> getString(Res.string.number_hidden_passion) to AdvancedNumerology.hiddenPassionNumber(profile.fullName)
+            NumberType.CORNERSTONE -> getString(Res.string.number_cornerstone) to AdvancedNumerology.cornerstoneNumber(profile.fullName)
+            NumberType.CAPSTONE -> getString(Res.string.number_capstone) to AdvancedNumerology.capstoneNumber(profile.fullName)
+            else -> getString(Res.string.number_generic) to numbers.lifePath
         }
         _state.value = NumberDetailState.Content(categoryLabel, value, NumberMeanings.meaningFor(value))
     }
