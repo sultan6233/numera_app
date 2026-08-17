@@ -1,5 +1,6 @@
 package com.numera.app
 
+import com.numera.app.core.commonMain.deviceLanguageCode
 import com.numera.app.core.commonMain.deviceTimezoneId
 import com.numera.app.core.commonMain.session.SessionStorage
 import dev.zacsweers.metro.AppScope
@@ -74,6 +75,11 @@ interface NetworkBindings {
                 // insight/push schedule follows their current timezone without a dedicated
                 // "update my timezone" endpoint.
                 header("X-Timezone", deviceTimezoneId())
+                // Same mechanism as X-Timezone, for the daily insight's language instead - the
+                // backend's SupportedLanguages ignores anything outside its list, so sending an
+                // unsupported system language here is a harmless no-op (falls back to whatever's
+                // already stored, or Russian for a brand-new user).
+                header("X-Language", deviceLanguageCode())
             }
 
             install(Auth) {
